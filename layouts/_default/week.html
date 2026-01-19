@@ -1,0 +1,259 @@
+{{ define "main" }}
+<div class="mb-6">
+  <h1 class="text-2xl font-bold mb-2">Weekly Schedule</h1>
+  <p class="text-dark-muted">Tap any day to see the full workout details.</p>
+</div>
+
+<!-- Week Grid -->
+<div class="grid gap-3" id="week-grid">
+  {{ $schedule := .Site.Data.schedule.week }}
+  {{ $days := slice "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday" }}
+  {{ $dayLabels := dict "monday" "Monday" "tuesday" "Tuesday" "wednesday" "Wednesday" "thursday" "Thursday" "friday" "Friday" "saturday" "Saturday" "sunday" "Sunday" }}
+  
+  {{ range $index, $day := $days }}
+  {{ $data := index $schedule $day }}
+  {{ $label := index $dayLabels $day }}
+  <div class="day-card exercise-card cursor-pointer hover:border-accent-primary transition-colors" 
+       data-day="{{ $day }}"
+       onclick="showDayDetail('{{ $day }}')">
+    <div class="flex items-center gap-4">
+      <div class="text-3xl">{{ $data.icon }}</div>
+      <div class="flex-1">
+        <div class="flex items-center gap-2">
+          <h3 class="font-semibold text-dark-text">{{ $label }}</h3>
+          <span class="badge {{ if eq $data.type "run" }}badge-run{{ else if eq $data.type "gym" }}badge-muscle{{ else if eq $data.type "rest" }}badge-rest{{ else }}badge-equipment{{ end }}">
+            {{ if eq $data.type "run" }}Run{{ else if eq $data.type "gym" }}{{ $data.workout | title }}{{ else if eq $data.type "rest" }}Rest{{ else }}Flexible{{ end }}
+          </span>
+        </div>
+        <p class="text-sm text-dark-muted">{{ $data.description }}</p>
+      </div>
+      <div class="text-dark-muted">
+        {{ if ne $data.duration 0 }}
+        <span class="text-sm">{{ $data.duration }} min</span>
+        {{ end }}
+        <span class="ml-2">›</span>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+
+<!-- Day Detail Modal -->
+<div id="day-modal" class="fixed inset-0 bg-black/80 z-50 hidden" onclick="closeDayModal(event)">
+  <div class="fixed inset-x-0 bottom-0 top-16 bg-dark-bg rounded-t-2xl overflow-y-auto" onclick="event.stopPropagation()">
+    <div class="sticky top-0 bg-dark-bg border-b border-dark-border p-4 flex items-center justify-between">
+      <h2 class="text-xl font-bold" id="modal-title">Monday</h2>
+      <button onclick="closeDayModal()" class="p-2 hover:bg-dark-card rounded-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="p-4" id="modal-content">
+      <!-- Content loaded by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- Exercise data from Hugo -->
+<script id="week-data">
+window.WEEK_DATA = {{- $data := dict 
+  "push" $.Site.Data.exercises.push 
+  "pull" $.Site.Data.exercises.pull 
+  "legs" $.Site.Data.exercises.legs 
+  "abs" $.Site.Data.exercises.abs 
+  "running" $.Site.Data.exercises.running 
+  "schedule" $.Site.Data.schedule -}}
+{{- $data | jsonify | safeJS -}};
+</script>
+
+<script>
+const dayLabels = {
+  monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday',
+  thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday'
+};
+
+function showDayDetail(day) {
+  const data = window.WEEK_DATA;
+  const schedule = data.schedule?.week?.[day];
+  if (!schedule) return;
+
+  const modal = document.getElementById('day-modal');
+  const title = document.getElementById('modal-title');
+  const content = document.getElementById('modal-content');
+
+  title.textContent = `${dayLabels[day]} - ${schedule.icon}`;
+  
+  let html = '';
+  
+  // Summary card
+  html += `
+    <div class="exercise-card mb-4">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">${schedule.icon}</span>
+        <div>
+          <h3 class="font-semibold text-lg">${getWorkoutTitle(schedule, data)}</h3>
+          <p class="text-sm text-dark-muted">${schedule.description}</p>
+        </div>
+      </div>
+      ${schedule.duration ? `<p class="text-sm text-dark-muted mt-2">Duration: <span class="text-dark-text">${schedule.duration} min</span></p>` : ''}
+    </div>
+  `;
+
+  if (schedule.type === 'gym') {
+    html += renderGymDay(schedule, data);
+  } else if (schedule.type === 'run') {
+    html += renderRunDay(schedule, data);
+  } else if (schedule.type === 'rest') {
+    html += renderRestDay();
+  } else if (schedule.type === 'flexible') {
+    html += renderFlexibleDay(schedule, data);
+  }
+
+  content.innerHTML = html;
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDayModal(event) {
+  if (event && event.target !== event.currentTarget) return;
+  document.getElementById('day-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function getWorkoutTitle(schedule, data) {
+  if (schedule.type === 'rest') return 'Rest Day';
+  if (schedule.type === 'run') {
+    const workout = data.running?.workouts?.find(w => w.id === schedule.workout);
+    return workout?.name || 'Run';
+  }
+  if (schedule.type === 'gym') {
+    return schedule.workout.charAt(0).toUpperCase() + schedule.workout.slice(1) + ' Day';
+  }
+  if (schedule.type === 'flexible') return 'Flexible Day';
+  return 'Workout';
+}
+
+function renderGymDay(schedule, data) {
+  const workoutData = data[schedule.workout];
+  if (!workoutData) return '';
+
+  let exercises = [...workoutData.exercises];
+  if (schedule.includeAbs && data.abs) {
+    exercises = exercises.concat(data.abs.exercises.slice(0, 3));
+  }
+
+  let html = `<h4 class="section-title">Exercises (${exercises.length})</h4>`;
+  
+  exercises.forEach(ex => {
+    html += `
+      <div class="exercise-card mb-3">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <h5 class="font-medium text-dark-text">${ex.name}</h5>
+            <div class="flex gap-2 mt-1">
+              <span class="badge badge-muscle">${ex.muscle}</span>
+              <span class="badge badge-equipment">${ex.equipment}</span>
+            </div>
+          </div>
+          <div class="text-right text-sm">
+            <div class="text-dark-text">${ex.sets} × ${ex.reps}</div>
+            ${ex.startingWeight ? `<div class="text-dark-muted">${ex.startingWeight}kg start</div>` : ''}
+          </div>
+        </div>
+        ${ex.notes ? `<p class="text-sm text-dark-muted">${ex.notes}</p>` : ''}
+        ${ex.description ? `
+          <details class="mt-2">
+            <summary class="text-sm text-accent-primary cursor-pointer">How to perform</summary>
+            <div class="mt-2 p-3 bg-dark-bg rounded text-sm text-dark-muted whitespace-pre-line">${ex.description}</div>
+          </details>
+        ` : ''}
+      </div>
+    `;
+  });
+
+  return html;
+}
+
+function renderRunDay(schedule, data) {
+  const workout = data.running?.workouts?.find(w => w.id === schedule.workout);
+  if (!workout) return '';
+
+  let html = `
+    <div class="exercise-card mb-4">
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <span class="text-dark-muted text-sm">Duration</span>
+          <p class="text-dark-text font-medium">${workout.duration}</p>
+        </div>
+        <div>
+          <span class="text-dark-muted text-sm">Intensity</span>
+          <p class="text-dark-text font-medium">${workout.intensity}</p>
+        </div>
+      </div>
+      <p class="text-dark-muted">${workout.description}</p>
+      ${workout.structure ? `
+        <div class="mt-4 p-3 bg-dark-bg rounded">
+          <span class="text-xs text-dark-muted">Structure:</span>
+          <p class="text-sm text-dark-text mt-1">${workout.structure}</p>
+        </div>
+      ` : ''}
+    </div>
+  `;
+
+  if (workout.tips?.length) {
+    html += `
+      <h4 class="section-title">Tips</h4>
+      <div class="exercise-card">
+        <ul class="space-y-2">
+          ${workout.tips.map(tip => `
+            <li class="flex items-start gap-2 text-sm">
+              <span class="text-accent-success">•</span>
+              <span class="text-dark-muted">${tip}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+    `;
+  }
+
+  return html;
+}
+
+function renderRestDay() {
+  return `
+    <div class="exercise-card text-center py-8">
+      <div class="text-5xl mb-4">🧘</div>
+      <h3 class="text-lg font-medium mb-2">Take It Easy</h3>
+      <p class="text-dark-muted">Active recovery is encouraged:</p>
+      <ul class="mt-4 space-y-2 text-sm text-dark-muted">
+        <li>• Light walking</li>
+        <li>• Stretching or yoga</li>
+        <li>• Foam rolling</li>
+        <li>• Get good sleep</li>
+      </ul>
+    </div>
+  `;
+}
+
+function renderFlexibleDay(schedule, data) {
+  let html = `<h4 class="section-title">Choose Your Workout</h4>`;
+  
+  schedule.options?.forEach((opt, i) => {
+    html += `
+      <div class="exercise-card mb-3">
+        <h5 class="font-medium text-dark-text mb-1">${opt.description}</h5>
+        <p class="text-sm text-dark-muted">Duration: ${opt.duration} min</p>
+      </div>
+    `;
+  });
+
+  return html;
+}
+
+// Close on escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeDayModal();
+});
+</script>
+{{ end }}

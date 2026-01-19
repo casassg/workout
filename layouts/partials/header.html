@@ -2,17 +2,16 @@
   <div class="container mx-auto px-4 max-w-4xl">
     <div class="flex items-center justify-between h-14">
       <!-- Logo -->
-      <a href="{{ "/" | relURL }}" class="flex items-center gap-2 font-bold text-lg text-dark-text hover:text-accent-primary transition-colors">
+      <a href="{{ .Site.BaseURL }}" class="flex items-center gap-2 font-bold text-lg text-dark-text hover:text-accent-primary transition-colors">
         <span>💪</span>
         <span class="hidden sm:inline">Workout</span>
       </a>
       
       <!-- Navigation -->
       <nav class="flex items-center gap-1">
-        <a href="{{ "/" | relURL }}" class="nav-link {{ if eq .RelPermalink "/" }}nav-link-active{{ end }}">Today</a>
-        <a href="{{ "exercises/" | relURL }}" class="nav-link {{ if eq .RelPermalink "/exercises/" }}nav-link-active{{ end }}">Exercises</a>
-        <a href="{{ "running/" | relURL }}" class="nav-link {{ if eq .RelPermalink "/running/" }}nav-link-active{{ end }}">Running</a>
-        <a href="{{ "history/" | relURL }}" class="nav-link {{ if eq .RelPermalink "/history/" }}nav-link-active{{ end }}">History</a>
+        <a href="{{ .Site.BaseURL }}" class="nav-link {{ if .IsHome }}nav-link-active{{ end }}">Today</a>
+        <a href="{{ "week/" | absURL }}" class="nav-link {{ if eq .RelPermalink "/week/" }}nav-link-active{{ end }}">Week</a>
+        <a href="{{ "history/" | absURL }}" class="nav-link {{ if eq .RelPermalink "/history/" }}nav-link-active{{ end }}">History</a>
       </nav>
       
       <!-- Unit Toggle -->

@@ -234,6 +234,12 @@ function showGymWorkout(data, workoutType, includeAbs) {
     listEl.appendChild(card);
   });
   
+  // Restore completion state if workout was already completed today
+  const todayWorkout = Storage.getTodayWorkout();
+  if (todayWorkout && todayWorkout.exercises) {
+    restoreExerciseState(todayWorkout.exercises);
+  }
+  
   // Initialize progress tracking
   updateProgress();
   
@@ -565,6 +571,40 @@ function saveExerciseData(exerciseId) {
 }
 
 /**
+ * Restore exercise completion state from saved workout data
+ */
+function restoreExerciseState(savedExercises) {
+  savedExercises.forEach(saved => {
+    const card = document.getElementById(`exercise-${saved.id}`);
+    if (!card) return;
+    
+    const checkbox = card.querySelector('.exercise-complete-check');
+    const weightInput = card.querySelector('.weight-input');
+    const repsInput = card.querySelector('.reps-input');
+    const setsInput = card.querySelector('.sets-input');
+    
+    // Restore checkbox state
+    if (checkbox && saved.completed) {
+      checkbox.checked = true;
+    }
+    
+    // Restore weight (convert from stored kg to display unit)
+    if (weightInput && saved.weight > 0) {
+      weightInput.value = Storage.displayWeight(saved.weight);
+      weightInput.dataset.weightKg = saved.weight;
+    }
+    
+    // Restore reps and sets
+    if (repsInput && saved.reps > 0) {
+      repsInput.value = saved.reps;
+    }
+    if (setsInput && saved.sets > 0) {
+      setsInput.value = saved.sets;
+    }
+  });
+}
+
+/**
  * Update progress bar
  */
 function updateProgress() {
@@ -592,19 +632,39 @@ function setupCompleteButton(type, workout, exercises) {
   const btn = document.getElementById('complete-workout-btn');
   if (!btn) return;
   
+  // Remove any existing event listeners by replacing the button
+  const newBtn = btn.cloneNode(true);
+  btn.parentNode.replaceChild(newBtn, btn);
+  
   // Check if already completed today
-  if (Storage.isWorkoutCompletedToday()) {
-    btn.textContent = 'Workout Completed! ✓';
-    btn.disabled = true;
-    btn.classList.remove('btn-success');
-    btn.classList.add('bg-dark-border', 'cursor-not-allowed');
+  const todayWorkout = Storage.getTodayWorkout();
+  if (todayWorkout) {
+    // Show completed state with option to redo
+    newBtn.textContent = 'Workout Completed! ✓';
+    newBtn.disabled = false;
+    newBtn.classList.remove('btn-success');
+    newBtn.classList.add('bg-dark-border');
+    
+    // Add redo option
+    newBtn.addEventListener('click', function() {
+      if (confirm('Want to redo this workout? This will clear your previous completion for today.')) {
+        Storage.clearTodayWorkout();
+        // Reset UI and re-setup button
+        document.querySelectorAll('.exercise-complete-check').forEach(cb => {
+          cb.checked = false;
+        });
+        updateProgress();
+        setupCompleteButton(type, workout, exercises);
+        showNotification('Workout reset - ready to go again!');
+      }
+    });
     return;
   }
   
-  btn.addEventListener('click', function() {
+  newBtn.addEventListener('click', function() {
     // Collect exercise data
     const exerciseResults = [];
-    document.querySelectorAll('.exercise-card').forEach(card => {
+    document.querySelectorAll('#exercise-list .exercise-card').forEach(card => {
       const id = card.dataset.exerciseId;
       if (!id) return;
       
@@ -636,13 +696,16 @@ function setupCompleteButton(type, workout, exercises) {
     });
     
     // Update UI
-    btn.textContent = 'Workout Completed! ✓';
-    btn.disabled = true;
-    btn.classList.remove('btn-success');
-    btn.classList.add('bg-dark-border', 'cursor-not-allowed');
+    newBtn.textContent = 'Workout Completed! ✓';
+    newBtn.disabled = false;
+    newBtn.classList.remove('btn-success');
+    newBtn.classList.add('bg-dark-border');
     
     // Show celebration
     showNotification('Great workout! 💪 See you next time!');
+    
+    // Re-setup to enable redo functionality
+    setTimeout(() => setupCompleteButton(type, workout, exercises), 100);
   });
 }
 

@@ -179,6 +179,13 @@ function isWorkoutCompletedToday() {
   return getTodayWorkout() !== null;
 }
 
+function clearTodayWorkout() {
+  const history = getWorkoutHistory();
+  const today = new Date().toISOString().split('T')[0];
+  const filtered = history.filter(w => w.date !== today);
+  localStorage.setItem(STORAGE_KEYS.WORKOUT_HISTORY, JSON.stringify(filtered));
+}
+
 // Week counter for alternating workouts (e.g., Friday Push/Legs)
 function getWeekCounter() {
   const stored = localStorage.getItem(STORAGE_KEYS.WEEK_COUNTER);
@@ -235,6 +242,7 @@ window.Storage = {
   saveWorkoutCompletion,
   getTodayWorkout,
   isWorkoutCompletedToday,
+  clearTodayWorkout,
   getWeekCounter,
   updateWeekCounter,
   clearAllData
