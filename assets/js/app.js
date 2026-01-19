@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize the app
   initUnitToggle();
   initTodayWorkout(exerciseData);
+  initStreakDisplay();
 });
 
 /**
@@ -142,14 +143,14 @@ function initTodayWorkout(data) {
   if (schedule.type === 'rest') {
     showRestDay();
   } else if (schedule.type === 'run') {
-    showRunWorkout(data.running, schedule.workout);
+    showRunWorkout(data.running, schedule.workout, schedule, data);
   } else if (schedule.type === 'gym') {
     let workoutType = schedule.workout;
     if (schedule.alternateWeekly) {
       const weekNum = Storage.updateWeekCounter();
       workoutType = weekNum === 0 ? schedule.workout : schedule.alternateWeekly;
     }
-    showGymWorkout(data, workoutType, schedule.includeAbs);
+    showGymWorkout(data, workoutType, schedule.includeAbs, schedule);
   } else if (schedule.type === 'flexible') {
     showFlexibleDay(data, schedule);
   }
@@ -169,7 +170,7 @@ function showRestDay() {
 /**
  * Show running workout
  */
-function showRunWorkout(runningData, workoutId) {
+function showRunWorkout(runningData, workoutId, schedule, allData) {
   hideElement('exercise-list');
   hideElement('rest-section');
   hideElement('progress-section');
@@ -192,6 +193,11 @@ function showRunWorkout(runningData, workoutId) {
     tipEl.innerHTML = `<strong>Tip:</strong> ${randomTip}`;
   }
   
+  // Show extra workout option if available
+  if (schedule && allData) {
+    showExtraWorkout(allData, schedule);
+  }
+  
   // Setup complete button
   setupCompleteButton('run', workoutId, []);
 }
@@ -199,7 +205,7 @@ function showRunWorkout(runningData, workoutId) {
 /**
  * Show gym workout with exercises
  */
-function showGymWorkout(data, workoutType, includeAbs) {
+function showGymWorkout(data, workoutType, includeAbs, schedule) {
   hideElement('rest-section');
   hideElement('running-section');
   showElement('exercise-list');
@@ -248,6 +254,11 @@ function showGymWorkout(data, workoutType, includeAbs) {
   
   // Show next run preview if it's a gym day
   showNextRunPreview(data);
+  
+  // Show extra workout option if available
+  if (schedule) {
+    showExtraWorkout(data, schedule);
+  }
 }
 
 /**
@@ -753,3 +764,105 @@ function showNotification(message) {
     notification.remove();
   }, 3000);
 }
+
+/**
+ * Initialize streak display
+ */
+function initStreakDisplay() {
+  const streakEl = document.getElementById('streak-display');
+  if (!streakEl) return;
+  
+  const streak = Storage.getStreakCount();
+  
+  if (streak >= 1) {
+    const badge = streakEl.querySelector('.badge');
+    badge.textContent = `${streak} day streak`;
+    streakEl.classList.remove('hidden');
+  }
+}
+
+/**
+ * Show extra workout section if available
+ */
+function showExtraWorkout(data, schedule) {
+  const extra = schedule.extra;
+  if (!extra) return;
+  
+  const section = document.getElementById('extra-workout-section');
+  const iconEl = document.getElementById('extra-workout-icon');
+  const summaryEl = document.getElementById('extra-workout-summary');
+  const contentEl = document.getElementById('extra-workout-content');
+  
+  if (!section || !contentEl) return;
+  
+  // Set icon and summary
+  iconEl.textContent = extra.icon || (extra.type === 'run' ? '🏃' : '🏋️');
+  summaryEl.textContent = `${extra.description} (${extra.duration} min)`;
+  
+  // Build content based on extra type
+  if (extra.type === 'run') {
+    const workout = data.running?.workouts?.find(w => w.id === extra.workout);
+    if (workout) {
+      const tips = workout.tips || [];
+      const randomTip = tips.length > 0 ? tips[Math.floor(Math.random() * tips.length)] : '';
+      
+      contentEl.innerHTML = `
+        <h4 class="card-title mb-2">${workout.name}</h4>
+        <p class="text-dark-muted mb-3">${workout.description}</p>
+        <div class="grid grid-cols-2 gap-4 text-sm mb-3">
+          <div>
+            <span class="text-dark-muted">Duration:</span>
+            <span class="text-dark-text">${extra.duration} min</span>
+          </div>
+          <div>
+            <span class="text-dark-muted">Intensity:</span>
+            <span class="text-dark-text">${workout.intensity}</span>
+          </div>
+        </div>
+        ${randomTip ? `
+          <div class="p-3 bg-dark-bg rounded-lg">
+            <p class="text-sm text-dark-muted"><strong>Tip:</strong> ${randomTip}</p>
+          </div>
+        ` : ''}
+      `;
+    }
+  } else if (extra.type === 'gym') {
+    const workoutData = data[extra.workout];
+    if (workoutData) {
+      const exercises = workoutData.exercises || [];
+      const exerciseList = exercises.slice(0, 4).map(e => e.name).join(', ');
+      const moreCount = exercises.length > 4 ? ` +${exercises.length - 4} more` : '';
+      
+      contentEl.innerHTML = `
+        <h4 class="card-title mb-2">${capitalizeFirst(extra.workout)} Workout</h4>
+        <p class="text-dark-muted mb-3">${extra.description}</p>
+        <div class="text-sm mb-3">
+          <span class="text-dark-muted">Duration:</span>
+          <span class="text-dark-text">${extra.duration} min</span>
+        </div>
+        <div class="text-sm">
+          <span class="text-dark-muted">Exercises:</span>
+          <span class="text-dark-text">${exerciseList}${moreCount}</span>
+        </div>
+      `;
+    }
+  }
+  
+  // Show the section
+  section.style.display = '';
+}
+
+/**
+ * Toggle extra workout details visibility
+ */
+window.toggleExtraWorkout = function() {
+  const details = document.getElementById('extra-workout-details');
+  const icon = document.getElementById('extra-toggle-icon');
+  
+  if (details) {
+    details.classList.toggle('hidden');
+    if (icon) {
+      icon.textContent = details.classList.contains('hidden') ? '▶' : '▼';
+    }
+  }
+};

@@ -2,7 +2,12 @@
 <div id="app">
   <!-- Today's Date and Workout Type -->
   <div class="mb-6">
-    <h1 class="text-2xl font-bold mb-2" id="today-title">Today's Workout</h1>
+    <div class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold mb-2" id="today-title">Today's Workout</h1>
+      <div id="streak-display" class="hidden">
+        <span class="badge badge-streak text-base px-3 py-1"></span>
+      </div>
+    </div>
     <p class="text-dark-muted" id="today-date"></p>
   </div>
 
@@ -24,6 +29,27 @@
   <!-- Next Run Preview (shown on gym days) -->
   <div id="next-run-preview" class="exercise-card mb-6 border-l-4 border-accent-primary" style="display: none;">
     <!-- Populated by JS -->
+  </div>
+
+  <!-- Extra Workout Section (collapsible) -->
+  <div id="extra-workout-section" class="mb-6" style="display: none;">
+    <div class="exercise-card border-l-4 border-accent-warning">
+      <button id="extra-workout-toggle" class="w-full flex items-center justify-between text-left" onclick="toggleExtraWorkout()">
+        <div class="flex items-center gap-3">
+          <span id="extra-workout-icon" class="text-xl"></span>
+          <div>
+            <span class="text-dark-text font-medium">Extra Workout Available</span>
+            <span id="extra-workout-summary" class="text-dark-muted text-sm block"></span>
+          </div>
+        </div>
+        <span id="extra-toggle-icon" class="text-dark-muted">▶</span>
+      </button>
+      <div id="extra-workout-details" class="hidden mt-4 pt-4 border-t border-dark-border">
+        <div id="extra-workout-content">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Progress for today -->

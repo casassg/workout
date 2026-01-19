@@ -54,3 +54,16 @@ workouts:
       - "Recovery jog can be a walk if needed"
       - "Great for improving VO2max"
       - "Skip if legs are tired from gym"
+
+  - id: "short_run"
+    name: "Short Run"
+    type: "Recovery"
+    duration: "15-20 min"
+    intensity: "Low"
+    description: "Quick easy run to add on gym days. Keep it light and conversational."
+    frequency: "Optional add-on"
+    tips:
+      - "Perfect for doubling up after a gym session"
+      - "Keep it truly easy - this is bonus cardio"
+      - "Great way to get extra movement without fatigue"
+      - "Can be done later in the day after recovery"

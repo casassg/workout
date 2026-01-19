@@ -9,6 +9,12 @@ week:
     description: "Start the week with upper body push exercises"
     icon: "🏋️"
     includeAbs: false
+    extra:
+      type: "run"
+      workout: "short_run"
+      duration: 20
+      description: "Optional afternoon run"
+      icon: "🏃"
 
   tuesday:
     type: "run"
@@ -16,6 +22,12 @@ week:
     duration: 45
     description: "Easy recovery run - conversational pace"
     icon: "🏃"
+    extra:
+      type: "gym"
+      workout: "abs"
+      duration: 15
+      description: "Optional core session"
+      icon: "🏋️"
 
   wednesday:
     type: "gym"
@@ -24,6 +36,12 @@ week:
     description: "Back and biceps day"
     icon: "🏋️"
     includeAbs: true
+    extra:
+      type: "run"
+      workout: "short_run"
+      duration: 20
+      description: "Optional afternoon run"
+      icon: "🏃"
 
   thursday:
     type: "run"
@@ -31,6 +49,12 @@ week:
     duration: 45
     description: "Tempo run - comfortably hard pace"
     icon: "🏃"
+    extra:
+      type: "gym"
+      workout: "abs"
+      duration: 15
+      description: "Optional core session"
+      icon: "🏋️"
 
   friday:
     type: "gym"
@@ -40,6 +64,12 @@ week:
     description: "Push or Legs (alternates weekly)"
     icon: "🏋️"
     includeAbs: true
+    extra:
+      type: "run"
+      workout: "short_run"
+      duration: 20
+      description: "Optional afternoon run"
+      icon: "🏃"
 
   saturday:
     type: "flexible"

@@ -222,6 +222,64 @@ function clearAllData() {
   });
 }
 
+/**
+ * Calculate current workout streak
+ * Counts consecutive days with completed workouts
+ * Sunday (rest day) doesn't break the streak - it's skipped
+ * @returns {number} Current streak count
+ */
+function getStreakCount() {
+  const history = getWorkoutHistory();
+  if (history.length === 0) return 0;
+  
+  // Create a Set of completed dates for fast lookup
+  const completedDates = new Set(history.map(w => w.date));
+  
+  let streak = 0;
+  const today = new Date();
+  const todayStr = today.toISOString().split('T')[0];
+  
+  // Check if today is completed (adds to streak)
+  const todayCompleted = completedDates.has(todayStr);
+  
+  // Start checking from yesterday (or today if already completed)
+  let checkDate = new Date(today);
+  if (!todayCompleted) {
+    // If today not completed, start from yesterday
+    checkDate.setDate(checkDate.getDate() - 1);
+  }
+  
+  // Count backwards
+  while (true) {
+    const dateStr = checkDate.toISOString().split('T')[0];
+    const dayOfWeek = checkDate.getDay(); // 0 = Sunday
+    
+    if (dayOfWeek === 0) {
+      // Sunday - skip it (doesn't break streak, doesn't add to it)
+      checkDate.setDate(checkDate.getDate() - 1);
+      continue;
+    }
+    
+    if (completedDates.has(dateStr)) {
+      streak++;
+      checkDate.setDate(checkDate.getDate() - 1);
+    } else {
+      // Streak broken
+      break;
+    }
+    
+    // Safety limit - don't go back more than 90 days
+    if (streak > 90) break;
+  }
+  
+  // Add today if completed
+  if (todayCompleted) {
+    streak++;
+  }
+  
+  return streak;
+}
+
 // Export functions for use in other modules
 window.Storage = {
   getPreferences,
@@ -245,5 +303,6 @@ window.Storage = {
   clearTodayWorkout,
   getWeekCounter,
   updateWeekCounter,
+  getStreakCount,
   clearAllData
 };
