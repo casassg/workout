@@ -8,7 +8,7 @@ exercises:
     muscle: "Lats"
     equipment: "Dual Adjustable Pulley"
     sets: 4
-    reps: "10-12"
+    reps: 10
     startingWeight: 20
     notes: "Primary lat builder"
     description: |
@@ -42,7 +42,7 @@ exercises:
     muscle: "Mid Back"
     equipment: "Dual Adjustable Pulley"
     sets: 4
-    reps: "10-12"
+    reps: 10
     startingWeight: 20
     notes: "Builds back thickness"
     description: |
@@ -101,7 +101,7 @@ exercises:
     muscle: "Lats"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: "12-15"
+    reps: 12
     startingWeight: 10
     notes: "Lat isolation - great mind-muscle connection"
     description: |
@@ -127,7 +127,7 @@ exercises:
     muscle: "Biceps"
     equipment: "Barbell"
     sets: 3
-    reps: "10-12"
+    reps: 10
     startingWeight: 15
     notes: "Classic bicep mass builder"
     description: |
@@ -161,7 +161,7 @@ exercises:
     muscle: "Biceps (Long Head)"
     equipment: "Dumbbells + Incline Bench"
     sets: 3
-    reps: "10-12"
+    reps: 10
     startingWeight: 6
     notes: "Maximum bicep stretch for long head"
     description: |
@@ -195,7 +195,7 @@ exercises:
     muscle: "Biceps, Brachialis"
     equipment: "Dumbbells"
     sets: 3
-    reps: "12-15"
+    reps: 12
     startingWeight: 8
     notes: "Builds arm thickness and forearms"
     description: |
