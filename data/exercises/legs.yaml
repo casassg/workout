@@ -1,0 +1,97 @@
+category: "Legs"
+description: "Quads, Hamstrings, Calves (maintenance focus - running is primary)"
+icon: "🦵"
+exercises:
+  - id: "leg_extension"
+    name: "Leg Extension"
+    muscle: "Quads"
+    equipment: "Technogym Leg Machine"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 15
+    notes: "Quad isolation - great for warming up knees"
+    description: |
+      Setup: Adjust machine so knee joint aligns with machine pivot point. Back flat against pad. Ankle pad rests on lower shins, just above ankles. Grip handles at sides.
+      
+      Execution: Extend legs until straight, squeezing quads hard at the top. Hold briefly. Lower slowly under control, stopping just before weights touch.
+      
+      Key points: Don't swing or use momentum. Keep back against pad. Full extension at top for peak contraction. Control especially important on the way down. Great as a warm-up or finisher.
+    alternatives:
+      - id: "goblet_squat"
+        name: "Goblet Squat"
+        equipment: "Dumbbell"
+      - id: "barbell_squat"
+        name: "Barbell Squat"
+        equipment: "Barbell"
+      - id: "leg_press"
+        name: "Leg Press"
+        equipment: "Leg Press Machine"
+
+  - id: "leg_curl"
+    name: "Leg Curl"
+    muscle: "Hamstrings"
+    equipment: "Technogym Leg Machine"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 15
+    notes: "Hamstring isolation - important for runners"
+    description: |
+      Setup: Lying face down (or seated depending on machine), position ankle pad just above heels. Knee joint should align with machine pivot. Grip handles for stability.
+      
+      Execution: Curl heels toward glutes, squeezing hamstrings hard at peak contraction. Hold briefly. Lower slowly, maintaining tension until legs are almost straight.
+      
+      Key points: Don't lift hips off pad when curling. Full range of motion - complete stretch at bottom, full contraction at top. Keep toes pointed or slightly flexed (not pointed hard). Control the negative.
+    alternatives:
+      - id: "romanian_deadlift"
+        name: "Romanian Deadlift"
+        equipment: "Barbell or Dumbbells"
+      - id: "nordic_curl"
+        name: "Nordic Curl"
+        equipment: "Bodyweight"
+      - id: "cable_pull_through"
+        name: "Cable Pull-Through"
+        equipment: "Dual Adjustable Pulley"
+
+  - id: "calf_raises"
+    name: "Standing Calf Raises"
+    muscle: "Calves"
+    equipment: "Barbell or Bodyweight"
+    sets: 3
+    reps: "15-20"
+    startingWeight: 0
+    notes: "Calves need high reps and full range"
+    description: |
+      Setup: Stand on edge of step or weight plate with heels hanging off. Hold barbell on back, dumbbells at sides, or use bodyweight. Start with heels dropped below the step.
+      
+      Execution: Rise up onto toes as high as possible, squeezing calves hard at top. Hold 1-2 seconds. Lower slowly until heels drop below step level for full stretch.
+      
+      Key points: Full range of motion is crucial for calves. Don't bounce. Pause at both top and bottom. Go slow - calves respond to time under tension. Keep legs straight (slight knee bend OK).
+    alternatives:
+      - id: "seated_calf_raise"
+        name: "Seated Calf Raise"
+        equipment: "Dumbbell on knee"
+      - id: "single_leg_calf_raise"
+        name: "Single-Leg Calf Raise"
+        equipment: "Bodyweight + Step"
+
+  - id: "lunges"
+    name: "Walking Lunges"
+    muscle: "Quads, Glutes"
+    equipment: "Dumbbells or Bodyweight"
+    sets: 3
+    reps: "10 each leg"
+    startingWeight: 0
+    notes: "Functional movement - great for runners"
+    description: |
+      Setup: Stand tall holding dumbbells at sides (or bodyweight). Feet together, core braced.
+      
+      Execution: Step forward with one leg, lowering until both knees are at ~90°. Front knee stays over ankle (not past toes). Back knee nearly touches floor. Push through front heel to step forward into next lunge.
+      
+      Key points: Keep torso upright - don't lean forward. Take long enough steps that back knee goes straight down. Push through the heel, not toes. Control your descent. Alternate legs as you walk.
+    alternatives:
+      - id: "reverse_lunge"
+        name: "Reverse Lunges"
+        equipment: "Dumbbells or Bodyweight"
+      - id: "split_squat"
+        name: "Bulgarian Split Squat"
+        equipment: "Dumbbells + Bench"

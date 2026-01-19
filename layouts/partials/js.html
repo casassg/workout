@@ -1,0 +1,17 @@
+{{- $scripts := slice "js/storage.js" "js/app.js" -}}
+
+{{- if eq .Layout "history" -}}
+  {{- $scripts = $scripts | append "js/history.js" -}}
+{{- end -}}
+
+{{- range $scripts -}}
+  {{- with resources.Get . -}}
+    {{- if hugo.IsDevelopment -}}
+      <script src="{{ .RelPermalink }}"></script>
+    {{- else -}}
+      {{- with . | minify | fingerprint -}}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,113 @@
+category: "Abs"
+description: "Core exercises - add to any workout day"
+icon: "🎯"
+exercises:
+  - id: "cable_crunch"
+    name: "Cable Crunch"
+    muscle: "Abs"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "15-20"
+    startingWeight: 10
+    notes: "Weighted ab exercise for progression"
+    description: |
+      Setup: Attach rope to high pulley. Kneel facing machine, grab rope with both hands and hold at forehead/temples. Keep hands in place throughout.
+      
+      Execution: Crunch DOWN by curling ribcage toward pelvis. Imagine trying to bring your sternum to your belly button. Squeeze abs hard at bottom. Return to start position slowly.
+      
+      Key points: This is a crunch, not a bow - your hips should NOT move back. The movement comes from your spine curling, not your whole body hinging. Keep hands at head level. Focus on abs doing the work.
+    alternatives:
+      - id: "crunches"
+        name: "Crunches"
+        equipment: "Bodyweight"
+      - id: "ab_wheel"
+        name: "Ab Wheel Rollout"
+        equipment: "Ab Wheel"
+
+  - id: "hanging_leg_raise"
+    name: "Hanging Leg Raise"
+    muscle: "Lower Abs"
+    equipment: "Pull-up Bar / Rack"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 0
+    notes: "Challenging lower ab exercise"
+    description: |
+      Setup: Hang from pull-up bar with overhand grip, arms fully extended. Let body hang straight. Engage shoulders (don't just hang passively).
+      
+      Execution: Keeping legs straight (or slightly bent if needed), raise them until at least parallel to floor. For extra work, curl hips up at top. Lower slowly with control.
+      
+      Key points: Don't swing! If you can't control the movement, bend knees (knee raises) until stronger. The key is lifting with abs by tilting pelvis, not just using hip flexors. Control the descent.
+    alternatives:
+      - id: "lying_leg_raise"
+        name: "Lying Leg Raise"
+        equipment: "Floor / Bench"
+      - id: "captain_chair_raise"
+        name: "Captain's Chair Leg Raise"
+        equipment: "Captain's Chair"
+
+  - id: "plank"
+    name: "Plank"
+    muscle: "Core"
+    equipment: "Bodyweight"
+    sets: 3
+    reps: "45-60s"
+    startingWeight: 0
+    notes: "Foundational core stability"
+    description: |
+      Setup: Start face down, then prop yourself on forearms (elbows under shoulders) and toes. Body forms straight line from head to heels.
+      
+      Execution: Hold position, bracing core as if about to be punched in stomach. Squeeze glutes. Breathe steadily. Maintain for prescribed time.
+      
+      Key points: Don't let hips sag (most common error) or pike up. Head neutral - look at floor just ahead of hands. Squeeze everything - abs, glutes, quads. If too easy, try longer holds or add weight on back.
+    alternatives:
+      - id: "side_plank"
+        name: "Side Plank"
+        equipment: "Bodyweight"
+      - id: "dead_bug"
+        name: "Dead Bug"
+        equipment: "Bodyweight"
+
+  - id: "wood_chop"
+    name: "Cable Wood Chop"
+    muscle: "Obliques"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "12 each side"
+    startingWeight: 5
+    notes: "Rotational core strength"
+    description: |
+      Setup: Set cable to high position with single handle. Stand sideways to machine, feet wider than shoulders. Grab handle with both hands, arms extended toward cable.
+      
+      Execution: Pull cable diagonally across body from high to low (like chopping wood), rotating through torso. Arms stay relatively straight - power comes from core rotation. Return slowly.
+      
+      Key points: Rotate through your core, not just your arms. Keep hips relatively stable - movement is in torso. Control both directions. Can also do low-to-high (reverse wood chop) for variety.
+    alternatives:
+      - id: "russian_twist"
+        name: "Russian Twist"
+        equipment: "Bodyweight / Dumbbell"
+      - id: "pallof_press"
+        name: "Pallof Press"
+        equipment: "Dual Adjustable Pulley"
+
+  - id: "reverse_crunch"
+    name: "Reverse Crunch"
+    muscle: "Lower Abs"
+    equipment: "Bench / Floor"
+    sets: 3
+    reps: "15-20"
+    startingWeight: 0
+    notes: "Lower ab focus without hanging"
+    description: |
+      Setup: Lie on back on floor or bench. Hands at sides (or grip bench behind head for stability). Lift legs with knees bent at 90°, thighs vertical.
+      
+      Execution: Curl hips up off floor/bench by contracting lower abs, bringing knees toward chest. Your tailbone should lift. Lower slowly until hips touch again, keeping legs up.
+      
+      Key points: Don't swing legs - use abs to curl hips up. The movement is small but targeted. Think about tilting pelvis toward ribcage. Keep upper back on surface. Control is key.
+    alternatives:
+      - id: "knee_raise"
+        name: "Knee Raise"
+        equipment: "Bodyweight"
+      - id: "mountain_climbers"
+        name: "Mountain Climbers"
+        equipment: "Bodyweight"

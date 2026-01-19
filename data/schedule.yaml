@@ -1,0 +1,71 @@
+# Weekly schedule template
+# Push/Pull/Legs + Running rotation
+
+week:
+  monday:
+    type: "gym"
+    workout: "push"
+    duration: 60
+    description: "Start the week with upper body push exercises"
+    icon: "🏋️"
+    includeAbs: false
+
+  tuesday:
+    type: "run"
+    workout: "easy_run"
+    duration: 45
+    description: "Easy recovery run - conversational pace"
+    icon: "🏃"
+
+  wednesday:
+    type: "gym"
+    workout: "pull"
+    duration: 60
+    description: "Back and biceps day"
+    icon: "🏋️"
+    includeAbs: true
+
+  thursday:
+    type: "run"
+    workout: "tempo_run"
+    duration: 45
+    description: "Tempo run - comfortably hard pace"
+    icon: "🏃"
+
+  friday:
+    type: "gym"
+    workout: "push"
+    alternateWeekly: "legs"
+    duration: 60
+    description: "Push or Legs (alternates weekly)"
+    icon: "🏋️"
+    includeAbs: true
+
+  saturday:
+    type: "flexible"
+    duration: 120
+    description: "Longer session - gym + run combo or long run"
+    icon: "💪"
+    options:
+      - type: "run"
+        workout: "long_run"
+        duration: 90
+        description: "Long endurance run"
+      - type: "combo"
+        morning: "pull"
+        afternoon: "easy_run"
+        description: "Morning: Pull workout, Afternoon: Easy run"
+
+  sunday:
+    type: "rest"
+    duration: 0
+    description: "Rest day - active recovery (walking, stretching) encouraged"
+    icon: "🧘"
+
+# Alternation tracking
+alternation:
+  friday:
+    exercises:
+      - "push"
+      - "legs"
+    description: "Alternates between Push and Legs each week"

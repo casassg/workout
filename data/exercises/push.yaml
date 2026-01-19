@@ -1,0 +1,179 @@
+category: "Push"
+description: "Chest, Shoulders, Triceps"
+icon: "🏋️"
+exercises:
+  # CHEST
+  - id: "bench_press"
+    name: "Bench Press"
+    muscle: "Chest"
+    equipment: "Barbell + Bench"
+    sets: 4
+    reps: "8-12"
+    startingWeight: 20
+    notes: "The foundational chest exercise"
+    description: |
+      Setup: Lie on bench with eyes under the bar. Grip slightly wider than shoulder-width. Plant feet flat on floor.
+      
+      Execution: Unrack and lower bar to mid-chest (nipple line) with elbows at ~45° angle. Touch chest lightly, then press up in a slight arc back toward face. Lock out at top.
+      
+      Key points: Keep shoulder blades squeezed together throughout. Maintain natural arch in lower back. Don't bounce off chest. Breathe in on the way down, exhale pressing up.
+    alternatives:
+      - id: "chest_press_machine"
+        name: "Chest Press Machine"
+        equipment: "Technogym Chest Press"
+      - id: "dumbbell_bench_press"
+        name: "Dumbbell Bench Press"
+        equipment: "Dumbbells + Bench"
+
+  - id: "incline_dumbbell_press"
+    name: "Incline Dumbbell Press"
+    muscle: "Upper Chest"
+    equipment: "Dumbbells + Incline Bench"
+    sets: 3
+    reps: "10-12"
+    startingWeight: 8
+    notes: "Targets upper chest for balanced development"
+    description: |
+      Setup: Set bench to 30-45° incline. Sit with dumbbells on thighs, then kick them up as you lie back. Start with dumbbells at shoulder level, palms facing forward.
+      
+      Execution: Press dumbbells up and slightly inward until they nearly touch at the top. Lower under control to shoulder level, feeling a stretch in upper chest.
+      
+      Key points: Don't let elbows flare out past 90°. Keep wrists straight, not bent back. Lower back stays on bench. The incline shifts work to upper chest fibers.
+    alternatives:
+      - id: "incline_cable_fly"
+        name: "Incline Cable Fly"
+        equipment: "Dual Pulley + Incline Bench"
+      - id: "incline_barbell_press"
+        name: "Incline Barbell Press"
+        equipment: "Barbell + Incline Bench"
+
+  - id: "cable_fly"
+    name: "Cable Fly"
+    muscle: "Chest"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 5
+    notes: "Isolation movement for chest squeeze"
+    description: |
+      Setup: Set both pulleys to shoulder height or slightly above. Grab handles and step forward into a staggered stance. Start with arms out wide, slight bend in elbows.
+      
+      Execution: Bring hands together in a hugging motion, squeezing chest hard at the center. Slowly return to start, feeling the stretch across your chest.
+      
+      Key points: Keep the same bend in your elbows throughout - this isn't a pressing motion. Focus on squeezing your chest to move the weight, not your arms. Control the negative.
+    alternatives:
+      - id: "dumbbell_fly"
+        name: "Dumbbell Fly"
+        equipment: "Dumbbells + Bench"
+      - id: "pec_deck"
+        name: "Pec Deck Machine"
+        equipment: "Machine"
+
+  # SHOULDERS
+  - id: "overhead_press"
+    name: "Overhead Press"
+    muscle: "Shoulders"
+    equipment: "Barbell"
+    sets: 4
+    reps: "8-10"
+    startingWeight: 20
+    notes: "Primary shoulder builder"
+    description: |
+      Setup: Stand with feet shoulder-width apart. Grip bar just outside shoulders, bar resting on front delts/upper chest. Elbows slightly in front of bar.
+      
+      Execution: Brace core hard, squeeze glutes. Press bar straight up, moving head back slightly to let bar pass, then forward once bar clears. Lock out overhead with bar over mid-foot.
+      
+      Key points: Don't lean back excessively - this isn't an incline press. Keep core tight to protect lower back. Full lockout at top. Bar path should be as vertical as possible.
+    alternatives:
+      - id: "shoulder_press_machine"
+        name: "Shoulder Press Machine"
+        equipment: "Technogym Shoulder Press"
+      - id: "dumbbell_shoulder_press"
+        name: "Dumbbell Shoulder Press"
+        equipment: "Dumbbells"
+
+  - id: "lateral_raise_cable"
+    name: "Cable Lateral Raise"
+    muscle: "Side Delts"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 2.5
+    notes: "Builds shoulder width"
+    description: |
+      Setup: Set pulley to lowest position. Stand sideways to machine, grab handle with far hand (cable crosses in front of body). Slight bend in elbow, locked in place.
+      
+      Execution: Raise arm out to the side until parallel with floor or slightly above. Lead with your elbow, not your hand. Lower slowly under control.
+      
+      Key points: Keep slight forward lean to target side delt better. Don't swing or use momentum. Think about pouring water from a pitcher at the top. Pinky slightly higher than thumb.
+    alternatives:
+      - id: "dumbbell_lateral_raise"
+        name: "Dumbbell Lateral Raise"
+        equipment: "Dumbbells"
+
+  - id: "face_pull"
+    name: "Face Pull"
+    muscle: "Rear Delts"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "15-20"
+    startingWeight: 5
+    notes: "Essential for shoulder health and posture"
+    description: |
+      Setup: Set cable to face height with rope attachment. Grip rope with thumbs pointing back toward you. Step back to create tension, arms extended.
+      
+      Execution: Pull rope toward your face, separating hands as you pull. Aim to bring hands beside your ears. Squeeze shoulder blades together and externally rotate (thumbs pointing back).
+      
+      Key points: This is a rear delt AND rotator cuff exercise. Pull apart, not just back. Hold the squeeze for a second. Don't let your elbows drop - keep them high. Light weight, high reps.
+    alternatives:
+      - id: "rear_delt_fly"
+        name: "Rear Delt Fly"
+        equipment: "Dumbbells"
+      - id: "reverse_cable_fly"
+        name: "Reverse Cable Fly"
+        equipment: "Dual Adjustable Pulley"
+
+  # TRICEPS
+  - id: "tricep_pushdown"
+    name: "Tricep Pushdown"
+    muscle: "Triceps"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 10
+    notes: "Classic tricep isolation"
+    description: |
+      Setup: Set cable to high position with straight bar or V-bar. Stand facing machine, grip bar with overhand grip. Tuck elbows tight to your sides.
+      
+      Execution: Keeping upper arms completely still, extend forearms down until arms are straight. Squeeze triceps hard at bottom. Slowly return to start position (forearms parallel to floor).
+      
+      Key points: Elbows stay pinned to your sides throughout - they should not move forward or back. Only your forearms move. Don't lean over the weight. Squeeze at the bottom.
+    alternatives:
+      - id: "rope_pushdown"
+        name: "Rope Pushdown"
+        equipment: "Dual Adjustable Pulley + Rope"
+      - id: "close_grip_bench"
+        name: "Close-Grip Bench Press"
+        equipment: "Barbell + Bench"
+
+  - id: "overhead_tricep_extension"
+    name: "Overhead Cable Extension"
+    muscle: "Triceps"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 7.5
+    notes: "Targets long head of triceps"
+    description: |
+      Setup: Set cable to low position with rope attachment. Face away from machine, grab rope with both hands overhead. Step forward, lean slightly forward with arms extended overhead.
+      
+      Execution: Keeping upper arms still and close to head, lower the rope behind your head by bending elbows. Feel the stretch in triceps. Extend arms back up, squeezing triceps at top.
+      
+      Key points: Upper arms stay vertical and close to ears - only forearms move. Don't let elbows flare out wide. Get a full stretch at the bottom. This position emphasizes the long head (inner tricep).
+    alternatives:
+      - id: "skull_crushers"
+        name: "Skull Crushers"
+        equipment: "Barbell/EZ Bar + Bench"
+      - id: "dumbbell_overhead_extension"
+        name: "Dumbbell Overhead Extension"
+        equipment: "Dumbbell"

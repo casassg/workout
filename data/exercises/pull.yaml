@@ -1,0 +1,153 @@
+category: "Pull"
+description: "Back, Biceps"
+icon: "🏋️"
+exercises:
+  # BACK
+  - id: "lat_pulldown"
+    name: "Lat Pulldown"
+    muscle: "Lats"
+    equipment: "Dual Adjustable Pulley"
+    sets: 4
+    reps: "10-12"
+    startingWeight: 20
+    notes: "Primary lat builder"
+    description: |
+      Setup: Sit at machine with thighs secured under pads. Grip bar wider than shoulder-width with overhand grip. Lean back slightly (10-15°), chest up.
+      
+      Execution: Pull bar down to upper chest, leading with elbows. Squeeze shoulder blades together at the bottom. Slowly return to start with arms fully extended.
+      
+      Key points: Don't lean back excessively or swing. Pull elbows down and back, not just down. Feel lats stretch at the top. Imagine pulling your elbows into your back pockets.
+    alternatives:
+      - id: "pull_ups"
+        name: "Pull-ups"
+        equipment: "Pull-up Bar"
+      - id: "assisted_pull_up"
+        name: "Assisted Pull-ups"
+        equipment: "Assisted Pull-up Machine"
+
+  - id: "cable_row"
+    name: "Seated Cable Row"
+    muscle: "Mid Back"
+    equipment: "Dual Adjustable Pulley"
+    sets: 4
+    reps: "10-12"
+    startingWeight: 20
+    notes: "Builds back thickness"
+    description: |
+      Setup: Sit with feet on platform, knees slightly bent. Grab V-handle or close-grip attachment. Start with arms extended, slight forward lean from hips (not rounded back).
+      
+      Execution: Pull handle to lower chest/upper abs while sitting up tall. Squeeze shoulder blades together at the end. Return slowly, letting shoulders reach forward slightly for stretch.
+      
+      Key points: Keep chest up throughout. Don't rock back and forth - movement comes from arms and back. Let shoulders protract at the stretch, retract at the contraction. Control the weight.
+    alternatives:
+      - id: "barbell_row"
+        name: "Barbell Row"
+        equipment: "Barbell"
+      - id: "t_bar_row"
+        name: "T-Bar Row"
+        equipment: "Barbell + V-Handle"
+
+  - id: "single_arm_cable_row"
+    name: "Single-Arm Cable Row"
+    muscle: "Lats, Mid Back"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "10-12 each"
+    startingWeight: 10
+    notes: "Allows rotation and full range of motion"
+    description: |
+      Setup: Set cable to mid-height. Stand facing machine in split stance (opposite leg forward). Grab handle with one hand, arm extended toward cable.
+      
+      Execution: Pull handle to your side/hip, rotating torso slightly toward working side. Squeeze lat and mid-back at contraction. Return slowly, allowing full stretch and slight torso rotation.
+      
+      Key points: The rotation is what makes this special - use it! Feel your lat stretch as arm extends. Pull elbow back past your body. Keep core braced. Work each side equally.
+    alternatives:
+      - id: "dumbbell_row"
+        name: "Single-Arm Dumbbell Row"
+        equipment: "Dumbbell + Bench"
+
+  - id: "straight_arm_pulldown"
+    name: "Straight-Arm Pulldown"
+    muscle: "Lats"
+    equipment: "Dual Adjustable Pulley"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 10
+    notes: "Lat isolation - great mind-muscle connection"
+    description: |
+      Setup: Set cable to high position with straight bar or rope. Stand facing machine, arms extended at ~45° angle, slight bend in elbows. Hinge slightly at hips.
+      
+      Execution: Keeping arms nearly straight (slight bend locked in), pull bar down in an arc to your thighs. Squeeze lats hard at bottom. Return slowly along same arc.
+      
+      Key points: Arms stay straight-ish throughout - this is NOT a pulldown. Think about pushing the bar down with your elbows/armpits. Really focus on feeling your lats. Light weight, high reps.
+    alternatives:
+      - id: "dumbbell_pullover"
+        name: "Dumbbell Pullover"
+        equipment: "Dumbbell + Bench"
+
+  # BICEPS
+  - id: "barbell_curl"
+    name: "Barbell Curl"
+    muscle: "Biceps"
+    equipment: "Barbell"
+    sets: 3
+    reps: "10-12"
+    startingWeight: 15
+    notes: "Classic bicep mass builder"
+    description: |
+      Setup: Stand with feet shoulder-width apart. Grip barbell with underhand grip, hands shoulder-width. Arms hang straight down, bar at thighs.
+      
+      Execution: Keeping upper arms pinned to sides, curl bar up toward shoulders. Squeeze biceps at top. Lower slowly under control, resisting gravity.
+      
+      Key points: Upper arms should NOT move - no swinging! Keep elbows at your sides throughout. Don't lean back. If you have to swing, the weight is too heavy. Control the negative.
+    alternatives:
+      - id: "cable_curl"
+        name: "Cable Curl"
+        equipment: "Dual Adjustable Pulley"
+      - id: "ez_bar_curl"
+        name: "EZ Bar Curl"
+        equipment: "EZ Curl Bar"
+
+  - id: "incline_dumbbell_curl"
+    name: "Incline Dumbbell Curl"
+    muscle: "Biceps (Long Head)"
+    equipment: "Dumbbells + Incline Bench"
+    sets: 3
+    reps: "10-12"
+    startingWeight: 6
+    notes: "Maximum bicep stretch for long head"
+    description: |
+      Setup: Set bench to 45-60° incline. Sit back with dumbbells hanging straight down at sides. Palms face forward. Let arms hang fully extended.
+      
+      Execution: Curl dumbbells up toward shoulders, keeping upper arms still. Squeeze at top. Lower slowly, feeling the stretch at bottom when arms are fully extended.
+      
+      Key points: The incline puts your biceps in a stretched position - that's the point. Don't lift upper arms. Get a FULL stretch at bottom. Use lighter weight than standing curls.
+    alternatives:
+      - id: "standing_dumbbell_curl"
+        name: "Standing Dumbbell Curl"
+        equipment: "Dumbbells"
+      - id: "preacher_curl"
+        name: "Preacher Curl"
+        equipment: "Preacher Bench + Barbell/Dumbbells"
+
+  - id: "hammer_curl"
+    name: "Hammer Curl"
+    muscle: "Biceps, Brachialis"
+    equipment: "Dumbbells"
+    sets: 3
+    reps: "12-15"
+    startingWeight: 8
+    notes: "Builds arm thickness and forearms"
+    description: |
+      Setup: Stand with feet shoulder-width apart. Hold dumbbells at sides with neutral grip (palms facing your body/thighs).
+      
+      Execution: Keeping palms facing in (neutral grip), curl dumbbells up toward shoulders. Squeeze at top. Lower slowly under control.
+      
+      Key points: The neutral grip shifts emphasis to brachialis (under bicep) and forearms. Keep elbows pinned to sides. Don't swing. Can do alternating or both arms together.
+    alternatives:
+      - id: "rope_curl"
+        name: "Rope Cable Curl"
+        equipment: "Dual Adjustable Pulley + Rope"
+      - id: "cross_body_curl"
+        name: "Cross-Body Hammer Curl"
+        equipment: "Dumbbells"

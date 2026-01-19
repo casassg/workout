@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Hugo output
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Hugo stats (generated, used by Tailwind)
+hugo_stats.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+/tmp/

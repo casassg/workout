@@ -1,0 +1,94 @@
+{{ define "main" }}
+<div id="app">
+  <!-- Today's Date and Workout Type -->
+  <div class="mb-6">
+    <h1 class="text-2xl font-bold mb-2" id="today-title">Today's Workout</h1>
+    <p class="text-dark-muted" id="today-date"></p>
+  </div>
+
+  <!-- Workout Summary Card -->
+  <div class="exercise-card mb-6" id="workout-summary">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h2 class="card-title" id="workout-type">Loading...</h2>
+        <p class="text-dark-muted text-sm" id="workout-description"></p>
+      </div>
+      <div id="workout-badge"></div>
+    </div>
+    <div class="flex items-center gap-4 text-sm">
+      <span class="text-dark-muted">Duration: <span class="text-dark-text" id="workout-duration">60 min</span></span>
+      <span class="text-dark-muted">Exercises: <span class="text-dark-text" id="exercise-count">0</span></span>
+    </div>
+  </div>
+
+  <!-- Next Run Preview (shown on gym days) -->
+  <div id="next-run-preview" class="exercise-card mb-6 border-l-4 border-accent-primary" style="display: none;">
+    <!-- Populated by JS -->
+  </div>
+
+  <!-- Progress for today -->
+  <div class="mb-6" id="progress-section" style="display: none;">
+    <div class="flex items-center justify-between mb-2">
+      <span class="text-sm text-dark-muted">Today's Progress</span>
+      <span class="text-sm text-accent-primary" id="progress-text">0/0 completed</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-bar" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <!-- Exercise List -->
+  <div id="exercise-list" class="space-y-4">
+    <!-- Exercises will be rendered here -->
+  </div>
+
+  <!-- Running Section (shown on run days) -->
+  <div id="running-section" style="display: none;">
+    <div class="exercise-card">
+      <h3 class="card-title mb-2" id="run-type">Easy Run</h3>
+      <p class="text-dark-muted mb-4" id="run-description"></p>
+      <div class="grid grid-cols-2 gap-4 text-sm">
+        <div>
+          <span class="text-dark-muted">Duration:</span>
+          <span class="text-dark-text" id="run-duration">30-45 min</span>
+        </div>
+        <div>
+          <span class="text-dark-muted">Intensity:</span>
+          <span class="text-dark-text" id="run-intensity">Low</span>
+        </div>
+      </div>
+      <div class="mt-4 p-3 bg-dark-bg rounded-lg">
+        <p class="text-sm text-dark-muted" id="run-tip"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rest Day Section -->
+  <div id="rest-section" style="display: none;">
+    <div class="exercise-card text-center py-8">
+      <div class="text-4xl mb-4">🧘</div>
+      <h3 class="card-title mb-2">Rest Day</h3>
+      <p class="text-dark-muted">Take it easy today. Active recovery like walking or stretching is encouraged.</p>
+    </div>
+  </div>
+
+  <!-- Complete Workout Button -->
+  <div class="mt-6" id="complete-section" style="display: none;">
+    <button id="complete-workout-btn" class="btn-success w-full py-3 text-lg">
+      Complete Workout
+    </button>
+  </div>
+</div>
+
+<!-- Exercise data from Hugo -->
+<script id="exercise-data">
+window.EXERCISE_DATA = {{- $data := dict 
+  "push" $.Site.Data.exercises.push 
+  "pull" $.Site.Data.exercises.pull 
+  "legs" $.Site.Data.exercises.legs 
+  "abs" $.Site.Data.exercises.abs 
+  "running" $.Site.Data.exercises.running 
+  "schedule" $.Site.Data.schedule -}}
+{{- $data | jsonify | safeJS -}};
+</script>
+{{ end }}

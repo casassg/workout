@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+/* Custom theme configuration */
+@theme {
+  --color-dark-bg: #0f0f0f;
+  --color-dark-card: #1a1a1a;
+  --color-dark-border: #2a2a2a;
+  --color-dark-text: #e5e5e5;
+  --color-dark-muted: #888888;
+  
+  --color-accent-primary: #3b82f6;
+  --color-accent-success: #22c55e;
+  --color-accent-warning: #f59e0b;
+  --color-accent-error: #ef4444;
+}
+
+/* Base styles */
+@layer base {
+  body {
+    @apply bg-dark-bg text-dark-text min-h-screen;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .exercise-card {
+    @apply bg-dark-card border border-dark-border rounded-lg p-4 mb-4 transition-all;
+  }
+  
+  .exercise-card:hover {
+    border-color: color-mix(in srgb, var(--color-accent-primary) 50%, transparent);
+  }
+  
+  .btn-primary {
+    @apply bg-accent-primary text-white px-4 py-2 rounded-lg transition-colors font-medium;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-blue-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-border text-dark-text px-4 py-2 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-gray-600;
+  }
+  
+  .btn-success {
+    @apply bg-accent-success text-white px-4 py-2 rounded-lg transition-colors font-medium;
+  }
+  
+  .btn-success:hover {
+    @apply bg-green-600;
+  }
+  
+  .btn-small {
+    @apply px-2 py-1 text-sm rounded;
+  }
+  
+  .input-field {
+    @apply bg-dark-bg border border-dark-border rounded px-3 py-2 text-dark-text w-full;
+  }
+  
+  .input-field:focus {
+    @apply border-accent-primary outline-none;
+  }
+  
+  .input-small {
+    @apply bg-dark-bg border border-dark-border rounded px-2 py-1 text-dark-text w-20 text-center;
+  }
+  
+  .input-small:focus {
+    @apply border-accent-primary outline-none;
+  }
+  
+  .nav-link {
+    @apply text-dark-muted px-3 py-2 rounded-lg transition-colors;
+  }
+  
+  .nav-link:hover {
+    @apply text-dark-text bg-dark-card;
+  }
+  
+  .nav-link-active {
+    @apply text-accent-primary bg-dark-card;
+  }
+  
+  .badge {
+    @apply inline-block px-2 py-1 text-xs rounded-full font-medium;
+  }
+  
+  .badge-muscle {
+    background-color: color-mix(in srgb, var(--color-accent-primary) 20%, transparent);
+    @apply text-accent-primary;
+  }
+  
+  .badge-equipment {
+    background-color: color-mix(in srgb, var(--color-accent-warning) 20%, transparent);
+    @apply text-accent-warning;
+  }
+  
+  .badge-run {
+    background-color: color-mix(in srgb, var(--color-accent-success) 20%, transparent);
+    @apply text-accent-success;
+  }
+  
+  .badge-rest {
+    @apply bg-dark-border text-dark-muted;
+  }
+  
+  .section-title {
+    @apply text-xl font-bold text-dark-text mb-4 flex items-center gap-2;
+  }
+  
+  .card-title {
+    @apply text-lg font-semibold text-dark-text;
+  }
+  
+  .progress-bar {
+    @apply h-2 bg-dark-border rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-accent-primary transition-all duration-300;
+  }
+  
+  .toggle-switch {
+    @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer;
+  }
+  
+  .toggle-switch-on {
+    @apply bg-accent-primary;
+  }
+  
+  .toggle-switch-off {
+    @apply bg-dark-border;
+  }
+  
+  .toggle-knob {
+    @apply inline-block h-4 w-4 transform rounded-full bg-white transition-transform;
+  }
+}

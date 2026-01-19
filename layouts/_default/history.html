@@ -1,0 +1,52 @@
+{{ define "main" }}
+<div class="mb-6">
+  <h1 class="text-2xl font-bold mb-2">Workout History</h1>
+  <p class="text-dark-muted">Track your progress over time.</p>
+</div>
+
+<!-- Stats Overview -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+  <div class="exercise-card text-center">
+    <div class="text-2xl font-bold text-accent-primary" id="total-workouts">0</div>
+    <div class="text-sm text-dark-muted">Total Workouts</div>
+  </div>
+  <div class="exercise-card text-center">
+    <div class="text-2xl font-bold text-accent-success" id="this-week">0</div>
+    <div class="text-sm text-dark-muted">This Week</div>
+  </div>
+  <div class="exercise-card text-center">
+    <div class="text-2xl font-bold text-accent-warning" id="current-streak">0</div>
+    <div class="text-sm text-dark-muted">Day Streak</div>
+  </div>
+  <div class="exercise-card text-center">
+    <div class="text-2xl font-bold text-dark-text" id="last-workout">-</div>
+    <div class="text-sm text-dark-muted">Days Since Last</div>
+  </div>
+</div>
+
+<!-- Exercise Progress -->
+<div class="mb-6">
+  <h2 class="section-title">Exercise Progress</h2>
+  <p class="text-dark-muted text-sm mb-4">See your weight progression for each exercise.</p>
+  
+  <div id="exercise-progress" class="space-y-4">
+    <p class="text-dark-muted">Loading exercise history...</p>
+  </div>
+</div>
+
+<!-- Recent Workouts -->
+<div class="mb-6">
+  <h2 class="section-title">Recent Workouts</h2>
+  <div id="workout-history" class="space-y-3">
+    <p class="text-dark-muted">No workouts recorded yet. Complete your first workout to see it here!</p>
+  </div>
+</div>
+
+<!-- Clear Data Button -->
+<div class="mt-8 pt-6 border-t border-dark-border">
+  <button id="clear-data-btn" class="text-sm text-accent-error hover:underline">
+    Clear all workout data
+  </button>
+</div>
+
+{{ end }}
