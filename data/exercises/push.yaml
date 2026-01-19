@@ -8,7 +8,7 @@ exercises:
     muscle: "Chest"
     equipment: "Barbell + Bench"
     sets: 4
-    reps: 8
+    reps: 10
     startingWeight: 20
     notes: "The foundational chest exercise"
     description: |
@@ -76,7 +76,7 @@ exercises:
     muscle: "Chest"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 5
     notes: "Isolation movement for chest squeeze"
     description: |
@@ -111,7 +111,7 @@ exercises:
     muscle: "Shoulders"
     equipment: "Barbell"
     sets: 4
-    reps: 8
+    reps: 10
     startingWeight: 20
     notes: "Primary shoulder builder"
     description: |
@@ -145,7 +145,7 @@ exercises:
     muscle: "Side Delts"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 2.5
     notes: "Builds shoulder width"
     description: |
@@ -169,8 +169,8 @@ exercises:
     name: "Face Pull"
     muscle: "Rear Delts"
     equipment: "Dual Adjustable Pulley"
-    sets: 3
-    reps: 15
+    sets: 4
+    reps: 10
     startingWeight: 5
     notes: "Essential for shoulder health and posture"
     description: |
@@ -205,7 +205,7 @@ exercises:
     muscle: "Triceps"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 10
     notes: "Classic tricep isolation"
     description: |
@@ -239,7 +239,7 @@ exercises:
     muscle: "Triceps"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 7.5
     notes: "Targets long head of triceps"
     description: |

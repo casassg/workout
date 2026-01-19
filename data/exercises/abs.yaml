@@ -7,7 +7,7 @@ exercises:
     muscle: "Abs"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: 15
+    reps: 10
     startingWeight: 10
     notes: "Weighted ab exercise for progression"
     description: |
@@ -41,7 +41,7 @@ exercises:
     muscle: "Lower Abs"
     equipment: "Pull-up Bar / Rack"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 0
     notes: "Challenging lower ab exercise"
     description: |
@@ -109,7 +109,7 @@ exercises:
     muscle: "Obliques"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: "12 each side"
+    reps: "10 each side"
     startingWeight: 5
     notes: "Rotational core strength"
     description: |
@@ -143,7 +143,7 @@ exercises:
     muscle: "Lower Abs"
     equipment: "Bench / Floor"
     sets: 3
-    reps: 15
+    reps: 10
     startingWeight: 0
     notes: "Lower ab focus without hanging"
     description: |

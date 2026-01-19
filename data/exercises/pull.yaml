@@ -76,7 +76,7 @@ exercises:
     muscle: "Lats, Mid Back"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: "10-12 each"
+    reps: "10 each"
     startingWeight: 10
     notes: "Allows rotation and full range of motion"
     description: |
@@ -101,7 +101,7 @@ exercises:
     muscle: "Lats"
     equipment: "Dual Adjustable Pulley"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 10
     notes: "Lat isolation - great mind-muscle connection"
     description: |
@@ -195,7 +195,7 @@ exercises:
     muscle: "Biceps, Brachialis"
     equipment: "Dumbbells"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 8
     notes: "Builds arm thickness and forearms"
     description: |

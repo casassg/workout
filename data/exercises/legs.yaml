@@ -7,7 +7,7 @@ exercises:
     muscle: "Quads"
     equipment: "Technogym Leg Machine"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 15
     notes: "Quad isolation - great for warming up knees"
     description: |
@@ -50,7 +50,7 @@ exercises:
     muscle: "Hamstrings"
     equipment: "Technogym Leg Machine"
     sets: 3
-    reps: 12
+    reps: 10
     startingWeight: 15
     notes: "Hamstring isolation - important for runners"
     description: |
@@ -92,8 +92,8 @@ exercises:
     name: "Standing Calf Raises"
     muscle: "Calves"
     equipment: "Barbell or Bodyweight"
-    sets: 3
-    reps: 15
+    sets: 4
+    reps: 10
     startingWeight: 0
     notes: "Calves need high reps and full range"
     description: |
