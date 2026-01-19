@@ -20,9 +20,21 @@ exercises:
       - id: "crunches"
         name: "Crunches"
         equipment: "Bodyweight"
+        description: |
+          Setup: Lie on back with knees bent, feet flat on floor. Hands behind head (don't pull on neck) or crossed on chest.
+          
+          Execution: Curl shoulders and upper back off floor by contracting abs. Focus on bringing ribcage toward pelvis. Hold briefly at top. Lower slowly with control.
+          
+          Key points: Small range of motion - don't sit all the way up. Don't pull on your neck. Exhale as you crunch up. Keep lower back pressed into floor. Quality over quantity.
       - id: "ab_wheel"
         name: "Ab Wheel Rollout"
         equipment: "Ab Wheel"
+        description: |
+          Setup: Kneel on mat, hands gripping ab wheel on floor in front of knees. Arms extended, core braced.
+          
+          Execution: Slowly roll wheel forward, extending body toward floor while keeping core tight. Go only as far as you can control. Roll back by contracting abs, pulling wheel back to start.
+          
+          Key points: Don't let lower back sag - if it does, you've gone too far. Keep core braced throughout. Start with small range, progress further over time. Very challenging - one of the best ab exercises.
 
   - id: "hanging_leg_raise"
     name: "Hanging Leg Raise"
@@ -42,9 +54,21 @@ exercises:
       - id: "lying_leg_raise"
         name: "Lying Leg Raise"
         equipment: "Floor / Bench"
+        description: |
+          Setup: Lie on back on floor or bench. Hands at sides or under lower back for support. Legs extended, feet together.
+          
+          Execution: Keeping legs straight (or slightly bent), raise them until perpendicular to floor. Lower slowly with control, stopping just before feet touch ground.
+          
+          Key points: Don't let lower back arch off floor - press it down. Control the lowering especially. Can bend knees slightly if hamstrings are tight. Targets lower abs effectively.
       - id: "captain_chair_raise"
         name: "Captain's Chair Leg Raise"
         equipment: "Captain's Chair"
+        description: |
+          Setup: Position yourself in captain's chair with forearms on pads, back against backrest. Legs hanging straight down.
+          
+          Execution: Raise knees toward chest (or legs straight for more difficulty) by contracting abs and tilting pelvis. Lower slowly with control.
+          
+          Key points: Don't swing - control the movement. Focus on curling pelvis up, not just lifting legs. Keep upper body stable. Great progression from floor leg raises.
 
   - id: "plank"
     name: "Plank"
@@ -64,9 +88,21 @@ exercises:
       - id: "side_plank"
         name: "Side Plank"
         equipment: "Bodyweight"
+        description: |
+          Setup: Lie on side, prop yourself on forearm (elbow under shoulder). Stack feet or stagger them. Lift hips so body forms straight line from head to feet.
+          
+          Execution: Hold position, bracing core and squeezing glutes. Don't let hips sag. Breathe steadily. Switch sides after completing time.
+          
+          Key points: Targets obliques and lateral core stability. Keep body in straight line - no sagging or piking. Can make easier by bending bottom knee. For more challenge, lift top leg or arm.
       - id: "dead_bug"
         name: "Dead Bug"
         equipment: "Bodyweight"
+        description: |
+          Setup: Lie on back with arms extended toward ceiling and knees bent 90° (thighs vertical). Press lower back into floor.
+          
+          Execution: Slowly extend one arm overhead while extending opposite leg, keeping lower back pressed down. Return to start and repeat other side.
+          
+          Key points: The key is keeping lower back pressed into floor throughout - if it arches, you've gone too far. Slow, controlled movement. Great for core stability and coordination. Easier on back than many ab exercises.
 
   - id: "wood_chop"
     name: "Cable Wood Chop"
@@ -86,9 +122,21 @@ exercises:
       - id: "russian_twist"
         name: "Russian Twist"
         equipment: "Bodyweight / Dumbbell"
+        description: |
+          Setup: Sit on floor with knees bent, feet elevated or on ground. Lean back slightly (torso at ~45° angle). Hold weight at chest or clasp hands together.
+          
+          Execution: Rotate torso to one side, bringing hands/weight toward floor beside hip. Rotate to other side. Keep core tight throughout.
+          
+          Key points: Movement comes from torso rotation, not just arm movement. Keep chest up. Can hold feet down for stability. Go slow and controlled. Great for obliques.
       - id: "pallof_press"
         name: "Pallof Press"
         equipment: "Dual Adjustable Pulley"
+        description: |
+          Setup: Set cable to chest height. Stand sideways to machine, grip handle with both hands at chest. Step away to create tension. Feet shoulder-width apart.
+          
+          Execution: Press handle straight out from chest, resisting rotation. Hold extended position, then return to chest. The cable tries to rotate you - resist it.
+          
+          Key points: This is an anti-rotation exercise - you're resisting movement, not creating it. Keep core braced throughout. Don't let cable pull you around. Great for functional core strength.
 
   - id: "reverse_crunch"
     name: "Reverse Crunch"
@@ -108,6 +156,18 @@ exercises:
       - id: "knee_raise"
         name: "Knee Raise"
         equipment: "Bodyweight"
+        description: |
+          Setup: Lie on back with legs extended, hands at sides or under lower back. Keep lower back pressed into floor.
+          
+          Execution: Bring knees toward chest by curling pelvis up. Squeeze lower abs at top. Lower legs back down slowly with control, stopping just before feet touch ground.
+          
+          Key points: Focus on tilting pelvis up, not just moving legs. Keep lower back pressed down. Easier than straight leg raises but still effective. Control the negative.
       - id: "mountain_climbers"
         name: "Mountain Climbers"
         equipment: "Bodyweight"
+        description: |
+          Setup: Start in push-up position - hands under shoulders, body in straight line from head to heels. Core braced.
+          
+          Execution: Drive one knee toward chest, then quickly switch legs as if running in place. Keep hips down and core tight throughout.
+          
+          Key points: Can go slow for ab focus or fast for cardio. Don't let hips pike up or sag down. Keep shoulders over hands. Great for lower abs and hip flexors while also building conditioning.

@@ -21,9 +21,21 @@ exercises:
       - id: "pull_ups"
         name: "Pull-ups"
         equipment: "Pull-up Bar"
+        description: |
+          Setup: Hang from bar with overhand grip, hands slightly wider than shoulders. Arms fully extended, shoulders engaged (not just hanging passively).
+          
+          Execution: Pull yourself up until chin clears bar, leading with chest. Squeeze lats at top. Lower slowly with control until arms are fully extended.
+          
+          Key points: Don't swing or kip. Pull elbows down and back. Keep core tight. If you can't do full reps, use assisted machine or resistance bands. The gold standard for back development.
       - id: "assisted_pull_up"
         name: "Assisted Pull-ups"
         equipment: "Assisted Pull-up Machine"
+        description: |
+          Setup: Select assistance weight (more weight = more help). Grip bar with overhand grip. Step onto platform or place knees on pad.
+          
+          Execution: Lower into full hang, then pull up until chin clears bar. Lower slowly with control to full extension.
+          
+          Key points: Gradually reduce assistance over time. Focus on same form as regular pull-ups - chest to bar, controlled negative. Great for building up to unassisted pull-ups.
 
   - id: "cable_row"
     name: "Seated Cable Row"
@@ -43,9 +55,21 @@ exercises:
       - id: "barbell_row"
         name: "Barbell Row"
         equipment: "Barbell"
+        description: |
+          Setup: Stand with feet shoulder-width apart, hinge at hips until torso is nearly parallel to floor. Grip bar just outside knees with overhand grip. Bar hangs at arm's length.
+          
+          Execution: Pull bar to lower chest/upper abs, squeezing shoulder blades together at top. Lower slowly with control.
+          
+          Key points: Keep back flat - don't round. Slight knee bend for stability. Pull elbows back, not just up. Don't use momentum or stand up as you row. Classic back thickness builder.
       - id: "t_bar_row"
         name: "T-Bar Row"
         equipment: "Barbell + V-Handle"
+        description: |
+          Setup: Secure one end of barbell in corner or landmine attachment. Load other end. Straddle bar, hinge forward, grip V-handle placed under the loaded end.
+          
+          Execution: Pull bar up to chest, squeezing back at top. Lower slowly with control.
+          
+          Key points: Keep back flat throughout. Can go slightly heavier than barbell rows due to stability. Focus on pulling with back, not biceps. Great for mid-back thickness.
 
   - id: "single_arm_cable_row"
     name: "Single-Arm Cable Row"
@@ -65,6 +89,12 @@ exercises:
       - id: "dumbbell_row"
         name: "Single-Arm Dumbbell Row"
         equipment: "Dumbbell + Bench"
+        description: |
+          Setup: Place one knee and same-side hand on bench, other foot on floor. Hold dumbbell in free hand, arm hanging straight down. Back flat, parallel to floor.
+          
+          Execution: Pull dumbbell to hip/lower rib area, keeping elbow close to body. Squeeze lat at top. Lower slowly with full arm extension.
+          
+          Key points: Don't rotate torso - keep shoulders square. Pull elbow back, not just up. Let shoulder blade move naturally - protract at bottom, retract at top. Great for fixing imbalances.
 
   - id: "straight_arm_pulldown"
     name: "Straight-Arm Pulldown"
@@ -84,6 +114,12 @@ exercises:
       - id: "dumbbell_pullover"
         name: "Dumbbell Pullover"
         equipment: "Dumbbell + Bench"
+        description: |
+          Setup: Lie across bench (shoulders on bench, hips below). Hold one dumbbell with both hands above chest, arms extended with slight bend in elbows.
+          
+          Execution: Lower dumbbell behind head in an arc, feeling stretch in lats and chest. Pull dumbbell back over chest using lats.
+          
+          Key points: Keep elbow bend constant. Don't go too deep if shoulders are tight. Focus on lat stretch and contraction. Hips stay low to increase stretch. Classic old-school exercise.
 
   # BICEPS
   - id: "barbell_curl"
@@ -104,9 +140,21 @@ exercises:
       - id: "cable_curl"
         name: "Cable Curl"
         equipment: "Dual Adjustable Pulley"
+        description: |
+          Setup: Attach straight bar or EZ bar to low pulley. Stand facing machine, grip bar with underhand grip, arms extended down.
+          
+          Execution: Keeping upper arms still, curl bar up toward shoulders. Squeeze biceps at top. Lower slowly with control.
+          
+          Key points: Constant cable tension throughout range of motion - no rest at bottom. Keep elbows pinned to sides. Don't swing. Great for maintaining tension on biceps.
       - id: "ez_bar_curl"
         name: "EZ Bar Curl"
         equipment: "EZ Curl Bar"
+        description: |
+          Setup: Stand with feet shoulder-width apart. Grip EZ bar on the angled portions with underhand grip. Arms hang straight down.
+          
+          Execution: Keeping upper arms still, curl bar up toward shoulders. Squeeze biceps at top. Lower slowly with control.
+          
+          Key points: The angled grip is easier on wrists than straight bar. Keep elbows at sides. Don't swing or lean back. Same principles as barbell curl with more comfort.
 
   - id: "incline_dumbbell_curl"
     name: "Incline Dumbbell Curl"
@@ -126,9 +174,21 @@ exercises:
       - id: "standing_dumbbell_curl"
         name: "Standing Dumbbell Curl"
         equipment: "Dumbbells"
+        description: |
+          Setup: Stand with feet shoulder-width apart. Hold dumbbells at sides with palms facing forward (supinated grip).
+          
+          Execution: Curl dumbbells up toward shoulders, keeping upper arms still. Squeeze at top. Lower slowly with control.
+          
+          Key points: Can alternate arms or do both together. Keep elbows pinned to sides. Don't swing or use momentum. Allows natural wrist rotation if you start with neutral grip and supinate as you curl.
       - id: "preacher_curl"
         name: "Preacher Curl"
         equipment: "Preacher Bench + Barbell/Dumbbells"
+        description: |
+          Setup: Sit at preacher bench with armpits at top of pad. Arms rest on pad, extended down. Grip barbell or dumbbells with underhand grip.
+          
+          Execution: Curl weight up toward shoulders. Squeeze biceps at top. Lower slowly, stopping just before full extension (don't hyperextend elbows).
+          
+          Key points: The pad eliminates cheating - pure bicep isolation. Don't let elbows flare off pad. Control the negative especially. Great for strict form and bicep peak development.
 
   - id: "hammer_curl"
     name: "Hammer Curl"
@@ -148,6 +208,18 @@ exercises:
       - id: "rope_curl"
         name: "Rope Cable Curl"
         equipment: "Dual Adjustable Pulley + Rope"
+        description: |
+          Setup: Attach rope to low pulley. Stand facing machine, grip rope with neutral grip (palms facing each other). Arms extended down.
+          
+          Execution: Curl rope up toward shoulders, keeping neutral grip or rotating pinkies out at top. Squeeze biceps. Lower slowly with control.
+          
+          Key points: Neutral grip targets brachialis more. Can spread rope at top for extra contraction. Constant cable tension throughout. Great alternative to dumbbell hammer curls.
       - id: "cross_body_curl"
         name: "Cross-Body Hammer Curl"
         equipment: "Dumbbells"
+        description: |
+          Setup: Stand with dumbbells at sides, neutral grip (palms facing body).
+          
+          Execution: Curl one dumbbell up and across body toward opposite shoulder, keeping neutral grip. Squeeze at top. Lower and repeat with other arm.
+          
+          Key points: The cross-body path hits the brachialis differently. Keep elbow in place - don't let it drift forward. Alternate arms. Great for forearm development too.

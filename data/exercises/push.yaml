@@ -21,9 +21,21 @@ exercises:
       - id: "chest_press_machine"
         name: "Chest Press Machine"
         equipment: "Technogym Chest Press"
+        description: |
+          Setup: Adjust seat height so handles are at mid-chest level. Sit with back flat against pad, feet flat on floor. Grip handles with overhand grip.
+          
+          Execution: Press handles forward until arms are extended (don't lock elbows). Squeeze chest at the end. Return slowly, feeling stretch across chest.
+          
+          Key points: Keep shoulder blades squeezed together. Don't let shoulders roll forward. Control the weight on return. Great for beginners or when benches are busy.
       - id: "dumbbell_bench_press"
         name: "Dumbbell Bench Press"
         equipment: "Dumbbells + Bench"
+        description: |
+          Setup: Sit on bench with dumbbells on thighs. Kick them up as you lie back, positioning them at shoulder level. Palms face forward, feet flat on floor.
+          
+          Execution: Press dumbbells up until arms are extended, bringing them slightly together at top. Lower slowly to shoulder level, elbows at ~45° angle.
+          
+          Key points: Allows greater range of motion than barbell. Keep shoulder blades squeezed together. Each arm works independently, fixing imbalances. Control the descent.
 
   - id: "incline_dumbbell_press"
     name: "Incline Dumbbell Press"
@@ -43,9 +55,21 @@ exercises:
       - id: "incline_cable_fly"
         name: "Incline Cable Fly"
         equipment: "Dual Pulley + Incline Bench"
+        description: |
+          Setup: Set pulleys to low position. Place incline bench (30-45°) between cables. Grab handles, lie back on bench with arms out wide, slight bend in elbows.
+          
+          Execution: Bring hands together in an arc above upper chest, squeezing hard at top. Lower slowly, feeling stretch across upper chest.
+          
+          Key points: Keep same elbow bend throughout - this is a fly, not a press. Focus on squeezing upper chest. Constant cable tension makes this excellent for mind-muscle connection.
       - id: "incline_barbell_press"
         name: "Incline Barbell Press"
         equipment: "Barbell + Incline Bench"
+        description: |
+          Setup: Set bench to 30-45° incline. Lie back with eyes under bar. Grip slightly wider than shoulders. Unrack and hold bar at arm's length above upper chest.
+          
+          Execution: Lower bar to upper chest (just below collarbone). Touch lightly, then press up and slightly back. Lock out at top.
+          
+          Key points: Keep shoulder blades squeezed. Bar path is slightly diagonal - not straight up. Don't let elbows flare too wide. Targets upper chest more than flat bench.
 
   - id: "cable_fly"
     name: "Cable Fly"
@@ -65,9 +89,21 @@ exercises:
       - id: "dumbbell_fly"
         name: "Dumbbell Fly"
         equipment: "Dumbbells + Bench"
+        description: |
+          Setup: Lie on flat bench holding dumbbells above chest, palms facing each other. Slight bend in elbows, locked in place.
+          
+          Execution: Lower dumbbells out to sides in wide arc until you feel stretch across chest (arms roughly parallel to floor). Bring them back together above chest, squeezing chest.
+          
+          Key points: Keep elbow bend constant - don't turn this into a press. Go lighter than you think - deep stretch can be intense. Control the negative. Great for chest isolation.
       - id: "pec_deck"
         name: "Pec Deck Machine"
         equipment: "Machine"
+        description: |
+          Setup: Adjust seat so handles are at chest height. Sit with back flat against pad. Place forearms against pads (or grip handles, depending on machine type).
+          
+          Execution: Bring arms together in front of chest, squeezing pecs hard. Hold contraction briefly. Return slowly to starting position, feeling chest stretch.
+          
+          Key points: Don't let shoulders roll forward. Keep slight bend in elbows if using handles. Control the weight - don't let it slam back. Excellent for isolating chest without balance concerns.
 
   # SHOULDERS
   - id: "overhead_press"
@@ -88,9 +124,21 @@ exercises:
       - id: "shoulder_press_machine"
         name: "Shoulder Press Machine"
         equipment: "Technogym Shoulder Press"
+        description: |
+          Setup: Adjust seat so handles are at shoulder level. Sit with back flat against pad, feet flat on floor. Grip handles with overhand grip.
+          
+          Execution: Press handles overhead until arms are extended (don't lock elbows hard). Lower slowly to starting position.
+          
+          Key points: Keep back against pad - don't arch excessively. Controlled movement throughout. Great for beginners or when fatigued. Safer than free weights for heavy loads.
       - id: "dumbbell_shoulder_press"
         name: "Dumbbell Shoulder Press"
         equipment: "Dumbbells"
+        description: |
+          Setup: Sit on bench with back support or stand. Hold dumbbells at shoulder level, palms facing forward. Elbows below wrists.
+          
+          Execution: Press dumbbells overhead, bringing them slightly together at top. Lower slowly to shoulder level.
+          
+          Key points: Don't lean back excessively. Allows natural wrist rotation. Each arm works independently. Can be done seated or standing - standing requires more core engagement.
 
   - id: "lateral_raise_cable"
     name: "Cable Lateral Raise"
@@ -110,6 +158,12 @@ exercises:
       - id: "dumbbell_lateral_raise"
         name: "Dumbbell Lateral Raise"
         equipment: "Dumbbells"
+        description: |
+          Setup: Stand with feet shoulder-width apart, dumbbells at sides with slight bend in elbows. Palms face your body.
+          
+          Execution: Raise arms out to sides until parallel with floor (or slightly above). Lead with elbows, not hands. Lower slowly with control.
+          
+          Key points: Slight forward lean helps target side delts. Don't swing or use momentum. Think "pour water from a pitcher" at top - pinky slightly higher than thumb. Light weight, high reps.
 
   - id: "face_pull"
     name: "Face Pull"
@@ -129,9 +183,21 @@ exercises:
       - id: "rear_delt_fly"
         name: "Rear Delt Fly"
         equipment: "Dumbbells"
+        description: |
+          Setup: Bend at hips until torso is nearly parallel to floor (or sit on bench and lean forward). Hold dumbbells hanging below chest with slight elbow bend.
+          
+          Execution: Raise dumbbells out to sides, leading with elbows. Squeeze rear delts at top. Lower slowly with control.
+          
+          Key points: Keep torso stable - don't swing up. Slight bend in elbows stays constant. Focus on rear delts, not traps. Light weight, higher reps. Great for posture and shoulder health.
       - id: "reverse_cable_fly"
         name: "Reverse Cable Fly"
         equipment: "Dual Adjustable Pulley"
+        description: |
+          Setup: Set cables to shoulder height. Stand between cables, grab left handle with right hand and right handle with left (cables cross). Step back to create tension.
+          
+          Execution: Pull hands apart and back, squeezing rear delts and upper back. Hold contraction briefly. Return slowly with control.
+          
+          Key points: Keep slight bend in elbows. Squeeze shoulder blades together at contraction. Constant cable tension is excellent for rear delt development. Don't use momentum.
 
   # TRICEPS
   - id: "tricep_pushdown"
@@ -152,9 +218,21 @@ exercises:
       - id: "rope_pushdown"
         name: "Rope Pushdown"
         equipment: "Dual Adjustable Pulley + Rope"
+        description: |
+          Setup: Attach rope to high pulley. Stand facing machine, grip rope with neutral grip (palms facing each other). Tuck elbows to sides.
+          
+          Execution: Push rope down, spreading ends apart at bottom to squeeze triceps harder. Return slowly to starting position with forearms parallel to floor.
+          
+          Key points: Elbows stay pinned to sides throughout. The rope allows you to spread at bottom for extra contraction. Don't lean over the weight. Control both directions.
       - id: "close_grip_bench"
         name: "Close-Grip Bench Press"
         equipment: "Barbell + Bench"
+        description: |
+          Setup: Lie on bench, grip bar with hands about shoulder-width apart (closer than regular bench). Unrack and hold above chest.
+          
+          Execution: Lower bar to lower chest/sternum, keeping elbows closer to body. Touch chest, then press up. Lock out at top.
+          
+          Key points: Hands shouldn't be too close - shoulder-width works. Elbows stay tighter to body than regular bench. This is a compound tricep exercise - can go heavier than isolation moves.
 
   - id: "overhead_tricep_extension"
     name: "Overhead Cable Extension"
@@ -174,6 +252,18 @@ exercises:
       - id: "skull_crushers"
         name: "Skull Crushers"
         equipment: "Barbell/EZ Bar + Bench"
+        description: |
+          Setup: Lie on bench holding barbell or EZ bar with narrow grip. Arms extended above chest, perpendicular to floor.
+          
+          Execution: Keeping upper arms still, lower bar toward forehead by bending elbows. Stop just above forehead, then extend arms back up.
+          
+          Key points: Upper arms don't move - only forearms. Don't actually hit your skull! Can lower to forehead or just behind head for more stretch. Use controlled weight - this exercise is about form.
       - id: "dumbbell_overhead_extension"
         name: "Dumbbell Overhead Extension"
         equipment: "Dumbbell"
+        description: |
+          Setup: Stand or sit, holding one dumbbell with both hands overhead (hands under the top weight plate, forming diamond shape). Arms extended above head.
+          
+          Execution: Lower dumbbell behind head by bending elbows. Feel stretch in triceps. Extend arms back up, squeezing triceps at top.
+          
+          Key points: Keep upper arms close to ears and still - only forearms move. Don't flare elbows out wide. Get full stretch at bottom. Can also be done with two dumbbells for unilateral work.

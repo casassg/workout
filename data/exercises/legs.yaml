@@ -20,12 +20,30 @@ exercises:
       - id: "goblet_squat"
         name: "Goblet Squat"
         equipment: "Dumbbell"
+        description: |
+          Setup: Hold dumbbell vertically against chest, cupping the top weight with both hands. Feet shoulder-width apart or slightly wider, toes pointed slightly out.
+          
+          Execution: Squat down by pushing hips back and bending knees. Go as deep as comfortable (ideally thighs parallel or below). Push through heels to stand.
+          
+          Key points: Keep chest up and core braced. Elbows can touch inside of knees at bottom. The weight in front counterbalances and helps with depth. Great for learning squat form.
       - id: "barbell_squat"
         name: "Barbell Squat"
         equipment: "Barbell"
+        description: |
+          Setup: Position bar on upper traps (high bar) or rear delts (low bar). Grip bar wider than shoulders. Unrack, step back, feet shoulder-width or slightly wider.
+          
+          Execution: Squat down by pushing hips back and bending knees simultaneously. Go to at least parallel. Drive through whole foot to stand, squeezing glutes at top.
+          
+          Key points: Keep core braced throughout. Don't let knees cave inward. Chest stays up. The king of leg exercises - builds overall strength and muscle. Start light, perfect form first.
       - id: "leg_press"
         name: "Leg Press"
         equipment: "Leg Press Machine"
+        description: |
+          Setup: Sit in machine with back flat against pad. Place feet shoulder-width apart on platform. Unrack by extending legs (don't lock knees).
+          
+          Execution: Lower platform by bending knees toward chest. Go as deep as comfortable without lower back rounding. Push through heels to extend legs.
+          
+          Key points: Don't lock knees at top. Keep lower back pressed into pad. Foot placement changes emphasis - higher hits glutes/hamstrings more, lower hits quads more. Safer than squats for heavy loads.
 
   - id: "leg_curl"
     name: "Leg Curl"
@@ -45,12 +63,30 @@ exercises:
       - id: "romanian_deadlift"
         name: "Romanian Deadlift"
         equipment: "Barbell or Dumbbells"
+        description: |
+          Setup: Stand holding barbell at hip level (or dumbbells at sides). Feet hip-width apart, slight bend in knees that stays constant.
+          
+          Execution: Push hips back while lowering weight along legs, keeping back flat. Feel stretch in hamstrings. Once stretched (roughly mid-shin), drive hips forward to stand.
+          
+          Key points: This is a hip hinge - knees barely bend. Keep bar/dumbbells close to legs. Don't round lower back. Go only as low as flexibility allows. Excellent hamstring and glute builder.
       - id: "nordic_curl"
         name: "Nordic Curl"
         equipment: "Bodyweight"
+        description: |
+          Setup: Kneel on pad with feet anchored under something solid (partner, bar, bench). Body upright from knees up.
+          
+          Execution: Slowly lower yourself forward by straightening at the knees only. Control descent as long as possible using hamstrings. Catch yourself at bottom, push up, and use hamstrings to pull back up.
+          
+          Key points: This is advanced - start with just the eccentric (lowering). One of the best hamstring exercises. Keep hips extended throughout (don't bend at waist). Build up slowly to avoid injury.
       - id: "cable_pull_through"
         name: "Cable Pull-Through"
         equipment: "Dual Adjustable Pulley"
+        description: |
+          Setup: Set cable to lowest position with rope attachment. Straddle cable facing away, grab rope between legs. Step forward to create tension. Slight knee bend.
+          
+          Execution: Hinge at hips, pushing them back while keeping back flat. Feel stretch in hamstrings/glutes. Drive hips forward explosively, squeezing glutes at top.
+          
+          Key points: Keep arms straight - they're just holding the rope. Power comes from hip drive. Great for learning hip hinge pattern. Don't squat - this is a hinge movement.
 
   - id: "calf_raises"
     name: "Standing Calf Raises"
@@ -70,9 +106,21 @@ exercises:
       - id: "seated_calf_raise"
         name: "Seated Calf Raise"
         equipment: "Dumbbell on knee"
+        description: |
+          Setup: Sit on bench with balls of feet on edge of step/plate. Place dumbbell on lower thighs (just above knees). Let heels drop for stretch.
+          
+          Execution: Rise up onto toes as high as possible, squeezing calves. Hold at top. Lower slowly until heels drop below the step.
+          
+          Key points: Seated position targets the soleus (lower calf) more than standing. Full range of motion is crucial. Pause at top and bottom. Higher reps work well for calves.
       - id: "single_leg_calf_raise"
         name: "Single-Leg Calf Raise"
         equipment: "Bodyweight + Step"
+        description: |
+          Setup: Stand on one foot on edge of step, heel hanging off. Hold wall or rack for balance. Other foot lifted behind you.
+          
+          Execution: Lower heel below step level for full stretch. Rise up as high as possible onto toe. Hold and squeeze. Lower slowly with control.
+          
+          Key points: Single leg means double the intensity. Full range of motion - both the stretch and the contraction. Can hold dumbbell for added resistance. Great for addressing calf imbalances.
 
   - id: "lunges"
     name: "Walking Lunges"
@@ -92,6 +140,18 @@ exercises:
       - id: "reverse_lunge"
         name: "Reverse Lunges"
         equipment: "Dumbbells or Bodyweight"
+        description: |
+          Setup: Stand with feet together, holding dumbbells at sides (or bodyweight). Core braced.
+          
+          Execution: Step BACKWARD with one leg, lowering until both knees are at ~90°. Front knee stays over ankle. Push through front heel to return to start. Alternate legs.
+          
+          Key points: Stepping back is often easier on knees than forward lunges. Keep torso upright. Control the descent. Great for quad and glute development. Can also do all reps on one leg then switch.
       - id: "split_squat"
         name: "Bulgarian Split Squat"
         equipment: "Dumbbells + Bench"
+        description: |
+          Setup: Stand a few feet in front of bench. Place top of one foot on bench behind you. Hold dumbbells at sides. Front foot flat on ground.
+          
+          Execution: Lower by bending front knee until thigh is parallel to floor or below. Push through front heel to stand back up.
+          
+          Key points: Keep torso fairly upright. Front knee tracks over toes. Most of the work is in the front leg. Very challenging - start with bodyweight. Excellent for single-leg strength and balance.

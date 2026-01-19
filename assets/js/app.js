@@ -469,7 +469,7 @@ window.swapExercise = function(originalId, alternativeId) {
   if (!alternative) return;
   
   // Create a new exercise object from the alternative
-  // Keep the sets, reps from original, but use alternative's name and equipment
+  // Keep the sets, reps from original, but use alternative's name, equipment, and description
   const newExercise = {
     id: alternative.id,
     name: alternative.name,
@@ -478,11 +478,11 @@ window.swapExercise = function(originalId, alternativeId) {
     sets: originalExercise.sets,
     reps: originalExercise.reps,
     notes: originalExercise.notes,
-    startingWeight: originalExercise.startingWeight,
-    description: originalExercise.description,
+    startingWeight: alternative.startingWeight || originalExercise.startingWeight,
+    description: alternative.description || originalExercise.description,
     // Add original as an alternative so user can swap back
     alternatives: [
-      { id: originalExercise.id, name: originalExercise.name, equipment: originalExercise.equipment },
+      { id: originalExercise.id, name: originalExercise.name, equipment: originalExercise.equipment, description: originalExercise.description, startingWeight: originalExercise.startingWeight },
       ...originalExercise.alternatives.filter(a => a.id !== alternativeId)
     ]
   };
