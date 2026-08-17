@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h1>All Exercises</h1>
+<p class="muted">Everything in the plan, with instructions and alternatives.</p>
+{{ $cats := slice "push" "pull" "legs" "abs" }}
+{{ range $cats }}
+  {{ $cat := index $.Site.Data.exercises . }}
+  <h2>{{ $cat.icon }} {{ $cat.category }} <span class="muted">· {{ $cat.description }}</span></h2>
+  {{ range $cat.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+{{ end }}
+<h2>🏃 Running</h2>
+{{ range $.Site.Data.exercises.running.workouts }}{{ partial "run-info.html" . }}{{ end }}
+{{ end }}

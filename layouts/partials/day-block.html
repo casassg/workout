@@ -1,0 +1,67 @@
+{{ $day := .day }}
+{{ $site := .site }}
+
+{{ if eq $day.type "gym" }}
+  {{ $cat := index $site.Data.exercises $day.workout }}
+  <div class="card">
+    <div class="day-summary">
+      <span class="icon">{{ $day.icon }}</span>
+      <div>
+        <h3>{{ title $day.workout }}{{ if $day.includeAbs }} + Abs{{ end }}</h3>
+        <p class="meta">{{ $day.description }}</p>
+      </div>
+      <div class="meta">{{ $day.duration }} min</div>
+    </div>
+  </div>
+  <h2>Exercises</h2>
+  {{ range $cat.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+  {{ if $day.includeAbs }}
+    {{ $abs := index $site.Data.exercises "abs" }}
+    <h2>Abs (first 3)</h2>
+    {{ range first 3 $abs.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+  {{ end }}
+{{ else if eq $day.type "run" }}
+  {{ range where $site.Data.exercises.running.workouts "id" $day.workout }}
+    {{ partial "run-info.html" . }}
+  {{ end }}
+{{ else if eq $day.type "rest" }}
+  <div class="card">
+    <div class="day-summary">
+      <span class="icon">🧘</span>
+      <div><h3>Rest Day</h3><p class="meta">{{ $day.description }}</p></div>
+    </div>
+  </div>
+{{ else if eq $day.type "flexible" }}
+  <div class="card">
+    <div class="day-summary">
+      <span class="icon">{{ $day.icon }}</span>
+      <div><h3>Flexible</h3><p class="meta">{{ $day.description }}</p></div>
+      <div class="meta">{{ $day.duration }} min</div>
+    </div>
+  </div>
+  {{ range $day.options }}
+    {{ $opt := . }}
+    <div class="card">
+      <h4>{{ $opt.description }}</h4>
+      <p class="meta">{{ $opt.duration }} min</p>
+      {{ if eq $opt.type "run" }}
+        {{ range where $site.Data.exercises.running.workouts "id" $opt.workout }}
+          {{ partial "run-info.html" . }}
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
+
+{{ with $day.extra }}
+  <h2>Bonus</h2>
+  {{ if eq .type "run" }}
+    {{ range where $site.Data.exercises.running.workouts "id" .workout }}
+      {{ partial "run-info.html" . }}
+    {{ end }}
+  {{ else if eq .type "gym" }}
+    {{ $cat := index $site.Data.exercises .workout }}
+    <div class="card"><h4>{{ title .workout }}</h4><p class="meta">{{ .description }}</p></div>
+    {{ range first 3 $cat.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+  {{ end }}
+{{ end }}

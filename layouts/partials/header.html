@@ -1,26 +1,10 @@
-<header class="bg-dark-card border-b border-dark-border sticky top-0 z-50">
-  <div class="container mx-auto px-4 max-w-4xl">
-    <div class="flex items-center justify-between h-14">
-      <!-- Logo -->
-      <a href="{{ .Site.BaseURL }}" class="flex items-center gap-2 font-bold text-lg text-dark-text hover:text-accent-primary transition-colors">
-        <span>💪</span>
-        <span class="hidden sm:inline">Workout</span>
-      </a>
-      
-      <!-- Navigation -->
-      <nav class="flex items-center gap-1">
-        <a href="{{ .Site.BaseURL }}" class="nav-link {{ if .IsHome }}nav-link-active{{ end }}">Today</a>
-        <a href="{{ "week/" | absURL }}" class="nav-link {{ if eq .RelPermalink "/week/" }}nav-link-active{{ end }}">Week</a>
-        <a href="{{ "history/" | absURL }}" class="nav-link {{ if eq .RelPermalink "/history/" }}nav-link-active{{ end }}">History</a>
-      </nav>
-      
-      <!-- Unit Toggle -->
-      <div class="flex items-center gap-2">
-        <span class="text-sm text-dark-muted" id="unit-label">kg</span>
-        <button id="unit-toggle" class="toggle-switch toggle-switch-off" aria-label="Toggle unit">
-          <span class="toggle-knob translate-x-1"></span>
-        </button>
-      </div>
-    </div>
+<header>
+  <div class="inner">
+    <a class="logo" href="{{ .Site.BaseURL }}">💪 Workout</a>
+    <nav>
+      <a href="{{ .Site.BaseURL }}" class="{{ if .IsHome }}active{{ end }}">Today</a>
+      <a href="{{ "week/" | absURL }}" class="{{ if eq .RelPermalink "/week/" }}active{{ end }}">Week</a>
+      <a href="{{ "exercises/" | absURL }}" class="{{ if eq .RelPermalink "/exercises/" }}active{{ end }}">Exercises</a>
+    </nav>
   </div>
 </header>

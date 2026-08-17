@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
-  {{ with (templates.Defer (dict "key" "global")) }}
-    {{ partial "css.html" . }}
-  {{ end }}
+  {{ partial "css.html" . }}
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
 </head>
-<body class="bg-dark-bg text-dark-text min-h-screen flex flex-col">
+<body>
   {{ partial "header.html" . }}
-  
-  <main class="flex-1 container mx-auto px-4 py-6 max-w-4xl">
+  <main>
     {{ block "main" . }}{{ end }}
   </main>
-  
   {{ partial "footer.html" . }}
-  
-  {{ partial "js.html" . }}
 </body>
 </html>

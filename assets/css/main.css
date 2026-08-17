@@ -1,150 +1,82 @@
-@import "tailwindcss";
-@source "hugo_stats.json";
-
-/* Custom theme configuration */
-@theme {
-  --color-dark-bg: #0f0f0f;
-  --color-dark-card: #1a1a1a;
-  --color-dark-border: #2a2a2a;
-  --color-dark-text: #e5e5e5;
-  --color-dark-muted: #888888;
-  
-  --color-accent-primary: #3b82f6;
-  --color-accent-success: #22c55e;
-  --color-accent-warning: #f59e0b;
-  --color-accent-error: #ef4444;
+:root {
+  --bg: #0f0f0f;
+  --card: #1a1a1a;
+  --text: #e5e5e5;
+  --muted: #9ca3af;
+  --accent: #3b82f6;
+  --border: #2a2a2a;
+  --green: #10b981;
+  --orange: #f59e0b;
 }
 
-/* Base styles */
-@layer base {
-  body {
-    @apply bg-dark-bg text-dark-text min-h-screen;
-  }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Component styles */
-@layer components {
-  .exercise-card {
-    @apply bg-dark-card border border-dark-border rounded-lg p-4 mb-4 transition-all;
-  }
-  
-  .exercise-card:hover {
-    border-color: color-mix(in srgb, var(--color-accent-primary) 50%, transparent);
-  }
-  
-  .btn-primary {
-    @apply bg-accent-primary text-white px-4 py-2 rounded-lg transition-colors font-medium;
-  }
-  
-  .btn-primary:hover {
-    @apply bg-blue-600;
-  }
-  
-  .btn-secondary {
-    @apply bg-dark-border text-dark-text px-4 py-2 rounded-lg transition-colors;
-  }
-  
-  .btn-secondary:hover {
-    @apply bg-gray-600;
-  }
-  
-  .btn-success {
-    @apply bg-accent-success text-white px-4 py-2 rounded-lg transition-colors font-medium;
-  }
-  
-  .btn-success:hover {
-    @apply bg-green-600;
-  }
-  
-  .btn-small {
-    @apply px-2 py-1 text-sm rounded;
-  }
-  
-  .input-field {
-    @apply bg-dark-bg border border-dark-border rounded px-3 py-2 text-dark-text w-full;
-  }
-  
-  .input-field:focus {
-    @apply border-accent-primary outline-none;
-  }
-  
-  .input-small {
-    @apply bg-dark-bg border border-dark-border rounded px-2 py-1 text-dark-text w-20 text-center;
-  }
-  
-  .input-small:focus {
-    @apply border-accent-primary outline-none;
-  }
-  
-  .nav-link {
-    @apply text-dark-muted px-3 py-2 rounded-lg transition-colors;
-  }
-  
-  .nav-link:hover {
-    @apply text-dark-text bg-dark-card;
-  }
-  
-  .nav-link-active {
-    @apply text-accent-primary bg-dark-card;
-  }
-  
-  .badge {
-    @apply inline-block px-2 py-1 text-xs rounded-full font-medium;
-  }
-  
-  .badge-muscle {
-    background-color: color-mix(in srgb, var(--color-accent-primary) 20%, transparent);
-    @apply text-accent-primary;
-  }
-  
-  .badge-equipment {
-    background-color: color-mix(in srgb, var(--color-accent-warning) 20%, transparent);
-    @apply text-accent-warning;
-  }
-  
-  .badge-run {
-    background-color: color-mix(in srgb, var(--color-accent-success) 20%, transparent);
-    @apply text-accent-success;
-  }
-  
-  .badge-rest {
-    @apply bg-dark-border text-dark-muted;
-  }
-  
-  .badge-streak {
-    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-    @apply text-white font-semibold;
-  }
-  
-  .section-title {
-    @apply text-xl font-bold text-dark-text mb-4 flex items-center gap-2;
-  }
-  
-  .card-title {
-    @apply text-lg font-semibold text-dark-text;
-  }
-  
-  .progress-bar {
-    @apply h-2 bg-dark-border rounded-full overflow-hidden;
-  }
-  
-  .progress-fill {
-    @apply h-full bg-accent-primary transition-all duration-300;
-  }
-  
-  .toggle-switch {
-    @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer;
-  }
-  
-  .toggle-switch-on {
-    @apply bg-accent-primary;
-  }
-  
-  .toggle-switch-off {
-    @apply bg-dark-border;
-  }
-  
-  .toggle-knob {
-    @apply inline-block h-4 w-4 transform rounded-full bg-white transition-transform;
-  }
+main { flex: 1; width: 100%; max-width: 52rem; margin: 0 auto; padding: 1.25rem 1rem 2.5rem; }
+
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--card); border-bottom: 1px solid var(--border);
 }
+header .inner {
+  max-width: 52rem; margin: 0 auto; padding: 0 1rem;
+  display: flex; align-items: center; justify-content: space-between; height: 3.5rem;
+}
+header .logo { font-weight: 700; text-decoration: none; color: var(--text); font-size: 1.1rem; }
+header nav { display: flex; gap: 0.25rem; }
+header nav a {
+  color: var(--muted); text-decoration: none; padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem; font-size: 0.925rem;
+}
+header nav a:hover { color: var(--text); background: var(--bg); }
+header nav a.active { color: var(--text); background: var(--bg); }
+
+h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+h2 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+h3 { font-size: 1rem; }
+p.meta, .muted { color: var(--muted); font-size: 0.9rem; }
+
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 0.75rem; padding: 1rem; margin-bottom: 0.75rem;
+}
+.card-head { display: flex; justify-content: space-between; gap: 0.75rem; align-items: flex-start; }
+.card-head h3, .card-head h4 { margin: 0; }
+.badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
+.badge {
+  font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 999px;
+  background: var(--bg); color: var(--muted); border: 1px solid var(--border);
+}
+.badge.run { color: var(--green); border-color: var(--green); }
+.badge.gym { color: var(--accent); border-color: var(--accent); }
+.badge.rest { color: var(--orange); border-color: var(--orange); }
+.set-reps { font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.notes { color: var(--muted); font-size: 0.85rem; margin-top: 0.4rem; }
+.desc { margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted); white-space: pre-line; }
+.note {
+  background: var(--bg); border-radius: 0.5rem; padding: 0.6rem 0.75rem;
+  font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem;
+}
+details { margin-top: 0.6rem; }
+summary { cursor: pointer; color: var(--accent); font-size: 0.85rem; }
+details .desc { margin-top: 0.5rem; }
+.alt { padding: 0.6rem; border-left: 2px solid var(--border); margin-top: 0.5rem; }
+.alt strong { font-size: 0.9rem; }
+ul.tips { margin: 0.5rem 0 0 1rem; color: var(--muted); font-size: 0.9rem; }
+
+.day-summary { display: flex; align-items: center; gap: 0.9rem; }
+.day-summary .icon { font-size: 1.75rem; }
+.day-summary .meta { margin-left: auto; text-align: right; white-space: nowrap; }
+
+footer { background: var(--card); border-top: 1px solid var(--border); padding: 0.9rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+
+section.day { margin-bottom: 1.25rem; }

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-head">
+    <div>
+      <h4>{{ .name }}</h4>
+      <div class="badges"><span class="badge">{{ .muscle }}</span><span class="badge">{{ .equipment }}</span></div>
+    </div>
+    <div class="set-reps">{{ .sets }} × {{ .reps }}{{ with .startingWeight }} · {{ . }} kg{{ end }}</div>
+  </div>
+  {{ with .notes }}<p class="notes">{{ . }}</p>{{ end }}
+  {{ with .description }}
+    <details><summary>How to perform</summary><div class="desc">{{ . }}</div></details>
+  {{ end }}
+  {{ with .alternatives }}
+    <details><summary>Alternatives ({{ len . }})</summary>
+      {{ range . }}
+        <div class="alt">
+          <strong>{{ .name }}</strong> <span class="badge">{{ .equipment }}</span>
+          {{ with .description }}<div class="desc">{{ . }}</div>{{ end }}
+        </div>
+      {{ end }}
+    </details>
+  {{ end }}
+</div>

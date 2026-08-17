@@ -1,0 +1,4 @@
+---
+title: "Exercises"
+layout: "exercises"
+---

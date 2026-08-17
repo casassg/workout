@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-head">
+    <div>
+      <h4>🏃 {{ .name }} <span class="badge run">{{ .intensity }}</span></h4>
+      <p class="meta">{{ .duration }} · {{ .type }}</p>
+    </div>
+  </div>
+  <p class="notes">{{ .description }}</p>
+  {{ with .structure }}<div class="note">Structure: {{ . }}</div>{{ end }}
+  {{ with .tips }}
+    <ul class="tips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  {{ end }}
+</div>
