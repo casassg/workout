@@ -9,6 +9,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 15
+    image: "https://wger.de/media/exercise-images/369/78c915d1-e46d-4d30-8124-65d68664c3ef.png"
     notes: "Quad isolation - great for warming up knees"
     description: |
       Setup: Adjust machine so knee joint aligns with machine pivot point. Back flat against pad. Ankle pad rests on lower shins, just above ankles. Grip handles at sides.
@@ -52,6 +53,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 15
+    image: "https://wger.de/media/exercise-images/364/b318dde9-f5f2-489f-940a-cd864affb9e3.png"
     notes: "Hamstring isolation - important for runners"
     description: |
       Setup: Lying face down (or seated depending on machine), position ankle pad just above heels. Knee joint should align with machine pivot. Grip handles for stability.
@@ -95,6 +97,7 @@ exercises:
     sets: 4
     reps: 10
     startingWeight: 0
+    image: "https://wger.de/media/exercise-images/622/9a429bd0-afd3-4ad0-8043-e9beec901c81.jpeg"
     notes: "Calves need high reps and full range"
     description: |
       Setup: Stand on edge of step or weight plate with heels hanging off. Hold barbell on back, dumbbells at sides, or use bodyweight. Start with heels dropped below the step.
@@ -129,6 +132,7 @@ exercises:
     sets: 3
     reps: "10 each leg"
     startingWeight: 0
+    image: "https://wger.de/media/exercise-images/113/Walking-lunges-1.png"
     notes: "Functional movement - great for runners"
     description: |
       Setup: Stand tall holding dumbbells at sides (or bodyweight). Feet together, core braced.

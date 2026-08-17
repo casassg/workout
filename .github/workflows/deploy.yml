@@ -28,6 +28,12 @@ jobs:
       - name: Init Hermit
         uses: cashapp/activate-hermit@v1
 
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Validate data files
+        run: uv run scripts/validate.py
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

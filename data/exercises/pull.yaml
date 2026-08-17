@@ -10,6 +10,7 @@ exercises:
     sets: 4
     reps: 10
     startingWeight: 20
+    image: "https://wger.de/media/exercise-images/1127/4942b7c0-6bda-4983-88e5-86547c3d445e.png"
     notes: "Primary lat builder"
     description: |
       Setup: Sit at machine with thighs secured under pads. Grip bar wider than shoulder-width with overhand grip. Lean back slightly (10-15°), chest up.
@@ -44,6 +45,7 @@ exercises:
     sets: 4
     reps: 10
     startingWeight: 20
+    image: "https://wger.de/media/exercise-images/1117/2555c4c3-a84d-47db-b83b-cbf721f12e45.png"
     notes: "Builds back thickness"
     description: |
       Setup: Sit with feet on platform, knees slightly bent. Grab V-handle or close-grip attachment. Start with arms extended, slight forward lean from hips (not rounded back).
@@ -129,6 +131,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 15
+    image: "https://wger.de/media/exercise-images/74/Bicep-curls-1.png"
     notes: "Classic bicep mass builder"
     description: |
       Setup: Stand with feet shoulder-width apart. Grip barbell with underhand grip, hands shoulder-width. Arms hang straight down, bar at thighs.
@@ -197,6 +200,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 8
+    image: "https://wger.de/media/exercise-images/86/Bicep-hammer-curl-1.png"
     notes: "Builds arm thickness and forearms"
     description: |
       Setup: Stand with feet shoulder-width apart. Hold dumbbells at sides with neutral grip (palms facing your body/thighs).

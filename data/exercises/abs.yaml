@@ -43,6 +43,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 0
+    image: "https://wger.de/media/exercise-images/979/27097a3a-5749-428d-b94c-6082afe390f6.png"
     notes: "Challenging lower ab exercise"
     description: |
       Setup: Hang from pull-up bar with overhand grip, arms fully extended. Let body hang straight. Engage shoulders (don't just hang passively).
@@ -77,6 +78,7 @@ exercises:
     sets: 3
     reps: "45s"
     startingWeight: 0
+    image: "https://wger.de/media/exercise-images/458/b7bd9c28-9f1d-4647-bd17-ab6a3adf5770.png"
     notes: "Foundational core stability"
     description: |
       Setup: Start face down, then prop yourself on forearms (elbows under shoulders) and toes. Body forms straight line from head to heels.
