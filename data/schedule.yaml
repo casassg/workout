@@ -1,19 +1,20 @@
 # Weekly schedule template
 # Push/Pull/Legs + Running rotation
+# Última revisió: 2026-08-17 (divendres i diumenge tarda sense runs; run amb Laura després del sopar)
 
 week:
   monday:
     type: "gym"
     workout: "push"
     duration: 60
-    description: "Start the week with upper body push exercises"
+    description: "Start the week with upper body push exercises + abs"
     icon: "🏋️"
-    includeAbs: false
+    includeAbs: true
     extra:
       type: "run"
-      workout: "short_run"
-      duration: 20
-      description: "Optional afternoon run"
+      workout: "easy_run"
+      duration: 40
+      description: "Easy run with Laura AFTER dinner (18:00-19:00)"
       icon: "🏃"
 
   tuesday:
@@ -33,15 +34,9 @@ week:
     type: "gym"
     workout: "pull"
     duration: 60
-    description: "Back and biceps day"
+    description: "Back and biceps day + abs. Football at 19:00"
     icon: "🏋️"
     includeAbs: true
-    extra:
-      type: "run"
-      workout: "short_run"
-      duration: 20
-      description: "Optional afternoon run"
-      icon: "🏃"
 
   thursday:
     type: "run"
@@ -61,21 +56,16 @@ week:
     workout: "push"
     alternateWeekly: "legs"
     duration: 60
-    description: "Push or Legs (alternates weekly)"
+    description: "Push or Legs (alternates weekly). No afternoon run"
     icon: "🏋️"
     includeAbs: true
-    extra:
-      type: "run"
-      workout: "short_run"
-      duration: 20
-      description: "Optional afternoon run"
-      icon: "🏃"
 
   saturday:
-    type: "flexible"
-    duration: 120
-    description: "Longer session - gym + run combo or long run"
-    icon: "💪"
+    type: "run"
+    workout: "long_run"
+    duration: 90
+    description: "Long endurance run, early start to beat the heat"
+    icon: "🏃"
     options:
       - type: "run"
         workout: "long_run"
