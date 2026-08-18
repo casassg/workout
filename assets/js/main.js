@@ -99,6 +99,54 @@
       var head = card.querySelector(".card-head");
       (head ? head.parentNode : card).insertBefore(row, head ? head.nextSibling : card.firstChild);
     });
+    initExport(now, state);
+  }
+
+  // --- Export the day as plain text (paste into an agent / training log) ---
+  function initExport(now, state) {
+    var visible = document.querySelector("section[data-day]:not([hidden])");
+    if (!visible) return;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "export-btn";
+    btn.textContent = "Copy day as text";
+    btn.addEventListener("click", function () {
+      var lines = ["Workout log — " + now.toLocaleDateString("en-US", {
+        weekday: "long", month: "long", day: "numeric", year: "numeric"
+      })];
+      var title = visible.querySelector(".card h3, .card h4");
+      var desc = visible.querySelector(".day-summary p.meta");
+      if (title) lines.push(title.textContent.trim() + (desc ? " — " + desc.textContent.trim() : ""));
+      var total = 0, done = 0, items = [];
+      visible.querySelectorAll("[data-exercise-id]").forEach(function (card) {
+        var id = card.getAttribute("data-exercise-id");
+        var sets = parseInt(card.getAttribute("data-sets"), 10) || 0;
+        var d = 0;
+        for (var s = 0; s < sets; s++) if (state[id] && state[id][s]) d++;
+        total += sets; done += d;
+        var w = card.getAttribute("data-weight");
+        items.push("- " + card.getAttribute("data-exercise-name") + ": " + d + "/" + sets +
+          " sets of " + card.getAttribute("data-reps") + (w ? " @ " + w + " kg" : ""));
+      });
+      if (items.length) {
+        lines.push("");
+        lines = lines.concat(items);
+        lines.push("");
+        lines.push("Completed " + done + "/" + total + " sets.");
+      }
+      var text = lines.join("\n");
+      var flash = function (msg) {
+        btn.textContent = msg;
+        setTimeout(function () { btn.textContent = "Copy day as text"; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { flash("Copied ✓"); },
+          function () { window.prompt("Copy the log below:", text); });
+      } else {
+        window.prompt("Copy the log below:", text);
+      }
+    });
+    visible.appendChild(btn);
   }
 
   // --- Service worker ---
