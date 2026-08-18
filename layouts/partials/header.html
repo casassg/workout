@@ -2,9 +2,9 @@
   <div class="inner">
     <a class="logo" href="{{ .Site.BaseURL }}">💪 Workout</a>
     <nav>
-      <a href="{{ .Site.BaseURL }}" class="{{ if .IsHome }}active{{ end }}"><span class="nav-icon">📅</span>Today</a>
-      <a href="{{ "week/" | absURL }}" class="{{ if eq .RelPermalink "/week/" }}active{{ end }}"><span class="nav-icon">🗓️</span>Week</a>
-      <a href="{{ "exercises/" | absURL }}" class="{{ if eq .RelPermalink "/exercises/" }}active{{ end }}"><span class="nav-icon">🏋️</span>Exercises</a>
+      <a href="{{ .Site.BaseURL }}" class="{{ if .IsHome }}active{{ end }}">Today</a>
+      <a href="{{ "week/" | absURL }}" class="{{ if eq .RelPermalink "/week/" }}active{{ end }}">Week</a>
+      <a href="{{ "exercises/" | absURL }}" class="{{ if eq .RelPermalink "/exercises/" }}active{{ end }}">Exercises</a>
     </nav>
   </div>
 </header>

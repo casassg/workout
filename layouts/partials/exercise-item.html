@@ -1,4 +1,4 @@
-<div class="card" data-exercise-id="{{ .id }}" data-sets="{{ .sets }}" data-exercise-name="{{ .name }}">
+<div class="card" data-exercise-id="{{ .id }}" data-sets="{{ .sets }}" data-reps="{{ .reps }}"{{ with .startingWeight }} data-weight="{{ . }}"{{ end }} data-exercise-name="{{ .name }}">
   <div class="card-head">
     <div>
       <h4>{{ .name }}</h4>
