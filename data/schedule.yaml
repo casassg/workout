@@ -18,17 +18,10 @@ week:
       icon: "🏃"
 
   tuesday:
-    type: "run"
-    workout: "easy_run"
-    duration: 45
-    description: "Easy recovery run - conversational pace"
-    icon: "🏃"
-    extra:
-      type: "gym"
-      workout: "abs"
-      duration: 15
-      description: "Optional core session"
-      icon: "🏋️"
+    type: "rest"
+    duration: 0
+    description: "Rest day - recovering from a cold (easy run paused until recovered)"
+    icon: "🧘"
 
   wednesday:
     type: "gym"
@@ -39,17 +32,10 @@ week:
     includeAbs: true
 
   thursday:
-    type: "run"
-    workout: "tempo_run"
-    duration: 45
-    description: "Tempo run - comfortably hard pace"
-    icon: "🏃"
-    extra:
-      type: "gym"
-      workout: "abs"
-      duration: 15
-      description: "Optional core session"
-      icon: "🏋️"
+    type: "rest"
+    duration: 0
+    description: "Rest day - recovering from a cold (tempo run paused until recovered)"
+    icon: "🧘"
 
   friday:
     type: "gym"
@@ -61,20 +47,10 @@ week:
     includeAbs: true
 
   saturday:
-    type: "run"
-    workout: "long_run"
-    duration: 90
-    description: "Long endurance run, early start to beat the heat"
-    icon: "🏃"
-    options:
-      - type: "run"
-        workout: "long_run"
-        duration: 90
-        description: "Long endurance run"
-      - type: "combo"
-        morning: "pull"
-        afternoon: "easy_run"
-        description: "Morning: Pull workout, Afternoon: Easy run"
+    type: "rest"
+    duration: 0
+    description: "Rest day - recovering from a cold (long run paused until recovered)"
+    icon: "🧘"
 
   sunday:
     type: "rest"
