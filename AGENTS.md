@@ -58,3 +58,20 @@ Running workout: `id`, `name`, `type`, `duration` (string), `intensity` required
 
 Always run `uv run scripts/validate.py && hugo --minify` before committing data edits.
 Keep the site in English. Keep private data (logged weights, metrics, diet) out of this repo.
+
+## Gotchas
+
+- `now`/`Date` in templates is evaluated at BUILD time. Never render the weekday server-side;
+  `index.html` renders all 7 `data-day` sections hidden and `assets/js/main.js` unhides today's
+  (with a Friday A/B alternation computed from the `data-alt-anchor` date). The `#today-date`
+  string is a server fallback that main.js overwrites; `<noscript>` unhides everything.
+- If the Today page looks frozen or wrong: check that all 7 `data-day` sections are present and
+  main.js loads (fingerprinted as `js/main.min.*.js`). Don't bake `now` into visible content.
+- The favicon is an inline percent-encoded SVG data URI in `layouts/_default/baseof.html`;
+  keep the encoding when editing it.
+- `config.toml` disables taxonomies (`disableKinds = ["taxonomy", "term"]`) so /tags/ and
+  /categories/ are not generated.
+- For build checks use a fresh output dir (e.g. `/tmp/wb-check-NN`); never `rm -rf` in /tmp
+  without explicit approval.
+- No frameworks, no external CDNs, no tracking. Extend `assets/js/main.js` if more behavior is
+  ever needed; keep it small.
