@@ -2,6 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Workout Plan"
 enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
 
 [params]
   description = "Gerard's weekly workout plan: gym and running"

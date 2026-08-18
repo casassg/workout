@@ -101,6 +101,7 @@ ul.tips { margin: 0.5rem 0 0 1.1rem; color: var(--muted); font-size: 0.92rem; }
 
 /* Today page: per-day sections stay hidden until JS (or noscript) reveals them */
 section.day { margin-bottom: 1.25rem; }
+section.day[hidden] { display: none; }
 .day-heading { display: none; }
 
 /* Set checkoff */
