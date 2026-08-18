@@ -10,6 +10,7 @@ exercises:
     sets: 4
     reps: 10
     startingWeight: 20
+    image: "https://wger.de/media/exercise-images/192/Bench-press-1.png"
     notes: "The foundational chest exercise"
     description: |
       Setup: Lie on bench with eyes under the bar. Grip slightly wider than shoulder-width. Plant feet flat on floor.
@@ -44,6 +45,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 8
+    image: "https://wger.de/media/exercise-images/16/Incline-press-1.png"
     notes: "Targets upper chest for balanced development"
     description: |
       Setup: Set bench to 30-45° incline. Sit with dumbbells on thighs, then kick them up as you lie back. Start with dumbbells at shoulder level, palms facing forward.
@@ -78,6 +80,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 5
+    image: "https://wger.de/media/exercise-images/98/Butterfly-machine-2.png"
     notes: "Isolation movement for chest squeeze"
     description: |
       Setup: Set both pulleys to shoulder height or slightly above. Grab handles and step forward into a staggered stance. Start with arms out wide, slight bend in elbows.
@@ -113,6 +116,7 @@ exercises:
     sets: 4
     reps: 10
     startingWeight: 20
+    image: "https://wger.de/media/exercise-images/119/seated-barbell-shoulder-press-large-1.png"
     notes: "Primary shoulder builder"
     description: |
       Setup: Stand with feet shoulder-width apart. Grip bar just outside shoulders, bar resting on front delts/upper chest. Elbows slightly in front of bar.
@@ -147,6 +151,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 2.5
+    image: "https://wger.de/media/exercise-images/148/lateral-dumbbell-raises-large-2.png"
     notes: "Builds shoulder width"
     description: |
       Setup: Set pulley to lowest position. Stand sideways to machine, grab handle with far hand (cable crosses in front of body). Slight bend in elbow, locked in place.
@@ -172,6 +177,7 @@ exercises:
     sets: 4
     reps: 10
     startingWeight: 5
+    image: "https://wger.de/media/exercise-images/1732/d13b9adb-968e-4f73-95e6-b16690bcf616.jpg"
     notes: "Essential for shoulder health and posture"
     description: |
       Setup: Set cable to face height with rope attachment. Grip rope with thumbs pointing back toward you. Step back to create tension, arms extended.
@@ -207,6 +213,7 @@ exercises:
     sets: 3
     reps: 10
     startingWeight: 10
+    image: "https://wger.de/media/exercise-images/805/7a437824-e2cc-46e1-804a-674f0ea31d25.png"
     notes: "Classic tricep isolation"
     description: |
       Setup: Set cable to high position with straight bar or V-bar. Stand facing machine, grip bar with overhand grip. Tuck elbows tight to your sides.

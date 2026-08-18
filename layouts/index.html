@@ -1,8 +1,34 @@
 {{ define "main" }}
-{{ $today := now }}
-{{ $dayKey := index (dict "Mon" "monday" "Tue" "tuesday" "Wed" "wednesday" "Thu" "thursday" "Fri" "friday" "Sat" "saturday" "Sun" "sunday") ($today.Format "Mon") }}
-{{ $day := index .Site.Data.schedule.week $dayKey }}
-<h1>Today</h1>
-<p class="muted">{{ $today.Format "Monday, January 2, 2006" }}</p>
-{{ partial "day-block.html" (dict "day" $day "site" .Site) }}
+<div data-today-page data-alt-anchor="2026-08-21">
+  <h1>Today</h1>
+  <p class="muted" id="today-date">{{ now.Format "Monday, January 2, 2006" }}</p>
+  {{ $days := slice "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday" }}
+  {{ range $days }}
+    {{ $key := . }}
+    {{ $day := index $.Site.Data.schedule.week $key }}
+    {{ if $day.alternateWeekly }}
+      <section class="day" data-day="{{ $key }}" data-alt-week="a" hidden>
+        <h2 class="day-heading">{{ title $key }} · Week A</h2>
+        {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
+      </section>
+      <section class="day" data-day="{{ $key }}" data-alt-week="b" hidden>
+        <h2 class="day-heading">{{ title $key }} · Week B</h2>
+        {{ $alt := merge $day (dict "workout" $day.alternateWeekly) }}
+        {{ partial "day-block.html" (dict "day" $alt "site" $.Site) }}
+      </section>
+    {{ else }}
+      <section class="day" data-day="{{ $key }}" hidden>
+        <h2 class="day-heading">{{ title $key }}</h2>
+        {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
+      </section>
+    {{ end }}
+  {{ end }}
+  <noscript>
+    <style>
+      section.day[hidden] { display: block; }
+      .day-heading { display: block !important; }
+      #today-date::after { content: " — JavaScript is off, showing the full week."; }
+    </style>
+  </noscript>
+</div>
 {{ end }}

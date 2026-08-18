@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" data-exercise-id="{{ .id }}" data-sets="{{ .sets }}" data-exercise-name="{{ .name }}">
   <div class="card-head">
     <div>
       <h4>{{ .name }}</h4>
@@ -7,14 +7,19 @@
     <div class="set-reps">{{ .sets }} × {{ .reps }}{{ with .startingWeight }} · {{ . }} kg{{ end }}</div>
   </div>
   {{ with .notes }}<p class="notes">{{ . }}</p>{{ end }}
-  {{ with .description }}
-    <details><summary>How to perform</summary><div class="desc">{{ . }}</div></details>
+  {{ if or .description .image }}
+    <details><summary>How to perform</summary>
+      {{ with .image }}<img class="exercise-img" src="{{ . }}" loading="lazy" alt="{{ $.name }} demonstration">{{ end }}
+      {{ with .description }}<div class="desc">{{ . }}</div>{{ end }}
+    </details>
   {{ end }}
   {{ with .alternatives }}
     <details><summary>Alternatives ({{ len . }})</summary>
       {{ range . }}
         <div class="alt">
+          {{ $altName := .name }}
           <strong>{{ .name }}</strong> <span class="badge">{{ .equipment }}</span>
+          {{ with .image }}<img class="exercise-img" src="{{ . }}" loading="lazy" alt="{{ $altName }} demonstration">{{ end }}
           {{ with .description }}<div class="desc">{{ . }}</div>{{ end }}
         </div>
       {{ end }}

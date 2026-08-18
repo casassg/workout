@@ -1,40 +1,60 @@
-# AGENTS.md - AI Coding Agent Guidelines
+# AGENTS.md
 
-Static weekly workout plan for Gerard, deployed to GitHub Pages (gerard.space/workout).
+Gerard's weekly workout plan (Hugo static site + light vanilla JS), deployed to GitHub Pages.
+Training logs live in `/opt/data/fitness/log.yaml`, NEVER in this repo. Set checkoff on the
+today page is client-only localStorage, not synced anywhere.
 
-## Project Overview
-
-A minimal static Hugo site showing the weekly workout plan (gym + running). No JavaScript, no localStorage, no tracking: it is a read-only PLAN. All training logs live in the private `/opt/data/fitness/log.yaml` (managed by the assistant), never in this repo.
-
-## Build Commands
+## Commands
 
 ```bash
-# Activate Hermit environment (provides hugo)
-source bin/activate-hermit
-
-# Production build
-hugo --minify
-
-# Build outputs to /public/
+source bin/activate-hermit     # provides hugo
+uv run scripts/validate.py     # validate data files (also runs in CI before deploy)
+hugo --minify                  # build to /public
+hugo server                    # local preview
 ```
 
-No tests or linting. Deploy automatic via GitHub Actions on push to `main`.
+Deploy is automatic on push to `main`. CI fails if validation fails.
 
 ## Structure
 
-- `/data/schedule.yaml` - weekly schedule (gym push/pull/legs, runs, rest). `extra` = secondary session of the day; `alternateWeekly` = alternates between two workouts by week.
-- `/data/exercises/{push,pull,legs,abs,running}.yaml` - exercises with sets/reps/starting weights (kg) and instructions; `running.yaml` has `workouts` instead of `exercises`.
-- `/layouts/` - three pages: `index.html` (today's session, rendered from the current weekday), `_default/week.html` (week overview), `_default/exercises.html` (full exercise catalog).
-- `/layouts/partials/` - `exercise-item.html` (exercise card), `run-info.html` (run card), `day-block.html` (renders any day from schedule data + available exercises).
-- `/content/` - thin pages: `_index.md`, `week.md` (layout: week), `exercises.md` (layout: exercises).
+- `data/schedule.yaml` — the weekly plan (source of truth for what happens each day).
+- `data/exercises/{push,pull,legs,abs}.yaml` — gym exercises; `running.yaml` — run workouts.
+- `layouts/` — `index.html` (today: all 7 days rendered, JS picks one), `week.html` (next 7 days), `exercises.html` (catalog). Partials: `day-block`, `exercise-item`, `run-info`.
+- `assets/js/main.js` — day selection, Friday push/legs alternation (anchor 2026-08-21 = week A = push), week reorder, set checkoff. `static/sw.js` + `static/manifest.webmanifest` — PWA.
 
-## Conventions
+## Schema: data/schedule.yaml
 
-- Pure server-side rendering with Hugo data files. Never add JS for interaction; use `<details>/<summary>`.
-- Simple CSS in `assets/css/main.css` (dark theme, CSS variables). No Tailwind.
-- Keep the site in English. Keep private data (weights logged, metrics, diet) out of this repo.
-- The assistant updates schedule/exercises on request; week count for `alternateWeekly` starts from the week of 2026-08-21 (Push = week A, Legs = week B).
+`week:` must have all 7 keys `monday`–`sunday`. Each day:
 
-## Editing Data
+| field | notes |
+|---|---|
+| `type` | `gym` \| `run` \| `rest` \| `flexible` (required) |
+| `workout` | gym: exercise category (`push`/`pull`/`legs`/`abs`); run: running workout `id` |
+| `alternateWeekly` | gym only: second category; alternates with `workout` by week |
+| `duration` | minutes (0 for rest) |
+| `description`, `icon` | shown on cards |
+| `includeAbs` | gym only: append first 3 abs exercises |
+| `extra` | optional secondary block: `{type, workout, duration, description, icon}` |
+| `options` | flexible/choice days: list of blocks like `extra` |
 
-Edit `/data/schedule.yaml` or `/data/exercises/*.yaml`, then verify with `hugo --minify` and commit. Schedule keys: monday-sunday; each day: type (gym|run|rest|flexible), workout (exercise category or run id), duration (min), description, icon, includeAbs (gym), options (flexible), extra (secondary block).
+## Schema: data/exercises/*.yaml
+
+Top level: `category`, `description`, `icon`, `exercises:` (or `workouts:` in running.yaml).
+
+Exercise: `id`, `name`, `sets`, `reps` (int or string like `"45s"`) required; plus `muscle`,
+`equipment`, `startingWeight` (kg), `notes`, `description` (multiline how-to), `image`
+(https://wger.de/media/... demo image), `alternatives:` (list of `{id, name, equipment,
+description, image?}`).
+
+Running workout: `id`, `name`, `type`, `duration` (string), `intensity` required; plus
+`description`, `frequency`, `structure`, `tips` (list).
+
+## Common workflows
+
+- **Update a weight after a session**: edit `startingWeight` in the exercise's yaml, validate, commit.
+- **Add/swap an exercise**: add to the category's `exercises:` list (or as an `alternative`), run validate.
+- **Change the schedule**: edit `data/schedule.yaml`; `workout` refs must resolve (validator checks).
+- **Find an exercise image**: `curl "https://wger.de/api/v2/exercise/search/?term=<name>&language=english&format=json"`, take `data[].data.image`, prefix `https://wger.de`, set `image:`.
+
+Always run `uv run scripts/validate.py && hugo --minify` before committing data edits.
+Keep the site in English. Keep private data (logged weights, metrics, diet) out of this repo.

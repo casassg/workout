@@ -1,24 +1,25 @@
 {{ define "main" }}
-<h1>Weekly Schedule</h1>
+<h1>Next 7 Days</h1>
 <p class="muted">The plan, day by day. Friday alternates Push/Legs by week.</p>
 {{ $days := slice "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday" }}
-{{ $labels := dict "monday" "Monday" "tuesday" "Tuesday" "wednesday" "Wednesday" "thursday" "Thursday" "friday" "Friday" "saturday" "Saturday" "sunday" "Sunday" }}
+<div data-week-list>
 {{ range $days }}
   {{ $day := index $.Site.Data.schedule.week . }}
-  <details class="card">
+  <details class="card week-card" data-day="{{ . }}">
     <summary>
       <div class="day-summary">
         <span class="icon">{{ $day.icon }}</span>
         <div>
-          <h3>{{ index $labels . }}</h3>
+          <h3 data-day-label>{{ title . }}</h3>
           <p class="meta">{{ $day.description }}</p>
         </div>
         <div class="meta">{{ if ne $day.duration 0 }}{{ $day.duration }} min{{ end }}</div>
       </div>
     </summary>
-    <div style="margin-top:0.75rem;">
+    <div class="week-detail">
       {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
     </div>
   </details>
 {{ end }}
+</div>
 {{ end }}
