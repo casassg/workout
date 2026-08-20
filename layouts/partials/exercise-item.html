@@ -7,8 +7,9 @@
     <div class="set-reps">{{ .sets }} × {{ .reps }}{{ with .startingWeight }} · {{ . }} kg{{ end }}</div>
   </div>
   {{ with .notes }}<p class="notes">{{ . }}</p>{{ end }}
-  {{ if or .description .image }}
+  {{ if or .description .image .demo }}
     <details><summary>How to perform</summary>
+      {{ with .demo }}<img class="exercise-img" src="{{ . }}" loading="lazy" alt="{{ $.name }} demo animation">{{ end }}
       {{ with .image }}<img class="exercise-img" src="{{ . }}" loading="lazy" alt="{{ $.name }} demonstration">{{ end }}
       {{ with .description }}<div class="desc">{{ . }}</div>{{ end }}
     </details>
@@ -19,6 +20,7 @@
         <div class="alt">
           {{ $altName := .name }}
           <strong>{{ .name }}</strong> <span class="badge">{{ .equipment }}</span>
+          {{ with .demo }}<img class="exercise-img" src="{{ . }}" loading="lazy" alt="{{ $altName }} demo animation">{{ end }}
           {{ with .image }}<img class="exercise-img" src="{{ . }}" loading="lazy" alt="{{ $altName }} demonstration">{{ end }}
           {{ with .description }}<div class="desc">{{ . }}</div>{{ end }}
         </div>

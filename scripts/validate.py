@@ -23,16 +23,25 @@ def check_image(url, where):
         err(f"{where}: image must be an https://wger.de/media/... URL, got {url!r}")
 
 
+def check_demo(demo, where):
+    if demo and not demo.startswith("/exercises/"):
+        err(f"{where}: demo must be a local /exercises/... GIF path, got {demo!r}")
+    if demo and not (ROOT / "static" / demo.lstrip("/")).exists():
+        err(f"{where}: demo file missing: static/{demo.lstrip('/')}")
+
+
 def check_exercise(ex, where):
     for field in ("id", "name", "sets", "reps"):
         if field not in ex:
             err(f"{where}: missing required field {field!r}")
     check_image(ex.get("image"), where)
+    check_demo(ex.get("demo"), where)
     for alt in ex.get("alternatives", []):
         for field in ("id", "name"):
             if field not in alt:
                 err(f"{where} alternative: missing {field!r}")
         check_image(alt.get("image"), f"{where} alt {alt.get('id', '?')}")
+        check_demo(alt.get("demo"), f"{where} alt {alt.get('id', '?')}")
 
 
 # Load exercise data
