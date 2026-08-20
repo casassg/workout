@@ -9,7 +9,6 @@ exercises:
   sets: 4
   reps: 10
   startingWeight: 20
-  image: https://wger.de/media/exercise-images/1127/4942b7c0-6bda-4983-88e5-86547c3d445e.png
   notes: Primary lat builder
   description: 'Setup: Sit at machine with thighs secured under pads. Grip bar wider
     than shoulder-width with overhand grip. Lean back slightly (10-15°), chest up.
@@ -41,7 +40,6 @@ exercises:
       standard for back development.
 
       '
-    demo: /exercises/3019-mExgrF9.gif
   - id: assisted_pull_up
     name: Assisted Pull-ups
     equipment: Assisted Pull-up Machine
@@ -58,12 +56,7 @@ exercises:
       pull-ups.
 
       '
-    demo: /exercises/0017-kiJ4Z2K.gif
-  - id: auto_0007
-    name: alternate lateral pulldown
-    equipment: Cable
-    demo: /exercises/0007-4IKbhHV.gif
-  demo: /exercises/2330-LEprlgG.gif
+  demo: /exercises/0197-qdRxqCj.gif
 - id: cable_row
   name: Seated Cable Row
   muscle: Mid Back
@@ -71,7 +64,6 @@ exercises:
   sets: 4
   reps: 10
   startingWeight: 20
-  image: https://wger.de/media/exercise-images/1117/2555c4c3-a84d-47db-b83b-cbf721f12e45.png
   notes: Builds back thickness
   description: 'Setup: Sit with feet on platform, knees slightly bent. Grab V-handle
     or close-grip attachment. Start with arms extended, slight forward lean from hips
@@ -122,8 +114,7 @@ exercises:
       thickness.
 
       '
-    demo: /exercises/1349-BgljGjd.gif
-  demo: null
+  demo: /exercises/0861-fUBheHs.gif
 - id: single_arm_cable_row
   name: Single-Arm Cable Row
   muscle: Lats, Mid Back
@@ -164,7 +155,7 @@ exercises:
       top. Great for fixing imbalances.
 
       '
-  demo: null
+  demo: /exercises/0189-EIsE3u8.gif
 - id: straight_arm_pulldown
   name: Straight-Arm Pulldown
   muscle: Lats
@@ -206,7 +197,7 @@ exercises:
 
       '
     demo: /exercises/0375-9XjtHvS.gif
-  demo: null
+  demo: /exercises/0238-x69MAlq.gif
 - id: barbell_curl
   name: Barbell Curl
   muscle: Biceps
@@ -214,7 +205,6 @@ exercises:
   sets: 3
   reps: 10
   startingWeight: 15
-  image: https://wger.de/media/exercise-images/74/Bicep-curls-1.png
   notes: Classic bicep mass builder
   description: 'Setup: Stand with feet shoulder-width apart. Grip barbell with underhand
     grip, hands shoulder-width. Arms hang straight down, bar at thighs.
@@ -263,10 +253,6 @@ exercises:
       comfort.
 
       '
-  - id: auto_0968
-    name: band alternating biceps curl
-    equipment: Band
-    demo: /exercises/0968-3omWx6P.gif
   demo: /exercises/0031-25GPyDY.gif
 - id: incline_dumbbell_curl
   name: Incline Dumbbell Curl
@@ -322,8 +308,7 @@ exercises:
       peak development.
 
       '
-    demo: /exercises/0059-SYJ4Bkt.gif
-  demo: null
+  demo: /exercises/0318-ae9UoXQ.gif
 - id: hammer_curl
   name: Hammer Curl
   muscle: Biceps, Brachialis
@@ -331,7 +316,6 @@ exercises:
   sets: 3
   reps: 10
   startingWeight: 8
-  image: https://wger.de/media/exercise-images/86/Bicep-hammer-curl-1.png
   notes: Builds arm thickness and forearms
   description: 'Setup: Stand with feet shoulder-width apart. Hold dumbbells at sides
     with neutral grip (palms facing your body/thighs).
@@ -362,7 +346,6 @@ exercises:
       hammer curls.
 
       '
-    demo: /exercises/0868-G08RZcQ.gif
   - id: cross_body_curl
     name: Cross-Body Hammer Curl
     equipment: Dumbbells
@@ -379,8 +362,4 @@ exercises:
       too.
 
       '
-  - id: auto_0976
-    name: band concentration curl
-    equipment: Band
-    demo: /exercises/0976-kmVVAfu.gif
-  demo: /exercises/0165-HPlPoQA.gif
+  demo: /exercises/0313-slDvUAU.gif

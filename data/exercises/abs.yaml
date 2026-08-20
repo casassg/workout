@@ -41,7 +41,6 @@ exercises:
       over quantity.
 
       '
-    demo: /exercises/0635-QUDd8WS.gif
   - id: ab_wheel
     name: Ab Wheel Rollout
     equipment: Ab Wheel
@@ -59,7 +58,7 @@ exercises:
       Very challenging - one of the best ab exercises.
 
       '
-  demo: /exercises/0685-oLrKqDH.gif
+  demo: /exercises/0212-8xUv4J7.gif
 - id: hanging_leg_raise
   name: Hanging Leg Raise
   muscle: Lower Abs
@@ -67,7 +66,6 @@ exercises:
   sets: 3
   reps: 10
   startingWeight: 0
-  image: https://wger.de/media/exercise-images/979/27097a3a-5749-428d-b94c-6082afe390f6.png
   notes: Challenging lower ab exercise
   description: 'Setup: Hang from pull-up bar with overhand grip, arms fully extended.
     Let body hang straight. Engage shoulders (don''t just hang passively).
@@ -100,7 +98,6 @@ exercises:
       lower abs effectively.
 
       '
-    demo: /exercises/0012-UGhRD1A.gif
   - id: captain_chair_raise
     name: Captain's Chair Leg Raise
     equipment: Captain's Chair
@@ -117,10 +114,6 @@ exercises:
       leg raises.
 
       '
-  - id: auto_2355
-    name: arm slingers hanging bent knee legs
-    equipment: Body Weight
-    demo: /exercises/2355-uWpxD4v.gif
   demo: /exercises/0472-I3tsCnC.gif
 - id: plank
   name: Plank
@@ -129,7 +122,6 @@ exercises:
   sets: 3
   reps: 45s
   startingWeight: 0
-  image: https://wger.de/media/exercise-images/458/b7bd9c28-9f1d-4647-bd17-ab6a3adf5770.png
   notes: Foundational core stability
   description: 'Setup: Start face down, then prop yourself on forearms (elbows under
     shoulders) and toes. Body forms straight line from head to heels.
@@ -162,7 +154,6 @@ exercises:
       challenge, lift top leg or arm.
 
       '
-    demo: /exercises/3544-5VXmnV5.gif
   - id: dead_bug
     name: Dead Bug
     equipment: Bodyweight
@@ -180,11 +171,7 @@ exercises:
 
       '
     demo: /exercises/0276-iny3m5y.gif
-  - id: auto_3544
-    name: bodyweight incline side plank
-    equipment: Body Weight
-    demo: /exercises/3544-5VXmnV5.gif
-  demo: /exercises/3544-5VXmnV5.gif
+  demo: /exercises/0464-CosupLu.gif
 - id: wood_chop
   name: Cable Wood Chop
   muscle: Obliques
@@ -244,8 +231,6 @@ exercises:
       Great for functional core strength.
 
       '
-    demo: /exercises/0979-9pa4H5m.gif
-  demo: null
 - id: reverse_crunch
   name: Reverse Crunch
   muscle: Lower Abs
@@ -286,7 +271,6 @@ exercises:
       negative.
 
       '
-    demo: /exercises/0011-03lzqwk.gif
   - id: mountain_climbers
     name: Mountain Climbers
     equipment: Bodyweight
@@ -303,9 +287,4 @@ exercises:
       while also building conditioning.
 
       '
-    demo: /exercises/0630-RJgzwny.gif
-  - id: auto_0972
-    name: band bicycle crunch
-    equipment: Band
-    demo: /exercises/0972-tZkGYZ9.gif
   demo: /exercises/0872-nCU1Ekp.gif

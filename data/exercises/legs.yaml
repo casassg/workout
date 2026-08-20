@@ -9,7 +9,6 @@ exercises:
   sets: 3
   reps: 10
   startingWeight: 15
-  image: https://wger.de/media/exercise-images/369/78c915d1-e46d-4d30-8124-65d68664c3ef.png
   notes: Quad isolation - great for warming up knees
   description: 'Setup: Adjust machine so knee joint aligns with machine pivot point.
     Back flat against pad. Ankle pad rests on lower shins, just above ankles. Grip
@@ -43,7 +42,6 @@ exercises:
       learning squat form.
 
       '
-    demo: /exercises/1760-yn8yg1r.gif
   - id: barbell_squat
     name: Barbell Squat
     equipment: Barbell
@@ -62,7 +60,6 @@ exercises:
       light, perfect form first.
 
       '
-    demo: /exercises/0102-oR7O9LW.gif
   - id: leg_press
     name: Leg Press
     equipment: Leg Press Machine
@@ -79,7 +76,6 @@ exercises:
       quads more. Safer than squats for heavy loads.
 
       '
-    demo: /exercises/2287-V07qpXy.gif
   demo: /exercises/0585-my33uHU.gif
 - id: leg_curl
   name: Leg Curl
@@ -88,7 +84,6 @@ exercises:
   sets: 3
   reps: 10
   startingWeight: 15
-  image: https://wger.de/media/exercise-images/364/b318dde9-f5f2-489f-940a-cd864affb9e3.png
   notes: Hamstring isolation - important for runners
   description: 'Setup: Lying face down (or seated depending on machine), position
     ankle pad just above heels. Knee joint should align with machine pivot. Grip handles
@@ -122,7 +117,6 @@ exercises:
       hamstring and glute builder.
 
       '
-    demo: /exercises/0085-wQ2c4XD.gif
   - id: nordic_curl
     name: Nordic Curl
     equipment: Bodyweight
@@ -157,7 +151,7 @@ exercises:
       a hinge movement.
 
       '
-  demo: /exercises/3235-zHEpuuc.gif
+  demo: /exercises/0586-17lJ1kr.gif
 - id: calf_raises
   name: Standing Calf Raises
   muscle: Calves
@@ -165,7 +159,6 @@ exercises:
   sets: 4
   reps: 10
   startingWeight: 0
-  image: https://wger.de/media/exercise-images/622/9a429bd0-afd3-4ad0-8043-e9beec901c81.jpeg
   notes: Calves need high reps and full range
   description: 'Setup: Stand on edge of step or weight plate with heels hanging off.
     Hold barbell on back, dumbbells at sides, or use bodyweight. Start with heels
@@ -198,7 +191,6 @@ exercises:
       for calves.
 
       '
-    demo: /exercises/0088-ktsFQAZ.gif
   - id: single_leg_calf_raise
     name: Single-Leg Calf Raise
     equipment: Bodyweight + Step
@@ -215,7 +207,7 @@ exercises:
       for addressing calf imbalances.
 
       '
-  demo: null
+  demo: /exercises/1372-8ozhUIZ.gif
 - id: lunges
   name: Walking Lunges
   muscle: Quads, Glutes
@@ -223,7 +215,6 @@ exercises:
   sets: 3
   reps: 10 each leg
   startingWeight: 0
-  image: https://wger.de/media/exercise-images/113/Walking-lunges-1.png
   notes: Functional movement - great for runners
   description: 'Setup: Stand tall holding dumbbells at sides (or bodyweight). Feet
     together, core braced.
@@ -273,8 +264,4 @@ exercises:
       for single-leg strength and balance.
 
       '
-  - id: auto_1460
-    name: walking lunge
-    equipment: Body Weight
-    demo: /exercises/1460-IZVHb27.gif
   demo: /exercises/1460-IZVHb27.gif
