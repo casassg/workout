@@ -42,10 +42,10 @@ Deploy is automatic on push to `main`. CI fails if validation fails.
 Top level: `category`, `description`, `icon`, `exercises:` (or `workouts:` in running.yaml).
 
 Exercise: `id`, `name`, `sets`, `reps` (int or string like `"45s"`) required; plus `muscle`,
-`equipment`, `startingWeight` (kg), `notes`, `description` (multiline how-to), `image`
-(https://wger.de/media/... demo image), `demo` (local GIF at `/exercises/<file>.gif` from the
-exercises-dataset — preferred visual; validator checks the file exists), `alternatives:`
-(list of `{id, name, equipment, description, image?, demo?}`).
+`equipment`, `startingWeight` (kg), `notes`, `description` (multiline how-to), `demo`
+(local GIF at `/exercises/<file>.gif` from the exercises-dataset — the visual shown on the
+site; validator checks the file exists), `alternatives:` (list of `{id, name, equipment,
+description, demo?}`). No wger `image` fields — local GIFs only.
 
 Running workout: `id`, `name`, `type`, `duration` (string), `intensity` required; plus
 `description`, `frequency`, `structure`, `tips` (list).
@@ -55,8 +55,8 @@ Running workout: `id`, `name`, `type`, `duration` (string), `intensity` required
 - **Update a weight after a session**: edit `startingWeight` in the exercise's yaml, validate, commit.
 - **Add/swap an exercise**: add to the category's `exercises:` list (or as an `alternative`), run validate.
 - **Change the schedule**: edit `data/schedule.yaml`; `workout` refs must resolve (validator checks).
-- **Find an exercise image**: `curl "https://wger.de/api/v2/exercise/search/?term=<name>&language=english&format=json"`, take `data[].data.image`, prefix `https://wger.de`, set `image:`.
-- **Sync exercise data from the exercises-dataset (preferred)**: `uv run scripts/sync_exercises.py` enriches every exercise/alternative with a local `demo` GIF (copied into `static/exercises/`), fills missing `muscle`/`equipment` from the dataset, and auto-adds up to 3 relevant alternatives (same target + shared name token). It NEVER overwrites `sets`/`reps`/`startingWeight`/`notes`/curated `description`. Requires the dataset cloned at `/opt/data/exercises-dataset` (`--data <path>` to override, `--dry-run` to preview). Media © Gym visual — keep attribution.
+- **Find an exercise image**: no longer via wger. Use the exercises-dataset (see the sync workflow below) or pick a local GIF from `static/exercises/` and set `demo:`.
+- **Sync exercise data from the exercises-dataset (preferred)**: `uv run scripts/sync_exercises.py` gives each exercise/alternative a correct local `demo` GIF (copied into `static/exercises/`) using an **explicit verified map** (exact normalized name match, else the `CURATED` name→id dict in the script — add an entry there for any new exercise that doesn't match exactly). It fills missing `muscle`/`equipment` from the dataset and NEVER overwrites `sets`/`reps`/`startingWeight`/`notes`/curated `description`. No fuzzy matching (it produced wrong GIFs). Requires the dataset cloned at `/opt/data/exercises-dataset` (`--data <path>` to override, `--dry-run` to preview). After adding/swapping exercises, remove any no-longer-referenced GIFs from `static/exercises/`. Media © Gym visual — keep attribution.
 
 Always run `uv run scripts/validate.py && hugo --minify` before committing data edits.
 Keep the site in English. Keep private data (logged weights, metrics, diet) out of this repo.
