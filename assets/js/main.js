@@ -1,9 +1,7 @@
-// Client-side day logic, Friday alternation, week reordering, set checkoff.
+// Client-side day logic, Friday alternation, week reordering, focus mode.
 (function () {
   var DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 
-  // Week parity relative to the alternation anchor, computed at UTC noon to
-  // dodge DST edges. Weeks starting at the anchor are "a", next week "b", etc.
   function altWeek(anchorISO) {
     var p = anchorISO.split("-");
     var anchor = Date.UTC(+p[0], p[1] - 1, +p[2], 12);
@@ -31,7 +29,7 @@
       if (alt) match = match && alt === week;
       sec.hidden = !match;
     });
-    initCheckoff(now);
+    initToday(now);
   }
 
   // --- Week page: reorder to start from today, relabel ---
@@ -50,15 +48,15 @@
       if (label) {
         var name = i === 0 ? "Today" : i === 1 ? "Tomorrow"
           : d.toLocaleDateString("en-US", { weekday: "long" });
-        label.textContent = name + " · " + d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+        label.textContent = name + " \u00b7 " + d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
       }
       if (i === 0) card.classList.add("is-today");
       weekList.appendChild(card);
     }
   }
 
-  // --- Set checkoff (localStorage, pruned after 14 days) ---
-  function initCheckoff(now) {
+  // --- Today: state + focus mode ---
+  function initToday(now) {
     var pad = function (n) { return (n < 10 ? "0" : "") + n; };
     var key = "workout:" + now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
     try {
@@ -69,135 +67,75 @@
           if (isNaN(age) || age > 14) localStorage.removeItem(k);
         }
       }
-    } catch (e) { return; } // localStorage unavailable: skip checkoff entirely
+    } catch (e) { return; }
     var state = {};
     try { state = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) {}
     var save = function () {
       try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
     };
-    document.querySelectorAll("section[data-day]:not([hidden]) [data-exercise-id]").forEach(function (card) {
-      var id = card.getAttribute("data-exercise-id");
-      var sets = parseInt(card.getAttribute("data-sets"), 10) || 0;
-      if (!sets) return;
-      var row = document.createElement("div");
-      row.className = "flex gap-2.5 mt-3";
-      for (var s = 0; s < sets; s++) {
-        var box = document.createElement("input");
-        box.type = "checkbox";
-        box.className = "set-check";
-        box.setAttribute("aria-label", "Set " + (s + 1) + " of " + card.getAttribute("data-exercise-name"));
-        box.checked = !!(state[id] && state[id][s]);
-        box.addEventListener("change", (function (id, s) {
-          return function (e) {
-            state[id] = state[id] || {};
-            state[id][s] = e.target.checked;
-            save();
-          };
-        })(id, s));
-        row.appendChild(box);
-      }
-      var head = card.querySelector(".card-head");
-      (head ? head.parentNode : card).insertBefore(row, head ? head.nextSibling : card.firstChild);
-    });
-    initExport(now, state);
     initFocus(now, state, save);
   }
 
-  // --- Export the day as plain text (paste into an agent / training log) ---
-  function initExport(now, state) {
-    var visible = document.querySelector("section[data-day]:not([hidden])");
-    if (!visible) return;
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "export-btn mt-3 w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-muted cursor-pointer hover:text-heading hover:bg-surface-2 min-h-11";
-    btn.textContent = "Copy day as text";
-    btn.addEventListener("click", function () {
-      var lines = ["Workout log — " + now.toLocaleDateString("en-US", {
-        weekday: "long", month: "long", day: "numeric", year: "numeric"
-      })];
-      var title = visible.querySelector(".card h3, .card h4");
-      var desc = visible.querySelector(".day-summary p.meta");
-      if (title) lines.push(title.textContent.trim() + (desc ? " — " + desc.textContent.trim() : ""));
-      var total = 0, done = 0, items = [];
-      visible.querySelectorAll("[data-exercise-id]").forEach(function (card) {
-        var id = card.getAttribute("data-exercise-id");
-        var sets = parseInt(card.getAttribute("data-sets"), 10) || 0;
-        var d = 0;
-        for (var s = 0; s < sets; s++) if (state[id] && state[id][s]) d++;
-        total += sets; done += d;
-        var w = card.getAttribute("data-weight");
-        items.push("- " + card.getAttribute("data-exercise-name") + ": " + d + "/" + sets +
-          " sets of " + card.getAttribute("data-reps") + (w ? " @ " + w + " kg" : ""));
-      });
-      if (items.length) {
-        lines.push("");
-        lines = lines.concat(items);
-        lines.push("");
-        lines.push("Completed " + done + "/" + total + " sets.");
-      }
-      var text = lines.join("\n");
-      var flash = function (msg) {
-        btn.textContent = msg;
-        setTimeout(function () { btn.textContent = "Copy day as text"; }, 2000);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function () { flash("Copied ✓"); },
-          function () { window.prompt("Copy the log below:", text); });
-      } else {
-        window.prompt("Copy the log below:", text);
-      }
-    });
-    visible.appendChild(btn);
+  // --- Timer helpers ---
+  function clockStr(sec) {
+    var m = Math.floor(sec / 60);
+    var s = sec % 60;
+    return m + ":" + (s < 10 ? "0" : "") + s;
   }
 
-  // --- Focus mode (one-exercise-at-a-time overlay) ---
+  // --- Focus mode ---
   function initFocus(now, state, save) {
     var visible = document.querySelector("section[data-day]:not([hidden])");
     if (!visible) return;
 
-    // Collect exercises
+    // Collect exercises from hidden cards
     var exercises = [];
     visible.querySelectorAll("[data-exercise-id]").forEach(function (card) {
+      var descEl = card.querySelector(".whitespace-pre-line");
       exercises.push({
         id: card.getAttribute("data-exercise-id"),
         name: card.getAttribute("data-exercise-name"),
         sets: parseInt(card.getAttribute("data-sets"), 10) || 0,
         reps: card.getAttribute("data-reps"),
         weight: card.getAttribute("data-weight"),
-        demo: card.getAttribute("data-demo")
+        demo: card.getAttribute("data-demo"),
+        description: descEl ? descEl.textContent.trim() : ""
       });
     });
     if (!exercises.length) return;
 
-    // Build "Start workout" button before export button
-    var exportBtn = visible.querySelector(".export-btn");
+    // "Start workout" button on the summary card
+    var summaryCard = visible.querySelector(".rounded-xl");
     var startBtn = document.createElement("button");
     startBtn.type = "button";
     startBtn.className = "mt-4 w-full rounded-xl bg-accent px-4 py-3 text-center font-semibold text-white min-h-11 cursor-pointer";
-    startBtn.textContent = "Start workout";
-    if (exportBtn) {
-      visible.insertBefore(startBtn, exportBtn);
+    startBtn.textContent = "\u25b6 Start workout (" + exercises.length + " exercises)";
+    if (summaryCard) {
+      summaryCard.appendChild(startBtn);
     } else {
       visible.appendChild(startBtn);
     }
 
-    // Build overlay DOM
+    // Build overlay
     var overlay = document.createElement("div");
     overlay.className = "focus-overlay";
     overlay.id = "focus-overlay";
     overlay.hidden = true;
-    overlay.innerHTML = '<div class="sticky top-0 z-[101] flex items-center gap-3 border-b border-line bg-surface px-4 py-2">' +
-      '<button class="min-h-11 min-w-11 grid place-content-center text-2xl text-muted" id="focus-close" aria-label="Close">×</button>' +
-      '<div class="flex-1 h-1.5 rounded-full bg-surface-2 overflow-hidden">' +
-        '<div class="h-full rounded-full bg-green transition-all duration-300" id="focus-progress"></div>' +
+    overlay.innerHTML =
+      '<div class="sticky top-0 z-[101] flex items-center gap-3 border-b border-line bg-surface px-4 py-2">' +
+        '<button class="min-h-11 min-w-11 grid place-content-center text-2xl text-muted" id="focus-close" aria-label="Close">\u00d7</button>' +
+        '<div class="flex-1 h-1.5 rounded-full bg-surface-2 overflow-hidden">' +
+          '<div class="h-full rounded-full bg-green transition-all duration-300" id="focus-progress"></div>' +
+        '</div>' +
+        '<span class="text-sm tabular-nums text-muted whitespace-nowrap" id="focus-counter"></span>' +
       '</div>' +
-      '<span class="text-sm tabular-nums text-muted" id="focus-counter">1 / ' + exercises.length + '</span>' +
-    '</div>' +
-    '<div class="flex-1 overflow-y-auto px-4 py-8 max-w-lg mx-auto w-full" id="focus-body"></div>' +
-    '<div class="sticky bottom-0 z-[101] flex gap-3 border-t border-line bg-surface px-4 py-3 max-w-lg mx-auto w-full">' +
-      '<button class="flex-1 rounded-xl bg-surface-2 px-4 py-3 font-medium text-body min-h-11" id="focus-prev" disabled>← Prev</button>' +
-      '<button class="flex-1 rounded-xl bg-accent px-4 py-3 font-semibold text-white min-h-11" id="focus-next">Next →</button>' +
-    '</div>';
+      '<div class="flex-1 overflow-y-auto" id="focus-body"></div>' +
+      '<div class="sticky bottom-0 z-[101] border-t border-line bg-surface px-4 py-3">' +
+        '<div class="flex gap-3 max-w-lg mx-auto">' +
+          '<button class="flex-1 rounded-xl bg-surface-2 px-4 py-3 font-medium text-body min-h-11" id="focus-prev" disabled>\u2190 Prev</button>' +
+          '<button class="flex-1 rounded-xl bg-accent px-4 py-3 font-semibold text-white min-h-11" id="focus-next">Next \u2192</button>' +
+        '</div>' +
+      '</div>';
     document.body.appendChild(overlay);
 
     var closeBtn = document.getElementById("focus-close");
@@ -210,61 +148,282 @@
     var wakeLock = null;
     var pos = 0;
 
+    // Rest timer state (persists across exercises within a session)
+    var timer = { running: false, remaining: 0, total: 90, iv: null };
+
+    function stopTimer() {
+      if (timer.iv) clearInterval(timer.iv);
+      timer.iv = null;
+      timer.running = false;
+    }
+
+    function startTimer(seconds) {
+      stopTimer();
+      timer.total = seconds;
+      timer.remaining = seconds;
+      timer.running = true;
+      timer.iv = setInterval(function () {
+        timer.remaining--;
+        updateTimerDisplay();
+        if (timer.remaining <= 0) {
+          stopTimer();
+          timer.remaining = 0;
+          updateTimerDisplay();
+          // Chime: use AudioContext for a short beep
+          try {
+            var ctx = new (window.AudioContext || window.webkitAudioContext)();
+            var osc = ctx.createOscillator();
+            var gain = ctx.createGain();
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.frequency.value = 880;
+            gain.gain.value = 0.3;
+            osc.start();
+            osc.stop(ctx.currentTime + 0.15);
+          } catch (e) {}
+        }
+      }, 1000);
+    }
+
+    function toggleTimer() {
+      if (timer.running) {
+        stopTimer();
+        updateTimerDisplay();
+      } else if (timer.remaining > 0) {
+        // Resume
+        timer.running = true;
+        timer.iv = setInterval(function () {
+          timer.remaining--;
+          updateTimerDisplay();
+          if (timer.remaining <= 0) {
+            stopTimer();
+            timer.remaining = 0;
+            updateTimerDisplay();
+            try {
+              var ctx = new (window.AudioContext || window.webkitAudioContext)();
+              var osc = ctx.createOscillator();
+              var gain = ctx.createGain();
+              osc.connect(gain);
+              gain.connect(ctx.destination);
+              osc.frequency.value = 880;
+              gain.gain.value = 0.3;
+              osc.start();
+              osc.stop(ctx.currentTime + 0.15);
+            } catch (e) {}
+          }
+        }, 1000);
+        updateTimerDisplay();
+      } else {
+        // Start fresh
+        startTimer(timer.total);
+      }
+    }
+
+    function updateTimerDisplay() {
+      var el = document.getElementById("focus-timer-btn");
+      if (!el) return;
+      if (timer.running) {
+        el.textContent = "\u23f8 " + clockStr(timer.remaining);
+        el.className = "mt-3 w-full rounded-xl bg-green/15 border border-green px-4 py-3 text-center font-semibold text-green min-h-11 cursor-pointer tabular-nums text-lg";
+      } else if (timer.remaining > 0) {
+        el.textContent = "\u25b6 " + clockStr(timer.remaining) + " (paused)";
+        el.className = "mt-3 w-full rounded-xl bg-orange/15 border border-orange px-4 py-3 text-center font-semibold text-orange min-h-11 cursor-pointer tabular-nums text-lg";
+      } else {
+        el.textContent = "\u23f1 Rest " + clockStr(timer.total);
+        el.className = "mt-3 w-full rounded-xl bg-surface-2 border border-line px-4 py-3 text-center font-medium text-muted min-h-11 cursor-pointer tabular-nums";
+      }
+    }
+
+    // Set counting
+    function countDone(id, total) {
+      var n = 0;
+      if (state[id]) for (var s = 0; s < total; s++) if (state[id][s]) n++;
+      return n;
+    }
+
+    function addSet(id, total) {
+      state[id] = state[id] || {};
+      for (var s = 0; s < total; s++) {
+        if (!state[id][s]) { state[id][s] = true; save(); return; }
+      }
+    }
+
+    function undoSet(id, total) {
+      if (!state[id]) return;
+      for (var s = total - 1; s >= 0; s--) {
+        if (state[id][s]) { state[id][s] = false; save(); return; }
+      }
+    }
+
+    // Build export text
+    function exportText() {
+      var lines = ["Workout log \u2014 " + now.toLocaleDateString("en-US", {
+        weekday: "long", month: "long", day: "numeric", year: "numeric"
+      })];
+      var titleEl = visible.querySelector("h3");
+      if (titleEl) lines.push(titleEl.textContent.trim());
+      var totalSets = 0, doneSets = 0, items = [];
+      for (var i = 0; i < exercises.length; i++) {
+        var ex = exercises[i];
+        var d = countDone(ex.id, ex.sets);
+        totalSets += ex.sets;
+        doneSets += d;
+        items.push("- " + ex.name + ": " + d + "/" + ex.sets +
+          " sets of " + ex.reps + (ex.weight ? " @ " + ex.weight + " kg" : ""));
+      }
+      lines.push("");
+      lines = lines.concat(items);
+      lines.push("");
+      lines.push("Completed " + doneSets + "/" + totalSets + " sets.");
+      return lines.join("\n");
+    }
+
     function render() {
       var total = exercises.length;
-      counterEl.textContent = (pos + 1) + " / " + total;
-      progressEl.style.width = ((pos + 1) / total * 100) + "%";
+      var clamped = Math.min(pos, total - 1);
+      counterEl.textContent = (clamped + 1) + " / " + total;
+      progressEl.style.width = ((clamped + 1) / total * 100) + "%";
       prevBtn.disabled = pos === 0;
 
+      // Done screen
       if (pos >= total) {
-        // Done screen
-        nextBtn.textContent = "Done ✓";
-        bodyEl.innerHTML = '<div class="text-center py-16"><div class="text-6xl mb-4">🎉</div><h2 class="text-2xl font-bold text-heading">Done!</h2><p class="text-muted mt-2">Great workout!</p></div>';
+        var ts = 0, ds = 0;
+        for (var i = 0; i < total; i++) { ts += exercises[i].sets; ds += countDone(exercises[i].id, exercises[i].sets); }
+        nextBtn.textContent = "Close";
+        bodyEl.innerHTML =
+          '<div class="text-center py-12 px-4 max-w-lg mx-auto">' +
+            '<div class="text-6xl mb-4">\ud83c\udf89</div>' +
+            '<h2 class="text-2xl font-bold text-heading">Workout complete!</h2>' +
+            '<p class="text-lg text-muted mt-2 tabular-nums">' + ds + ' / ' + ts + ' sets</p>' +
+            '<button type="button" id="focus-copy" class="mt-6 w-full rounded-xl bg-accent px-4 py-3 font-semibold text-white min-h-11 cursor-pointer">Copy log to clipboard</button>' +
+          '</div>';
+        var copyBtn = document.getElementById("focus-copy");
+        if (copyBtn) {
+          copyBtn.addEventListener("click", function () {
+            var text = exportText();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(
+                function () { copyBtn.textContent = "Copied \u2713"; },
+                function () { window.prompt("Copy:", text); }
+              );
+            } else {
+              window.prompt("Copy:", text);
+            }
+          });
+        }
         return;
       }
 
-      nextBtn.textContent = pos === total - 1 ? "Done ✓" : "Next →";
+      nextBtn.textContent = pos === total - 1 ? "Done \u2713" : "Next \u2192";
 
       var ex = exercises[pos];
-      var html = "";
-      if (ex.demo) {
-        html += '<img class="mx-auto h-[180px] w-[180px] rounded-xl bg-white object-cover mb-4" src="' + ex.demo + '" alt="' + ex.name + ' demonstration">';
-      }
-      html += '<h2 class="text-xl font-bold text-heading text-center">' + ex.name + '</h2>';
-      html += '<p class="text-center text-muted tabular-nums mt-1">' + ex.sets + ' × ' + ex.reps +
-        (ex.weight ? ' · ' + ex.weight + ' kg' : '') + '</p>';
+      var done = countDone(ex.id, ex.sets);
+      var allDone = done >= ex.sets;
 
-      // Set checkboxes row
-      if (ex.sets > 0) {
-        html += '<div class="flex gap-2.5 justify-center mt-4" id="focus-sets-row"></div>';
+      var html = '<div class="max-w-lg mx-auto w-full px-4 py-6">';
+
+      // GIF
+      if (ex.demo) {
+        html += '<img class="mx-auto h-[180px] w-[180px] rounded-xl bg-white object-cover mb-5" src="' +
+          ex.demo + '" alt="' + ex.name + '">';
       }
+
+      // Name + reps
+      html += '<h2 class="text-xl font-bold text-heading text-center">' + ex.name + '</h2>';
+      html += '<p class="text-center text-muted tabular-nums mt-1">' +
+        ex.sets + ' \u00d7 ' + ex.reps +
+        (ex.weight ? ' \u00b7 ' + ex.weight + ' kg' : '') + '</p>';
+
+      // Tap counter
+      html += '<div class="mt-6 flex flex-col items-center gap-2">';
+      if (allDone) {
+        html += '<div class="w-28 h-28 rounded-full bg-green/20 border-2 border-green grid place-content-center">' +
+          '<span class="text-3xl font-bold text-green">\u2713</span></div>';
+        html += '<p class="text-sm text-green font-medium">' + done + ' / ' + ex.sets + ' sets done</p>';
+      } else {
+        html += '<button type="button" id="focus-add-set" class="w-28 h-28 rounded-full bg-accent/10 border-2 border-accent grid place-content-center active:scale-95 transition-transform cursor-pointer">' +
+          '<span class="text-4xl font-bold text-accent">+1</span></button>';
+        html += '<p class="text-sm text-muted tabular-nums">' + done + ' / ' + ex.sets + ' sets</p>';
+      }
+      if (done > 0) {
+        html += '<button type="button" id="focus-undo-set" class="text-xs text-muted underline underline-offset-2 cursor-pointer mt-1">undo</button>';
+      }
+      html += '</div>';
+
+      // Rest timer
+      html += '<button type="button" id="focus-timer-btn" class="mt-3 w-full rounded-xl bg-surface-2 border border-line px-4 py-3 text-center font-medium text-muted min-h-11 cursor-pointer tabular-nums">' +
+        '\u23f1 Rest ' + clockStr(timer.total) + '</button>';
+
+      // Timer presets
+      html += '<div class="flex justify-center gap-2 mt-2">';
+      var presets = [60, 90, 120];
+      for (var p = 0; p < presets.length; p++) {
+        html += '<button type="button" data-preset="' + presets[p] + '" class="rounded-lg bg-surface-2 px-3 py-1.5 text-xs text-muted cursor-pointer hover:text-heading">' +
+          clockStr(presets[p]) + '</button>';
+      }
+      html += '</div>';
+
+      // Description
+      if (ex.description) {
+        html += '<div class="mt-6 border-t border-line pt-4">' +
+          '<h3 class="text-xs font-semibold uppercase tracking-wide text-muted mb-2">How to perform</h3>' +
+          '<div class="text-sm text-muted whitespace-pre-line leading-relaxed">' + ex.description + '</div>' +
+        '</div>';
+      }
+
+      html += '</div>';
       bodyEl.innerHTML = html;
 
-      // Populate checkboxes and sync with state
-      var setsRow = document.getElementById("focus-sets-row");
-      if (setsRow) {
-        for (var s = 0; s < ex.sets; s++) {
-          var box = document.createElement("input");
-          box.type = "checkbox";
-          box.className = "set-check";
-          box.setAttribute("aria-label", "Set " + (s + 1) + " of " + ex.name);
-          box.checked = !!(state[ex.id] && state[ex.id][s]);
-          box.addEventListener("change", (function (id, s) {
-            return function (e) {
-              state[id] = state[id] || {};
-              state[id][s] = e.target.checked;
-              save();
-              // Sync with the main page checkboxes
-              var mainCard = visible.querySelector('[data-exercise-id="' + id + '"]');
-              if (mainCard) {
-                var mainBoxes = mainCard.querySelectorAll(".set-check");
-                if (mainBoxes[s]) mainBoxes[s].checked = e.target.checked;
+      // Update timer display if it's still running from previous exercise
+      updateTimerDisplay();
+
+      // Wire +1 / undo
+      var addBtn = document.getElementById("focus-add-set");
+      if (addBtn) {
+        addBtn.addEventListener("click", function () {
+          addSet(ex.id, ex.sets);
+          var newDone = countDone(ex.id, ex.sets);
+          if (newDone >= ex.sets) {
+            // All sets complete — auto-advance after brief flash
+            render(); // show green check
+            setTimeout(function () {
+              if (pos < exercises.length - 1) {
+                pos++;
+                stopTimer();
+                render();
+                bodyEl.scrollTop = 0;
               }
-            };
-          })(ex.id, s));
-          setsRow.appendChild(box);
-        }
+            }, 600);
+          } else {
+            render();
+            // Auto-start rest timer after a set
+            startTimer(timer.total);
+          }
+        });
       }
+      var undoBtn = document.getElementById("focus-undo-set");
+      if (undoBtn) {
+        undoBtn.addEventListener("click", function () {
+          undoSet(ex.id, ex.sets);
+          render();
+        });
+      }
+
+      // Wire timer
+      var timerBtn = document.getElementById("focus-timer-btn");
+      if (timerBtn) {
+        timerBtn.addEventListener("click", toggleTimer);
+      }
+
+      // Wire presets
+      bodyEl.querySelectorAll("[data-preset]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          timer.total = parseInt(btn.getAttribute("data-preset"), 10);
+          stopTimer();
+          timer.remaining = 0;
+          updateTimerDisplay();
+        });
+      });
 
       state._pos = pos;
       save();
@@ -273,6 +432,7 @@
     function open() {
       pos = typeof state._pos === "number" ? state._pos : 0;
       if (pos >= exercises.length) pos = exercises.length - 1;
+      if (pos < 0) pos = 0;
       overlay.hidden = false;
       document.body.style.overflow = "hidden";
       state._focus = true;
@@ -287,6 +447,7 @@
       overlay.hidden = true;
       document.body.style.overflow = "";
       state._focus = false;
+      stopTimer();
       save();
       if (wakeLock) { try { wakeLock.release(); } catch (e) {} wakeLock = null; }
     }
@@ -294,13 +455,17 @@
     function goNext() {
       if (pos >= exercises.length) { close(); return; }
       pos++;
+      stopTimer();
       render();
+      bodyEl.scrollTop = 0;
     }
 
     function goPrev() {
       if (pos <= 0) return;
       pos--;
+      stopTimer();
       render();
+      bodyEl.scrollTop = 0;
     }
 
     startBtn.addEventListener("click", open);
@@ -311,7 +476,7 @@
     document.addEventListener("keydown", function (e) {
       if (overlay.hidden) return;
       if (e.key === "ArrowLeft") goPrev();
-      else if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); goNext(); }
+      else if (e.key === "ArrowRight") goNext();
       else if (e.key === "Escape") close();
     });
 
@@ -328,7 +493,6 @@
       }
     }, { passive: true });
 
-    // Auto-reopen if focus was active on last visit
     if (state._focus) open();
   }
 

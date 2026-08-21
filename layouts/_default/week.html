@@ -5,21 +5,16 @@
 <div class="mt-5 space-y-3" data-week-list>
 {{ range $days }}
   {{ $day := index $.Site.Data.schedule.week . }}
-  <details class="week-card rounded-xl border border-line bg-surface p-4" data-day="{{ . }}">
-    <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-      <div class="flex items-center gap-3">
-        <span class="text-2xl">{{ $day.icon }}</span>
-        <div class="min-w-0 flex-1">
-          <h3 class="text-base font-semibold text-heading" data-day-label>{{ title . }}</h3>
-          <p class="text-sm text-muted">{{ $day.description }}</p>
-        </div>
-        <div class="text-sm text-muted whitespace-nowrap">{{ if ne $day.duration 0 }}{{ $day.duration }} min{{ end }}</div>
+  <div class="week-card rounded-xl border border-line bg-surface p-4" data-day="{{ . }}">
+    <div class="flex items-center gap-3">
+      <span class="text-2xl">{{ $day.icon }}</span>
+      <div class="min-w-0 flex-1">
+        <h3 class="text-base font-semibold text-heading" data-day-label>{{ title . }}</h3>
+        <p class="text-sm text-muted">{{ $day.description }}</p>
       </div>
-    </summary>
-    <div class="mt-4 border-t border-line pt-4">
-      {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
+      <div class="text-sm text-muted whitespace-nowrap">{{ if ne $day.duration 0 }}{{ $day.duration }} min{{ end }}</div>
     </div>
-  </details>
+  </div>
 {{ end }}
 </div>
 {{ end }}

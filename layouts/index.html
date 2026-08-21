@@ -9,17 +9,17 @@
     {{ if $day.alternateWeekly }}
       <section class="day mt-5" data-day="{{ $key }}" data-alt-week="a" hidden>
         <h2 class="day-heading hidden mb-2 text-sm font-semibold uppercase tracking-wide text-muted">{{ title $key }} · Week A</h2>
-        {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
+        {{ partial "day-block.html" (dict "day" $day "site" $.Site "compact" true) }}
       </section>
       <section class="day mt-5" data-day="{{ $key }}" data-alt-week="b" hidden>
         <h2 class="day-heading hidden mb-2 text-sm font-semibold uppercase tracking-wide text-muted">{{ title $key }} · Week B</h2>
         {{ $alt := merge $day (dict "workout" $day.alternateWeekly) }}
-        {{ partial "day-block.html" (dict "day" $alt "site" $.Site) }}
+        {{ partial "day-block.html" (dict "day" $alt "site" $.Site "compact" true) }}
       </section>
     {{ else }}
       <section class="day mt-5" data-day="{{ $key }}" hidden>
         <h2 class="day-heading hidden mb-2 text-sm font-semibold uppercase tracking-wide text-muted">{{ title $key }}</h2>
-        {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
+        {{ partial "day-block.html" (dict "day" $day "site" $.Site "compact" true) }}
       </section>
     {{ end }}
   {{ end }}

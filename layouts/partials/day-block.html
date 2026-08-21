@@ -1,5 +1,6 @@
 {{ $day := .day }}
 {{ $site := .site }}
+{{ $compact := .compact }}
 
 {{ if eq $day.type "gym" }}
   {{ $cat := index $site.Data.exercises $day.workout }}
@@ -13,13 +14,16 @@
       <div class="text-sm text-muted whitespace-nowrap">{{ $day.duration }} min</div>
     </div>
   </div>
-  <h2 class="mt-5 mb-2 text-sm font-semibold uppercase tracking-wide text-muted">Exercises</h2>
-  {{ range $cat.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
-  {{ if $day.includeAbs }}
-    {{ $abs := index $site.Data.exercises "abs" }}
-    <h2 class="mt-5 mb-2 text-sm font-semibold uppercase tracking-wide text-muted">Abs (first 3)</h2>
-    {{ range first 3 $abs.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
-  {{ end }}
+  {{/* In compact mode (today page), exercises are hidden — focus mode reads them via data attrs */}}
+  <div{{ if $compact }} hidden{{ end }}>
+    <h2 class="mt-5 mb-2 text-sm font-semibold uppercase tracking-wide text-muted">Exercises</h2>
+    {{ range $cat.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+    {{ if $day.includeAbs }}
+      {{ $abs := index $site.Data.exercises "abs" }}
+      <h2 class="mt-5 mb-2 text-sm font-semibold uppercase tracking-wide text-muted">Abs (first 3)</h2>
+      {{ range first 3 $abs.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+    {{ end }}
+  </div>
 {{ else if eq $day.type "run" }}
   {{ range where $site.Data.exercises.running.workouts "id" $day.workout }}
     {{ partial "run-info.html" . }}

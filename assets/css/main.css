@@ -46,17 +46,6 @@
   }
 }
 
-/* ---- Set checkoff ---- */
-.set-check {
-  appearance: none; -webkit-appearance: none;
-  width: 2.75rem; height: 2.75rem; border-radius: 0.5rem;
-  border: 1.5px solid var(--line); background: var(--surface-2);
-  cursor: pointer; display: grid; place-content: center;
-  transition: background 0.15s, border-color 0.15s;
-}
-.set-check:checked { background: var(--green); border-color: var(--green); }
-.set-check:checked::before { content: "\2713"; color: #fff; font-size: 1.1rem; font-weight: 700; }
-
 /* ---- Focus mode overlay ---- */
 .focus-overlay {
   position: fixed; inset: 0; z-index: 100;
