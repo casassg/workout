@@ -10,11 +10,11 @@
     <div class="text-right font-bold tabular-nums text-base whitespace-nowrap">{{ .sets }} × {{ .reps }}{{ with .startingWeight }} · {{ . }} kg{{ end }}</div>
   </div>
   {{ with .notes }}<p class="mt-2 text-sm text-muted">{{ . }}</p>{{ end }}
-  {{ if or .description .demo }}
-    <details class="mt-3">
-      <summary class="cursor-pointer text-sm text-accent py-1 min-h-[30px]">How to perform</summary>
-      {{ with .demo }}<img class="mt-2 h-[180px] w-[180px] rounded-lg bg-white object-cover" src="{{ . | absURL }}" loading="lazy" alt="{{ $.name }} demonstration">{{ end }}
-      {{ with .description }}<div class="mt-2 text-sm text-muted whitespace-pre-line">{{ . }}</div>{{ end }}
-    </details>
-  {{ end }}
+  {{- with .description -}}
+    <div class="exercise-desc hidden" data-desc>
+      <div class="prose-desc text-sm text-muted leading-relaxed [&_p]:mb-2 [&_strong]:text-heading [&_strong]:text-xs [&_strong]:uppercase [&_strong]:tracking-wide">
+        {{- . | replaceRE "(?m)^(Setup|Execution|Key points|Tip|Note|Progression|Form check|Breathing|Variations|Scaling):" "\n**$1:**" | markdownify -}}
+      </div>
+    </div>
+  {{- end -}}
 </div>
