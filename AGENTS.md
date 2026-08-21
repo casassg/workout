@@ -1,8 +1,7 @@
 # AGENTS.md
 
 Gerard's weekly workout plan (Hugo static site + Tailwind CSS + vanilla JS), deployed to GitHub Pages.
-Training logs live in `/opt/data/fitness/log.yaml`, NEVER in this repo. Set checkoff on the
-today page is client-only localStorage, not synced anywhere.
+Set checkoff on the today page is client-only localStorage, not synced anywhere.
 
 ## Commands
 
