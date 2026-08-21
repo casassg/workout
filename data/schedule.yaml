@@ -38,13 +38,20 @@ week:
     icon: "🧘"
 
   friday:
-    type: "gym"
-    workout: "push"
-    alternateWeekly: "legs"
-    duration: 60
-    description: "Push or Legs (alternates weekly). No afternoon run"
-    icon: "🏋️"
-    includeAbs: true
+    type: "flexible"
+    duration: 15
+    description: "Skipped morning gym - optional short functional circuit in the afternoon"
+    icon: "🔥"
+    options:
+      - type: "gym"
+        workout: "functional"
+        duration: 15
+        description: "Short functional circuit (15-12-9 beginner): pick 2 movements, ~8-10 min"
+        icon: "🔥"
+      - type: "rest"
+        duration: 0
+        description: "Rest only (recover; push carries to next week)"
+        icon: "🧘"
 
   saturday:
     type: "run"
