@@ -18,21 +18,21 @@ def err(msg):
     errors.append(msg)
 
 
-def check_image(url, where):
-    if url and not url.startswith("https://wger.de/media/"):
-        err(f"{where}: image must be an https://wger.de/media/... URL, got {url!r}")
+def check_demo(demo, where):
+    if demo and not (ROOT / "static" / demo).exists():
+        err(f"{where}: demo {demo!r} not found under static/exercises/")
 
 
 def check_exercise(ex, where):
     for field in ("id", "name", "sets", "reps"):
         if field not in ex:
             err(f"{where}: missing required field {field!r}")
-    check_image(ex.get("image"), where)
+    check_demo(ex.get("demo"), where)
     for alt in ex.get("alternatives", []):
         for field in ("id", "name"):
             if field not in alt:
                 err(f"{where} alternative: missing {field!r}")
-        check_image(alt.get("image"), f"{where} alt {alt.get('id', '?')}")
+        check_demo(alt.get("demo"), f"{where} alt {alt.get('id', '?')}")
 
 
 # Load exercise data

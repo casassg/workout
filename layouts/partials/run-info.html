@@ -1,13 +1,13 @@
-<div class="card">
-  <div class="card-head">
+<div class="rounded-xl border border-line bg-surface p-4 mb-3">
+  <div class="flex items-start justify-between gap-3">
     <div>
-      <h4>🏃 {{ .name }} <span class="badge run">{{ .intensity }}</span></h4>
-      <p class="meta">{{ .duration }} · {{ .type }}</p>
+      <h4 class="text-base font-semibold text-heading">🏃 {{ .name }} <span class="rounded-full bg-green/10 px-2 py-0.5 text-xs font-medium text-green">{{ .intensity }}</span></h4>
+      <p class="mt-0.5 text-sm text-muted">{{ .duration }} · {{ .type }}</p>
     </div>
   </div>
-  <p class="notes">{{ .description }}</p>
-  {{ with .structure }}<div class="note">Structure: {{ . }}</div>{{ end }}
+  <p class="mt-2 text-sm text-muted">{{ .description }}</p>
+  {{ with .structure }}<div class="mt-2 rounded-lg bg-surface-2 px-3 py-2 text-sm text-muted">Structure: {{ . }}</div>{{ end }}
   {{ with .tips }}
-    <ul class="tips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+    <ul class="mt-2 ml-4 list-disc text-sm text-muted">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
   {{ end }}
 </div>

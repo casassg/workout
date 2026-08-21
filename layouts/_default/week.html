@@ -1,25 +1,20 @@
 {{ define "main" }}
-<h1>Next 7 Days</h1>
-<p class="muted">The plan, day by day. Friday alternates Push/Legs by week.</p>
+<h1 class="text-2xl font-bold tracking-tight text-heading">Next 7 Days</h1>
+<p class="text-sm text-muted">The plan, day by day. Friday alternates Push/Legs by week.</p>
 {{ $days := slice "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday" }}
-<div data-week-list>
+<div class="mt-5 space-y-3" data-week-list>
 {{ range $days }}
   {{ $day := index $.Site.Data.schedule.week . }}
-  <details class="card week-card" data-day="{{ . }}">
-    <summary>
-      <div class="day-summary">
-        <span class="icon">{{ $day.icon }}</span>
-        <div>
-          <h3 data-day-label>{{ title . }}</h3>
-          <p class="meta">{{ $day.description }}</p>
-        </div>
-        <div class="meta">{{ if ne $day.duration 0 }}{{ $day.duration }} min{{ end }}</div>
+  <div class="week-card rounded-xl border border-line bg-surface p-4" data-day="{{ . }}">
+    <div class="flex items-center gap-3">
+      <span class="text-2xl">{{ $day.icon }}</span>
+      <div class="min-w-0 flex-1">
+        <h3 class="text-base font-semibold text-heading" data-day-label>{{ title . }}</h3>
+        <p class="text-sm text-muted">{{ $day.description }}</p>
       </div>
-    </summary>
-    <div class="week-detail">
-      {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
+      <div class="text-sm text-muted whitespace-nowrap">{{ if ne $day.duration 0 }}{{ $day.duration }} min{{ end }}</div>
     </div>
-  </details>
+  </div>
 {{ end }}
 </div>
 {{ end }}

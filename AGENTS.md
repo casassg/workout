@@ -1,14 +1,14 @@
 # AGENTS.md
 
-Gerard's weekly workout plan (Hugo static site + light vanilla JS), deployed to GitHub Pages.
-Training logs live in `/opt/data/fitness/log.yaml`, NEVER in this repo. Set checkoff on the
-today page is client-only localStorage, not synced anywhere.
+Gerard's weekly workout plan (Hugo static site + Tailwind CSS + vanilla JS), deployed to GitHub Pages.
+Set checkoff on the today page is client-only localStorage, not synced anywhere.
 
 ## Commands
 
 ```bash
-source bin/activate-hermit     # provides hugo
+source bin/activate-hermit     # provides hugo, tailwindcss
 uv run scripts/validate.py     # validate data files (also runs in CI before deploy)
+uv run scripts/sync_exercises.py  # sync exercise GIFs from dataset (run after adding exercises)
 hugo --minify                  # build to /public
 hugo server                    # local preview
 ```
@@ -18,9 +18,12 @@ Deploy is automatic on push to `main`. CI fails if validation fails.
 ## Structure
 
 - `data/schedule.yaml` — the weekly plan (source of truth for what happens each day).
-- `data/exercises/{push,pull,legs,abs}.yaml` — gym exercises; `running.yaml` — run workouts.
+- `data/exercises/{push,pull,legs,abs,functional}.yaml` — gym exercises; `running.yaml` — run workouts.
 - `layouts/` — `index.html` (today: all 7 days rendered, JS picks one), `week.html` (next 7 days), `exercises.html` (catalog). Partials: `day-block`, `exercise-item`, `run-info`.
-- `assets/js/main.js` — day selection, Friday push/legs alternation (anchor 2026-08-21 = week A = push), week reorder, set checkoff. `static/sw.js` + `static/manifest.webmanifest` — PWA.
+- `assets/js/main.js` — day selection, Friday push/legs alternation (anchor 2026-08-21 = week A = push), week reorder, set checkoff, focus mode (one exercise at a time). `static/sw.js` + `static/manifest.webmanifest` — PWA.
+- `assets/css/main.css` — Tailwind v4 with CSS variable theme (dark-first, light via prefers-color-scheme).
+- `scripts/sync_exercises.py` — syncs exercise demo GIFs from `hasaneyldrm/exercises-dataset` into `static/exercises/`. Sets `demo:` field on matched exercises. Uses curated name→dataset-name map (no fuzzy matching).
+- `static/exercises/` — vendored 180×180 GIF demos. Media © GymVisual.
 
 ## Schema: data/schedule.yaml
 
@@ -29,7 +32,7 @@ Deploy is automatic on push to `main`. CI fails if validation fails.
 | field | notes |
 |---|---|
 | `type` | `gym` \| `run` \| `rest` \| `flexible` (required) |
-| `workout` | gym: exercise category (`push`/`pull`/`legs`/`abs`); run: running workout `id` |
+| `workout` | gym: exercise category (`push`/`pull`/`legs`/`abs`/`functional`); run: running workout `id` |
 | `alternateWeekly` | gym only: second category; alternates with `workout` by week |
 | `duration` | minutes (0 for rest) |
 | `description`, `icon` | shown on cards |
@@ -41,10 +44,15 @@ Deploy is automatic on push to `main`. CI fails if validation fails.
 
 Top level: `category`, `description`, `icon`, `exercises:` (or `workouts:` in running.yaml).
 
-Exercise: `id`, `name`, `sets`, `reps` (int or string like `"45s"`) required; plus `muscle`,
-`equipment`, `startingWeight` (kg), `notes`, `description` (multiline how-to), `image`
-(https://wger.de/media/... demo image), `alternatives:` (list of `{id, name, equipment,
-description, image?}`).
+Exercise: `id`, `name`, `sets`, `reps` (int or string like `"45s"` or `"21-15-9"`) required; plus `muscle`,
+`equipment`, `startingWeight` (kg), `notes`, `description` (multiline how-to), `demo`
+(path under `static/`, e.g. `exercises/0025-EIeI8Vf.gif` — set by sync script),
+`alternatives:` (list of `{id, name, equipment, description, demo?}`).
+
+**Alternatives contract:** `alternatives:` stays in YAML as machine-readable data for agents
+(hermes). The site renders exactly one exercise per slot. To change what's shown, promote the
+alternative to the main entry and demote the current one to alternatives. Never add UI rendering
+of alternatives.
 
 Running workout: `id`, `name`, `type`, `duration` (string), `intensity` required; plus
 `description`, `frequency`, `structure`, `tips` (list).
@@ -52,9 +60,9 @@ Running workout: `id`, `name`, `type`, `duration` (string), `intensity` required
 ## Common workflows
 
 - **Update a weight after a session**: edit `startingWeight` in the exercise's yaml, validate, commit.
-- **Add/swap an exercise**: add to the category's `exercises:` list (or as an `alternative`), run validate.
+- **Add/swap an exercise**: add to the category's `exercises:` list (or as an `alternative`), run `sync_exercises.py` to get GIF, run validate.
 - **Change the schedule**: edit `data/schedule.yaml`; `workout` refs must resolve (validator checks).
-- **Find an exercise image**: `curl "https://wger.de/api/v2/exercise/search/?term=<name>&language=english&format=json"`, take `data[].data.image`, prefix `https://wger.de`, set `image:`.
+- **Swap an alternative in**: move the alternative to the main exercise position in the YAML, demote the old main to alternatives. Run `sync_exercises.py` to update GIFs.
 
 Always run `uv run scripts/validate.py && hugo --minify` before committing data edits.
 Keep the site in English. Keep private data (logged weights, metrics, diet) out of this repo.
@@ -73,5 +81,6 @@ Keep the site in English. Keep private data (logged weights, metrics, diet) out 
   /categories/ are not generated.
 - For build checks use a fresh output dir (e.g. `/tmp/wb-check-NN`); never `rm -rf` in /tmp
   without explicit approval.
-- No frameworks, no external CDNs, no tracking. Extend `assets/js/main.js` if more behavior is
-  ever needed; keep it small.
+- Tailwind v4 via Hugo's `css.TailwindCSS` pipeline, no external CDNs or JS frameworks. JS stays vanilla.
+- Focus mode stores `_pos` and `_focus` in the same per-day localStorage object as set checkoffs.
+  Old entries without these keys just start at exercise 0, no migration needed. 14-day pruning covers cleanup.

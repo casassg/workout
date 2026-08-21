@@ -1,12 +1,19 @@
 {{ define "main" }}
-<h1>All Exercises</h1>
-<p class="muted">Everything in the plan, with instructions and alternatives.</p>
+<h1 class="text-2xl font-bold tracking-tight text-heading">All Exercises</h1>
+<p class="text-sm text-muted">Everything in the plan, with instructions.</p>
 {{ $cats := slice "push" "pull" "legs" "abs" }}
 {{ range $cats }}
   {{ $cat := index $.Site.Data.exercises . }}
-  <h2>{{ $cat.icon }} {{ $cat.category }} <span class="muted">· {{ $cat.description }}</span></h2>
+  {{ if $cat }}
+  <h2 class="mt-6 mb-3 text-lg font-semibold text-heading">{{ $cat.icon }} {{ $cat.category }} <span class="text-sm font-normal text-muted">· {{ $cat.description }}</span></h2>
   {{ range $cat.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+  {{ end }}
 {{ end }}
-<h2>🏃 Running</h2>
+{{/* Include functional if it exists */}}
+{{ with $.Site.Data.exercises.functional }}
+<h2 class="mt-6 mb-3 text-lg font-semibold text-heading">{{ .icon }} {{ .category }} <span class="text-sm font-normal text-muted">· {{ .description }}</span></h2>
+{{ range .exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+{{ end }}
+<h2 class="mt-6 mb-3 text-lg font-semibold text-heading">🏃 Running</h2>
 {{ range $.Site.Data.exercises.running.workouts }}{{ partial "run-info.html" . }}{{ end }}
 {{ end }}

@@ -1,10 +1,10 @@
-<header>
-  <div class="inner">
-    <a class="logo" href="{{ .Site.BaseURL }}">💪 Workout</a>
-    <nav>
-      <a href="{{ .Site.BaseURL }}" class="{{ if .IsHome }}active{{ end }}">Today</a>
-      <a href="{{ "week/" | absURL }}" class="{{ if eq .RelPermalink "/week/" }}active{{ end }}">Week</a>
-      <a href="{{ "exercises/" | absURL }}" class="{{ if eq .RelPermalink "/exercises/" }}active{{ end }}">Exercises</a>
+<header class="sticky top-0 z-10 border-b border-line bg-surface">
+  <div class="mx-auto flex max-w-2xl items-center justify-between px-3" style="min-height:3.25rem">
+    <a class="text-lg font-bold text-heading no-underline" href="{{ .Site.BaseURL }}">💪 Workout</a>
+    <nav class="flex gap-0.5">
+      <a href="{{ .Site.BaseURL }}" class="flex items-center rounded-lg px-3 py-2 text-sm min-h-11 {{ if .IsHome }}bg-surface-2 text-heading{{ else }}text-muted hover:text-heading hover:bg-surface-2{{ end }}">Today</a>
+      <a href="{{ "week/" | absURL }}" class="flex items-center rounded-lg px-3 py-2 text-sm min-h-11 {{ if eq .RelPermalink "/week/" }}bg-surface-2 text-heading{{ else }}text-muted hover:text-heading hover:bg-surface-2{{ end }}">Week</a>
+      <a href="{{ "exercises/" | absURL }}" class="flex items-center rounded-lg px-3 py-2 text-sm min-h-11 {{ if eq .RelPermalink "/exercises/" }}bg-surface-2 text-heading{{ else }}text-muted hover:text-heading hover:bg-surface-2{{ end }}">Exercises</a>
     </nav>
   </div>
 </header>

@@ -14,9 +14,9 @@
   {{ partial "css.html" . }}
   <link rel="icon" href="data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E💪%3C/text%3E%3C/svg%3E">
 </head>
-<body data-base="{{ .Site.BaseURL }}">
+<body class="flex min-h-screen flex-col bg-bg text-body antialiased" data-base="{{ .Site.BaseURL }}">
   {{ partial "header.html" . }}
-  <main>
+  <main class="mx-auto w-full max-w-2xl flex-1 px-4 py-5 pb-12">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
