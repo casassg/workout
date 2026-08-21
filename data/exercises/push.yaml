@@ -119,26 +119,26 @@ exercises:
       '
     demo: exercises/0047-3TZduzM.gif
   demo: exercises/0314-ns0SIbU.gif
-- id: cable_fly
-  name: Cable Fly
+- id: pec_deck
+  name: Pec Deck Machine
   muscle: Chest
-  equipment: Dual Adjustable Pulley
+  equipment: Machine
   sets: 3
   reps: 10
   startingWeight: 5
   notes: Isolation movement for chest squeeze
-  description: 'Setup: Set both pulleys to shoulder height or slightly above. Grab
-    handles and step forward into a staggered stance. Start with arms out wide, slight
-    bend in elbows.
+  description: 'Setup: Adjust seat so handles are at chest height. Sit with back
+    flat against pad. Place forearms against pads (or grip handles, depending on
+    machine type).
 
 
-    Execution: Bring hands together in a hugging motion, squeezing chest hard at the
-    center. Slowly return to start, feeling the stretch across your chest.
+    Execution: Bring arms together in front of chest, squeezing pecs hard. Hold
+    contraction briefly. Return slowly to starting position, feeling chest stretch.
 
 
-    Key points: Keep the same bend in your elbows throughout - this isn''t a pressing
-    motion. Focus on squeezing your chest to move the weight, not your arms. Control
-    the negative.
+    Key points: Don''t let shoulders roll forward. Keep slight bend in elbows if
+    using handles. Control the weight - don''t let it slam back. Excellent for isolating
+    chest without balance concerns.
 
     '
   alternatives:
@@ -160,24 +160,24 @@ exercises:
 
       '
     demo: exercises/0308-yz9nUhF.gif
-  - id: pec_deck
-    name: Pec Deck Machine
-    equipment: Machine
-    description: 'Setup: Adjust seat so handles are at chest height. Sit with back
-      flat against pad. Place forearms against pads (or grip handles, depending on
-      machine type).
+  - id: cable_fly
+    name: Cable Fly
+    equipment: Dual Adjustable Pulley
+    description: 'Setup: Set both pulleys to shoulder height or slightly above. Grab
+      handles and step forward into a staggered stance. Start with arms out wide, slight
+      bend in elbows.
 
 
-      Execution: Bring arms together in front of chest, squeezing pecs hard. Hold
-      contraction briefly. Return slowly to starting position, feeling chest stretch.
+      Execution: Bring hands together in a hugging motion, squeezing chest hard at the
+      center. Slowly return to start, feeling the stretch across your chest.
 
 
-      Key points: Don''t let shoulders roll forward. Keep slight bend in elbows if
-      using handles. Control the weight - don''t let it slam back. Excellent for isolating
-      chest without balance concerns.
+      Key points: Keep the same bend in your elbows throughout - this isn''t a pressing
+      motion. Focus on squeezing your chest to move the weight, not your arms. Control
+      the negative.
 
       '
-  demo: exercises/1269-UKWTJWR.gif
+    demo: exercises/1269-UKWTJWR.gif
 - id: overhead_press
   name: Overhead Press
   muscle: Shoulders
@@ -236,47 +236,47 @@ exercises:
       '
     demo: exercises/0361-84RyJf8.gif
   demo: exercises/0426-A6wtbuL.gif
-- id: lateral_raise_cable
-  name: Cable Lateral Raise
+- id: dumbbell_lateral_raise
+  name: Dumbbell Lateral Raise
   muscle: Side Delts
-  equipment: Dual Adjustable Pulley
+  equipment: Dumbbells
   sets: 3
   reps: 10
   startingWeight: 2.5
   notes: Builds shoulder width
-  description: 'Setup: Set pulley to lowest position. Stand sideways to machine, grab
-    handle with far hand (cable crosses in front of body). Slight bend in elbow, locked
-    in place.
+  description: 'Setup: Stand with feet shoulder-width apart, dumbbells at sides
+    with slight bend in elbows. Palms face your body.
 
 
-    Execution: Raise arm out to the side until parallel with floor or slightly above.
-    Lead with your elbow, not your hand. Lower slowly under control.
+    Execution: Raise arms out to sides until parallel with floor (or slightly above).
+    Lead with elbows, not hands. Lower slowly with control.
 
 
-    Key points: Keep slight forward lean to target side delt better. Don''t swing
-    or use momentum. Think about pouring water from a pitcher at the top. Pinky slightly
-    higher than thumb.
+    Key points: Slight forward lean helps target side delts. Don''t swing or use
+    momentum. Think "pour water from a pitcher" at top - pinky slightly higher than
+    thumb. Light weight, high reps.
 
     '
   alternatives:
-  - id: dumbbell_lateral_raise
-    name: Dumbbell Lateral Raise
-    equipment: Dumbbells
-    description: 'Setup: Stand with feet shoulder-width apart, dumbbells at sides
-      with slight bend in elbows. Palms face your body.
+  - id: lateral_raise_cable
+    name: Cable Lateral Raise
+    equipment: Dual Adjustable Pulley
+    description: 'Setup: Set pulley to lowest position. Stand sideways to machine, grab
+      handle with far hand (cable crosses in front of body). Slight bend in elbow, locked
+      in place.
 
 
-      Execution: Raise arms out to sides until parallel with floor (or slightly above).
-      Lead with elbows, not hands. Lower slowly with control.
+      Execution: Raise arm out to the side until parallel with floor or slightly above.
+      Lead with your elbow, not your hand. Lower slowly under control.
 
 
-      Key points: Slight forward lean helps target side delts. Don''t swing or use
-      momentum. Think "pour water from a pitcher" at top - pinky slightly higher than
-      thumb. Light weight, high reps.
+      Key points: Keep slight forward lean to target side delt better. Don''t swing
+      or use momentum. Think about pouring water from a pitcher at the top. Pinky slightly
+      higher than thumb.
 
       '
-    demo: exercises/0334-DsgkuIt.gif
-  demo: exercises/0178-goJ6ezq.gif
+    demo: exercises/0178-goJ6ezq.gif
+  demo: exercises/0334-DsgkuIt.gif
 - id: face_pull
   name: Face Pull
   muscle: Rear Delts

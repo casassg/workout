@@ -334,20 +334,17 @@
         ex.sets + ' \u00d7 ' + ex.reps +
         (ex.weight ? ' \u00b7 ' + ex.weight + ' kg' : '') + '</p>';
 
-      // Tap counter
-      html += '<div class="mt-6 flex flex-col items-center gap-2">';
+      // Set counter: [ - ]  2 / 4  [ + ]
+      html += '<div class="mt-6 flex items-center justify-center gap-4">';
+      html += '<button type="button" id="focus-sub-set" class="w-14 h-14 rounded-full border-2 border-line bg-surface-2 grid place-content-center text-2xl font-bold text-muted active:scale-95 transition-transform cursor-pointer' + (done <= 0 ? ' opacity-30 pointer-events-none' : '') + '">\u2212</button>';
       if (allDone) {
-        html += '<div class="w-28 h-28 rounded-full bg-green/20 border-2 border-green grid place-content-center">' +
-          '<span class="text-3xl font-bold text-green">\u2713</span></div>';
-        html += '<p class="text-sm text-green font-medium">' + done + ' / ' + ex.sets + ' sets done</p>';
+        html += '<div class="text-center min-w-[5rem]"><span class="text-4xl font-bold text-green">\u2713</span>' +
+          '<p class="text-sm text-green font-medium mt-1">' + done + ' / ' + ex.sets + '</p></div>';
       } else {
-        html += '<button type="button" id="focus-add-set" class="w-28 h-28 rounded-full bg-accent/10 border-2 border-accent grid place-content-center active:scale-95 transition-transform cursor-pointer">' +
-          '<span class="text-4xl font-bold text-accent">+1</span></button>';
-        html += '<p class="text-sm text-muted tabular-nums">' + done + ' / ' + ex.sets + ' sets</p>';
+        html += '<div class="text-center min-w-[5rem]"><span class="text-4xl font-bold tabular-nums text-heading">' + done + '</span>' +
+          '<p class="text-sm text-muted mt-1">' + done + ' / ' + ex.sets + ' sets</p></div>';
       }
-      if (done > 0) {
-        html += '<button type="button" id="focus-undo-set" class="text-xs text-muted underline underline-offset-2 cursor-pointer mt-1">undo</button>';
-      }
+      html += '<button type="button" id="focus-add-set" class="w-14 h-14 rounded-full border-2 border-accent bg-accent/10 grid place-content-center text-2xl font-bold text-accent active:scale-95 transition-transform cursor-pointer' + (allDone ? ' opacity-30 pointer-events-none' : '') + '">+</button>';
       html += '</div>';
 
       // Rest timer
@@ -377,14 +374,13 @@
       // Update timer display if it's still running from previous exercise
       updateTimerDisplay();
 
-      // Wire +1 / undo
+      // Wire + / - buttons
       var addBtn = document.getElementById("focus-add-set");
       if (addBtn) {
         addBtn.addEventListener("click", function () {
           addSet(ex.id, ex.sets);
           var newDone = countDone(ex.id, ex.sets);
           if (newDone >= ex.sets) {
-            // All sets complete — auto-advance after brief flash
             render(); // show green check
             setTimeout(function () {
               if (pos < exercises.length - 1) {
@@ -396,14 +392,13 @@
             }, 600);
           } else {
             render();
-            // Auto-start rest timer after a set
             startTimer(timer.total);
           }
         });
       }
-      var undoBtn = document.getElementById("focus-undo-set");
-      if (undoBtn) {
-        undoBtn.addEventListener("click", function () {
+      var subBtn = document.getElementById("focus-sub-set");
+      if (subBtn) {
+        subBtn.addEventListener("click", function () {
           undoSet(ex.id, ex.sets);
           render();
         });
@@ -425,12 +420,22 @@
         });
       });
 
+      // Persist position by exercise id (survives exercise reorder between builds)
       state._pos = pos;
+      state._exId = ex ? ex.id : null;
       save();
     }
 
     function open() {
-      pos = typeof state._pos === "number" ? state._pos : 0;
+      // Resolve position: prefer saved exercise id, fall back to numeric index
+      pos = 0;
+      if (state._exId) {
+        for (var j = 0; j < exercises.length; j++) {
+          if (exercises[j].id === state._exId) { pos = j; break; }
+        }
+      } else if (typeof state._pos === "number") {
+        pos = state._pos;
+      }
       if (pos >= exercises.length) pos = exercises.length - 1;
       if (pos < 0) pos = 0;
       overlay.hidden = false;
