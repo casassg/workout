@@ -1,6 +1,6 @@
 # Weekly schedule template
 # Push/Pull/Legs + Running rotation
-# Última revisió: 2026-08-17 (divendres i diumenge tarda sense runs; run amb Laura després del sopar)
+# Última revisió: 2026-08-21 (recuperat del refredat: dissabte run llarg, diumenge functional opcional)
 
 week:
   monday:
@@ -47,16 +47,27 @@ week:
     includeAbs: true
 
   saturday:
-    type: "rest"
-    duration: 0
-    description: "Rest day - recovering from a cold (long run paused until recovered)"
-    icon: "🧘"
+    type: "run"
+    workout: "long_run"
+    duration: 60
+    description: "Long run 60' moderate (Mode A). First long run back after the cold: easy pace, build gently."
+    icon: "🏃"
 
   sunday:
-    type: "rest"
-    duration: 0
-    description: "Rest day - active recovery (walking, stretching) encouraged"
+    type: "flexible"
+    duration: 20
+    description: "Active recovery - optional functional circuit (21-15-9)"
     icon: "🧘"
+    options:
+      - type: "gym"
+        workout: "functional"
+        duration: 20
+        description: "Functional circuit (21-15-9): pick 2 exercises, ~8-10 min"
+        icon: "🔥"
+      - type: "rest"
+        duration: 0
+        description: "Light walk + stretching only"
+        icon: "🧘"
 
 # Alternation tracking
 alternation:
