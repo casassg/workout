@@ -60,7 +60,7 @@
         {{ with $opt.exerciseRefs }}
           {{ $exs = where $cat.exercises "id" "in" . }}
         {{ end }}
-        <div class="mt-3 space-y-3">
+        <div class="gap-y-3 hidden">
           {{ range $exs }}{{ partial "exercise-item.html" . }}{{ end }}
         </div>
       {{ end }}
