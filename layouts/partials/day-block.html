@@ -52,6 +52,15 @@
         {{ range where $site.Data.exercises.running.workouts "id" $opt.workout }}
           {{ partial "run-info.html" . }}
         {{ end }}
+      {{ else if eq $opt.type "gym" }}
+        {{ $cat := index $site.Data.exercises $opt.workout }}
+        {{ $exs := $cat.exercises }}
+        {{ with $opt.exerciseRefs }}
+          {{ $exs = where $cat.exercises "id" "in" . }}
+        {{ end }}
+        <div class="mt-3 space-y-3">
+          {{ range $exs }}{{ partial "exercise-item.html" . }}{{ end }}
+        </div>
       {{ end }}
     </div>
   {{ end }}

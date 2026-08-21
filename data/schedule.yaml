@@ -45,6 +45,7 @@ week:
     options:
       - type: "gym"
         workout: "functional"
+        exerciseRefs: ["burpee", "mountain_climber_func"]
         duration: 15
         description: "Functional 15-12-9: Burpee + Mountain Climber (no equipment), ~8-10 min"
         icon: "🔥"
