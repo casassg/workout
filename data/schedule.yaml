@@ -46,7 +46,7 @@ week:
       - type: "gym"
         workout: "functional"
         duration: 15
-        description: "Short functional circuit (15-12-9 beginner): pick 2 movements, ~8-10 min"
+        description: "Functional 15-12-9: Burpee + Mountain Climber (no equipment), ~8-10 min"
         icon: "🔥"
       - type: "rest"
         duration: 0
@@ -61,20 +61,10 @@ week:
     icon: "🏃"
 
   sunday:
-    type: "flexible"
-    duration: 20
-    description: "Active recovery - optional functional circuit (21-15-9)"
+    type: "rest"
+    duration: 0
+    description: "Rest day - active recovery (walking, stretching) encouraged"
     icon: "🧘"
-    options:
-      - type: "gym"
-        workout: "functional"
-        duration: 20
-        description: "Functional circuit (21-15-9): pick 2 exercises, ~8-10 min"
-        icon: "🔥"
-      - type: "rest"
-        duration: 0
-        description: "Light walk + stretching only"
-        icon: "🧘"
 
 # Alternation tracking
 alternation:
