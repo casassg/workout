@@ -278,6 +278,43 @@
       return lines.join("\n");
     }
 
+    // Format description text: detect "Label: text" patterns, render as
+    // titled paragraphs. Falls back to plain whitespace-pre-line for
+    // unstructured text.
+    function formatDescription(text) {
+      // Split on lines that start with a known label followed by colon
+      var labels = /^(Setup|Execution|Key points|Tip|Note|Progression|Form check|Breathing|Variations|Scaling):\s*/im;
+      var lines = text.split("\n");
+      var sections = [];
+      var cur = null;
+      for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].trim();
+        if (!line) continue;
+        var m = line.match(labels);
+        if (m) {
+          cur = { label: m[1], body: line.slice(m[0].length) };
+          sections.push(cur);
+        } else if (cur) {
+          cur.body += (cur.body ? " " : "") + line;
+        } else {
+          // No label yet — plain paragraph
+          sections.push({ label: "", body: line });
+        }
+      }
+      if (!sections.length) return '<p class="text-sm text-muted">' + text + '</p>';
+      var out = "";
+      for (var j = 0; j < sections.length; j++) {
+        var s = sections[j];
+        if (s.label) {
+          out += '<div class="mb-3"><span class="text-xs font-semibold uppercase tracking-wide text-heading">' +
+            s.label + '</span><p class="text-sm text-muted mt-0.5 leading-relaxed">' + s.body + '</p></div>';
+        } else {
+          out += '<p class="text-sm text-muted mb-3 leading-relaxed">' + s.body + '</p>';
+        }
+      }
+      return out;
+    }
+
     function render() {
       var total = exercises.length;
       var clamped = Math.min(pos, total - 1);
@@ -360,11 +397,11 @@
       }
       html += '</div>';
 
-      // Description
+      // Description — format known labels (Setup/Execution/Key points) as sections
       if (ex.description) {
         html += '<div class="mt-6 border-t border-line pt-4">' +
           '<h3 class="text-xs font-semibold uppercase tracking-wide text-muted mb-2">How to perform</h3>' +
-          '<div class="text-sm text-muted whitespace-pre-line leading-relaxed">' + ex.description + '</div>' +
+          formatDescription(ex.description) +
         '</div>';
       }
 
