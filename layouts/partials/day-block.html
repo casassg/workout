@@ -46,8 +46,10 @@
   {{ range $day.options }}
     {{ $opt := . }}
     <div class="rounded-xl border border-line bg-surface p-4 mb-3">
-      <h4 class="font-semibold text-heading">{{ $opt.description }}</h4>
-      <p class="text-sm text-muted">{{ $opt.duration }} min</p>
+      {{ if ne $opt.type "gym" }}
+        <h4 class="font-semibold text-heading">{{ $opt.description }}</h4>
+        <p class="text-sm text-muted">{{ $opt.duration }} min</p>
+      {{ end }}
       {{ if eq $opt.type "run" }}
         {{ range where $site.Data.exercises.running.workouts "id" $opt.workout }}
           {{ partial "run-info.html" . }}
