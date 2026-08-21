@@ -1,24 +1,24 @@
 {{ define "main" }}
 <div data-today-page data-alt-anchor="2026-08-21">
-  <h1>Today</h1>
-  <p class="muted" id="today-date">{{ now.Format "Monday, January 2, 2006" }}</p>
+  <h1 class="text-2xl font-bold tracking-tight text-heading">Today</h1>
+  <p class="text-sm text-muted" id="today-date">{{ now.Format "Monday, January 2, 2006" }}</p>
   {{ $days := slice "monday" "tuesday" "wednesday" "thursday" "friday" "saturday" "sunday" }}
   {{ range $days }}
     {{ $key := . }}
     {{ $day := index $.Site.Data.schedule.week $key }}
     {{ if $day.alternateWeekly }}
-      <section class="day" data-day="{{ $key }}" data-alt-week="a" hidden>
-        <h2 class="day-heading">{{ title $key }} · Week A</h2>
+      <section class="day mt-5" data-day="{{ $key }}" data-alt-week="a" hidden>
+        <h2 class="day-heading hidden mb-2 text-sm font-semibold uppercase tracking-wide text-muted">{{ title $key }} · Week A</h2>
         {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
       </section>
-      <section class="day" data-day="{{ $key }}" data-alt-week="b" hidden>
-        <h2 class="day-heading">{{ title $key }} · Week B</h2>
+      <section class="day mt-5" data-day="{{ $key }}" data-alt-week="b" hidden>
+        <h2 class="day-heading hidden mb-2 text-sm font-semibold uppercase tracking-wide text-muted">{{ title $key }} · Week B</h2>
         {{ $alt := merge $day (dict "workout" $day.alternateWeekly) }}
         {{ partial "day-block.html" (dict "day" $alt "site" $.Site) }}
       </section>
     {{ else }}
-      <section class="day" data-day="{{ $key }}" hidden>
-        <h2 class="day-heading">{{ title $key }}</h2>
+      <section class="day mt-5" data-day="{{ $key }}" hidden>
+        <h2 class="day-heading hidden mb-2 text-sm font-semibold uppercase tracking-wide text-muted">{{ title $key }}</h2>
         {{ partial "day-block.html" (dict "day" $day "site" $.Site) }}
       </section>
     {{ end }}

@@ -1,132 +1,66 @@
+@import "tailwindcss";
+
+@source "../../layouts";
+@source "../../content";
+
+/* Palette: dark-first, light via prefers-color-scheme. */
+@theme inline {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-body: var(--text-color);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-green: var(--green);
+  --color-orange: var(--orange);
+}
+
 :root {
   --bg: #0f1115;
-  --card: #171a21;
-  --card-2: #1e222b;
-  --text: #e8eaed;
+  --surface: #171a21;
+  --surface-2: #1e222b;
+  --text-color: #e8eaed;
+  --heading: #ffffff;
   --muted: #99a1ad;
+  --line: #262b35;
   --accent: #4c8dff;
-  --border: #262b35;
   --green: #34d399;
   --orange: #fbbf24;
 }
+
 @media (prefers-color-scheme: light) {
   :root {
     --bg: #f6f7f9;
-    --card: #ffffff;
-    --card-2: #eef0f4;
-    --text: #1a1d23;
+    --surface: #ffffff;
+    --surface-2: #eef0f4;
+    --text-color: #1a1d23;
+    --heading: #111318;
     --muted: #5b6472;
+    --line: #e2e5ea;
     --accent: #2563eb;
-    --border: #e2e5ea;
     --green: #059669;
     --orange: #d97706;
   }
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 17px;
-  line-height: 1.55;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  -webkit-text-size-adjust: 100%;
-}
-
-main { flex: 1; width: 100%; max-width: 44rem; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
-
-header {
-  position: sticky; top: 0; z-index: 10;
-  background: var(--card); border-bottom: 1px solid var(--border);
-}
-header .inner {
-  max-width: 44rem; margin: 0 auto; padding: 0 0.75rem;
-  display: flex; align-items: center; justify-content: space-between; min-height: 3.25rem;
-}
-header .logo { font-weight: 700; text-decoration: none; color: var(--text); font-size: 1.05rem; }
-header nav { display: flex; gap: 0.15rem; }
-header nav a {
-  color: var(--muted); text-decoration: none; padding: 0.55rem 0.7rem;
-  border-radius: 0.75rem; font-size: 0.9rem; min-height: 44px;
-  display: flex; align-items: center; gap: 0.3rem;
-}
-header nav a:hover, header nav a.active { color: var(--text); background: var(--card-2); }
-
-h1 { font-size: 1.7rem; margin-bottom: 0.25rem; letter-spacing: -0.02em; }
-h2 { font-size: 1.15rem; margin: 1.5rem 0 0.6rem; }
-h3 { font-size: 1.05rem; }
-p.meta, .muted { color: var(--muted); font-size: 0.9rem; }
-
-.card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 1rem; padding: 1rem 1.1rem; margin-bottom: 0.8rem;
-}
-.card-head { display: flex; justify-content: space-between; gap: 0.75rem; align-items: flex-start; }
-.card-head > div { min-width: 0; }
-.card-head h3, .card-head h4 { margin: 0; font-size: 1.05rem; overflow-wrap: break-word; }
-.badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
-.badge {
-  font-size: 0.72rem; padding: 0.18rem 0.55rem; border-radius: 999px;
-  background: var(--card-2); color: var(--muted);
-}
-.badge.run { color: var(--green); }
-.badge.gym { color: var(--accent); }
-.badge.rest { color: var(--orange); }
-.set-reps { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; font-size: 1.05rem; }
-.notes { color: var(--muted); font-size: 0.88rem; margin-top: 0.4rem; }
-.desc { margin-top: 0.5rem; font-size: 0.92rem; color: var(--muted); white-space: pre-line; }
-.note {
-  background: var(--card-2); border-radius: 0.6rem; padding: 0.6rem 0.75rem;
-  font-size: 0.88rem; color: var(--muted); margin-top: 0.5rem;
-}
-details { margin-top: 0.6rem; }
-summary { cursor: pointer; color: var(--accent); font-size: 0.88rem; padding: 0.35rem 0; min-height: 30px; }
-details .desc { margin-top: 0.5rem; }
-.alt { padding: 0.6rem; border-left: 2px solid var(--border); margin-top: 0.5rem; }
-.alt strong { font-size: 0.92rem; }
-ul.tips { margin: 0.5rem 0 0 1.1rem; color: var(--muted); font-size: 0.92rem; }
-
-.exercise-img {
-  display: block; width: 100%; max-width: 20rem; border-radius: 0.75rem;
-  margin-top: 0.6rem; background: #fff;
-}
-
-.day-summary { display: flex; align-items: center; gap: 0.9rem; }
-.day-summary .icon { font-size: 1.9rem; }
-.day-summary > div { min-width: 0; }
-.day-summary .meta { margin-left: auto; text-align: right; }
-
-/* Today page: per-day sections stay hidden until JS (or noscript) reveals them */
-section.day { margin-bottom: 1.25rem; }
-section.day[hidden] { display: none; }
-.day-heading { display: none; }
-
-/* Set checkoff */
-.sets-row { display: flex; gap: 0.6rem; margin-top: 0.7rem; }
+/* ---- Set checkoff ---- */
 .set-check {
   appearance: none; -webkit-appearance: none;
-  width: 2.2rem; height: 2.2rem; border-radius: 0.6rem;
-  border: 1.5px solid var(--border); background: var(--card-2);
+  width: 2.75rem; height: 2.75rem; border-radius: 0.5rem;
+  border: 1.5px solid var(--line); background: var(--surface-2);
   cursor: pointer; display: grid; place-content: center;
+  transition: background 0.15s, border-color 0.15s;
 }
 .set-check:checked { background: var(--green); border-color: var(--green); }
-.set-check:checked::before { content: "✓"; color: #fff; font-size: 1.1rem; font-weight: 700; }
+.set-check:checked::before { content: "\2713"; color: #fff; font-size: 1.1rem; font-weight: 700; }
 
-/* Export day as text */
-.export-btn {
-  display: block; width: 100%; margin-top: 1rem; padding: 0.7rem;
-  border: 1px solid var(--border); border-radius: 0.75rem;
-  background: var(--card); color: var(--muted);
-  font: inherit; font-size: 0.9rem; cursor: pointer;
+/* ---- Focus mode overlay ---- */
+.focus-overlay {
+  position: fixed; inset: 0; z-index: 100;
+  background: var(--bg); overflow-y: auto;
+  display: flex; flex-direction: column;
 }
-.export-btn:hover { color: var(--text); background: var(--card-2); }
-
-/* Week page */
-.week-card.is-today { border-color: var(--accent); }
-.week-detail { margin-top: 0.75rem; }
-
-footer { background: var(--card); border-top: 1px solid var(--border); padding: 0.9rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+.focus-overlay[hidden] { display: none; }
