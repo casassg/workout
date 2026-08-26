@@ -394,36 +394,53 @@
           ex.demo + '" alt="' + ex.name + '">';
       }
 
-      // Name + reps
+      // Name + unit selector
+      html += '<div class="flex flex-wrap items-center justify-center gap-2">';
       html += '<h2 class="text-xl font-bold text-heading text-center">' + ex.name + '</h2>';
+      if (ex.weight) {
+        html += '<div class="flex gap-1 rounded-lg bg-surface-2 p-1">' +
+          '<button type="button" data-unit="kg" class="rounded px-2 py-1 text-xs cursor-pointer' + (unit === "kg" ? ' bg-accent text-white' : ' text-muted') + '">kg</button>' +
+          '<button type="button" data-unit="lb" class="rounded px-2 py-1 text-xs cursor-pointer' + (unit === "lb" ? ' bg-accent text-white' : ' text-muted') + '">lb</button>' +
+        '</div>';
+      }
+      html += '</div>';
       html += '<p class="text-center text-muted tabular-nums mt-1">' +
         ex.sets + ' \u00d7 ' + ex.reps +
         (ex.weight ? ' \u00b7 ' + formatWeight(ex.weight, unit) : '') + '</p>';
 
-      // Set counter: [ - ]  2 / 4  [ + ]
-      html += '<div class="mt-6 flex items-center justify-center gap-4">';
-      html += '<button type="button" id="focus-sub-set" class="w-14 h-14 rounded-full border-2 border-line bg-surface-2 grid place-content-center text-2xl font-bold text-muted active:scale-95 transition-transform cursor-pointer' + (done <= 0 ? ' opacity-30 pointer-events-none' : '') + '">\u2212</button>';
-      if (allDone) {
-        html += '<div class="text-center min-w-[5rem]"><span class="text-4xl font-bold text-green">\u2713</span>' +
-          '<p class="text-sm text-green font-medium mt-1">' + done + ' / ' + ex.sets + '</p></div>';
-      } else {
-        html += '<div class="text-center min-w-[5rem]"><span class="text-4xl font-bold tabular-nums text-heading">' + done + '</span>' +
-          '<p class="text-sm text-muted mt-1">' + done + ' / ' + ex.sets + ' sets</p></div>';
+      if (done) {
+        var loggedWeights = state._w && state._w[ex.id];
+        html += '<div class="mt-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted mb-2">Completed</p>' +
+          '<div class="flex flex-wrap gap-2">';
+        for (var s = 0; s < ex.sets; s++) {
+          if (!state[ex.id] || !state[ex.id][s]) continue;
+          var loggedWeight = loggedWeights && Object.prototype.hasOwnProperty.call(loggedWeights, s)
+            ? loggedWeights[s] : ex.weight;
+          html += '<span class="rounded-lg bg-green/15 px-3 py-2 text-sm font-medium text-green tabular-nums">Set ' + (s + 1) +
+            (ex.weight ? ' \u00b7 ' + formatWeight(loggedWeight, unit) : '') + ' \u2713</span>';
+        }
+        html += '</div></div>';
       }
-      html += '<button type="button" id="focus-add-set" class="w-14 h-14 rounded-full border-2 border-accent bg-accent/10 grid place-content-center text-2xl font-bold text-accent active:scale-95 transition-transform cursor-pointer' + (allDone ? ' opacity-30 pointer-events-none' : '') + '">+</button>';
-      html += '</div>';
 
-      if (ex.weight) {
-        var weight = currentWeight(ex);
-        html += '<div class="mt-4 flex items-center justify-center gap-2">' +
-          '<button type="button" id="focus-sub-weight" class="min-h-11 min-w-11 rounded-lg bg-surface-2 text-xl font-bold text-muted cursor-pointer">\u2212</button>' +
-          '<span class="min-w-24 text-center font-semibold tabular-nums text-heading">' + formatWeight(weight, unit) + '</span>' +
-          '<button type="button" id="focus-add-weight" class="min-h-11 min-w-11 rounded-lg bg-surface-2 text-xl font-bold text-muted cursor-pointer">+</button>' +
-          '<div class="flex gap-1 rounded-lg bg-surface-2 p-1">' +
-            '<button type="button" data-unit="kg" class="rounded px-2 py-1 text-xs cursor-pointer' + (unit === "kg" ? ' bg-accent text-white' : ' text-muted') + '">kg</button>' +
-            '<button type="button" data-unit="lb" class="rounded px-2 py-1 text-xs cursor-pointer' + (unit === "lb" ? ' bg-accent text-white' : ' text-muted') + '">lb</button>' +
-          '</div>' +
-        '</div>';
+      if (allDone) {
+        html += '<p class="mt-6 text-center font-semibold text-green">All ' + ex.sets + ' sets logged \u2713</p>';
+      } else {
+        html += '<div class="mt-6 rounded-xl border border-line bg-surface-2 p-4">' +
+          '<p class="text-center text-sm font-medium text-muted">Set ' + (done + 1) + ' of ' + ex.sets + '</p>';
+        if (ex.weight) {
+          var weight = currentWeight(ex);
+          html += '<p class="mt-4 text-center text-xs font-semibold uppercase tracking-wide text-muted">Working weight</p>' +
+            '<div class="mt-2 flex items-center justify-center gap-4">' +
+              '<button type="button" id="focus-sub-weight" aria-label="Decrease weight" class="min-h-11 min-w-11 rounded-lg bg-surface text-xl font-bold text-muted cursor-pointer">\u2212</button>' +
+              '<span class="min-w-28 text-center text-xl font-semibold tabular-nums text-heading">' + formatWeight(weight, unit) + '</span>' +
+              '<button type="button" id="focus-add-weight" aria-label="Increase weight" class="min-h-11 min-w-11 rounded-lg bg-surface text-xl font-bold text-muted cursor-pointer">+</button>' +
+            '</div>';
+        }
+        html += '<button type="button" id="focus-log-set" class="mt-4 w-full rounded-xl bg-accent px-4 py-3 font-semibold text-white min-h-11 cursor-pointer">Log set</button>' +
+          '</div>';
+      }
+      if (done) {
+        html += '<button type="button" id="focus-undo-set" class="mt-3 w-full py-2 text-sm font-medium text-muted cursor-pointer hover:text-heading">Undo last set</button>';
       }
 
       // Rest timer
@@ -444,8 +461,8 @@
       // Update timer display if it's still running from previous exercise
       updateTimerDisplay();
 
-      // Wire + / - buttons
-      var addBtn = document.getElementById("focus-add-set");
+      // Wire set actions
+      var addBtn = document.getElementById("focus-log-set");
       if (addBtn) {
         addBtn.addEventListener("click", function () {
           addSet(ex.id, ex.sets);
@@ -466,7 +483,7 @@
           }
         });
       }
-      var subBtn = document.getElementById("focus-sub-set");
+      var subBtn = document.getElementById("focus-undo-set");
       if (subBtn) {
         subBtn.addEventListener("click", function () {
           undoSet(ex.id, ex.sets);
