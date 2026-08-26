@@ -12,7 +12,7 @@
   }
 
   function formatWeight(kg, unit) {
-    return unit === "lb" ? toLb(kg).toFixed(1) + " lb" : formatKg(kg) + " kg";
+    return unit === "lb" ? String(Math.round(toLb(kg) / 2.5) * 2.5) + " lb" : formatKg(kg) + " kg";
   }
 
   function altWeek(anchorISO) {
