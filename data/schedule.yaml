@@ -38,21 +38,13 @@ week:
     icon: "🧘"
 
   friday:
-    type: "flexible"
-    duration: 15
-    description: "Skipped morning gym - optional short functional circuit in the afternoon"
-    icon: "🔥"
-    options:
-      - type: "gym"
-        workout: "functional"
-        exerciseRefs: ["burpee", "mountain_climber_func"]
-        duration: 15
-        description: "Functional 15-12-9: Burpee + Mountain Climber (no equipment), ~8-10 min"
-        icon: "🔥"
-      - type: "rest"
-        duration: 0
-        description: "Rest only (recover; push carries to next week)"
-        icon: "🧘"
+    type: "gym"
+    workout: "push"
+    alternateWeekly: "legs"
+    duration: 60
+    description: "Push or Legs (alternates weekly). No afternoon run"
+    icon: "🏋️"
+    includeAbs: true
 
   saturday:
     type: "run"
