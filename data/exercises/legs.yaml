@@ -163,12 +163,12 @@ exercises:
   reps: 10 each leg
   startingWeight: 0
   notes: Single leg = double intensity; no barbell needed
-  description: 'Setup: Stand on one foot on edge of step, heel hanging off. Hold
-    wall or rack for balance. Other foot lifted behind you.
+  description: 'Setup: Stand on one foot on edge of step, heel hanging off. Hold wall
+    or rack for balance. Other foot lifted behind you.
 
 
-    Execution: Lower heel below step level for full stretch. Rise up as high as
-    possible onto toe. Hold and squeeze. Lower slowly with control.
+    Execution: Lower heel below step level for full stretch. Rise up as high as possible
+    onto toe. Hold and squeeze. Lower slowly with control.
 
 
     Key points: Single leg means double the intensity. Full range of motion - both
@@ -181,18 +181,18 @@ exercises:
   - id: standing_calf_raise
     name: Standing Calf Raise
     equipment: Barbell or Bodyweight
-    description: 'Setup: Stand on edge of step or weight plate with heels hanging off.
-      Hold barbell on back, dumbbells at sides, or use bodyweight. Start with heels
-      dropped below the step.
+    description: 'Setup: Stand on edge of step or weight plate with heels hanging
+      off. Hold barbell on back, dumbbells at sides, or use bodyweight. Start with
+      heels dropped below the step.
 
 
       Execution: Rise up onto toes as high as possible, squeezing calves hard at top.
       Hold 1-2 seconds. Lower slowly until heels drop below step level for full stretch.
 
 
-      Key points: Full range of motion is crucial for calves. Don''t bounce. Pause at
-      both top and bottom. Go slow - calves respond to time under tension. Keep legs
-      straight (slight knee bend OK).
+      Key points: Full range of motion is crucial for calves. Don''t bounce. Pause
+      at both top and bottom. Go slow - calves respond to time under tension. Keep
+      legs straight (slight knee bend OK).
 
       '
   - id: seated_calf_raise
@@ -211,7 +211,6 @@ exercises:
       for calves.
 
       '
-  demo: exercises/0999-9JprnPh.gif
 - id: lunges
   name: Walking Lunges
   muscle: Quads, Glutes

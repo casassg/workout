@@ -20,7 +20,7 @@ week:
   tuesday:
     type: "rest"
     duration: 0
-    description: "Rest day - recovering from a cold (easy run paused until recovered)"
+    description: "Rest day - easy walk / active recovery"
     icon: "🧘"
 
   wednesday:
@@ -34,7 +34,7 @@ week:
   thursday:
     type: "rest"
     duration: 0
-    description: "Rest day - recovering from a cold (tempo run paused until recovered)"
+    description: "Rest day - active recovery before tempo run Friday-week"
     icon: "🧘"
 
   friday:

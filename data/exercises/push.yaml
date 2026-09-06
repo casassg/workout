@@ -127,17 +127,17 @@ exercises:
   reps: 10
   startingWeight: 32.22
   notes: Isolation movement for chest squeeze
-  description: 'Setup: Adjust seat so handles are at chest height. Sit with back
-    flat against pad. Place forearms against pads (or grip handles, depending on
-    machine type).
+  description: 'Setup: Adjust seat so handles are at chest height. Sit with back flat
+    against pad. Place forearms against pads (or grip handles, depending on machine
+    type).
 
 
-    Execution: Bring arms together in front of chest, squeezing pecs hard. Hold
-    contraction briefly. Return slowly to starting position, feeling chest stretch.
+    Execution: Bring arms together in front of chest, squeezing pecs hard. Hold contraction
+    briefly. Return slowly to starting position, feeling chest stretch.
 
 
-    Key points: Don''t let shoulders roll forward. Keep slight bend in elbows if
-    using handles. Control the weight - don''t let it slam back. Excellent for isolating
+    Key points: Don''t let shoulders roll forward. Keep slight bend in elbows if using
+    handles. Control the weight - don''t let it slam back. Excellent for isolating
     chest without balance concerns.
 
     '
@@ -164,12 +164,12 @@ exercises:
     name: Cable Fly
     equipment: Dual Adjustable Pulley
     description: 'Setup: Set both pulleys to shoulder height or slightly above. Grab
-      handles and step forward into a staggered stance. Start with arms out wide, slight
-      bend in elbows.
+      handles and step forward into a staggered stance. Start with arms out wide,
+      slight bend in elbows.
 
 
-      Execution: Bring hands together in a hugging motion, squeezing chest hard at the
-      center. Slowly return to start, feeling the stretch across your chest.
+      Execution: Bring hands together in a hugging motion, squeezing chest hard at
+      the center. Slowly return to start, feeling the stretch across your chest.
 
 
       Key points: Keep the same bend in your elbows throughout - this isn''t a pressing
@@ -244,26 +244,26 @@ exercises:
   reps: 10
   startingWeight: 13.84
   notes: Builds shoulder width
-  description: 'Setup: Stand with feet shoulder-width apart, dumbbells at sides
-    with slight bend in elbows. Palms face your body.
+  description: 'Setup: Stand with feet shoulder-width apart, dumbbells at sides with
+    slight bend in elbows. Palms face your body.
 
 
     Execution: Raise arms out to sides until parallel with floor (or slightly above).
     Lead with elbows, not hands. Lower slowly with control.
 
 
-    Key points: Slight forward lean helps target side delts. Don''t swing or use
-    momentum. Think "pour water from a pitcher" at top - pinky slightly higher than
-    thumb. Light weight, high reps.
+    Key points: Slight forward lean helps target side delts. Don''t swing or use momentum.
+    Think "pour water from a pitcher" at top - pinky slightly higher than thumb. Light
+    weight, high reps.
 
     '
   alternatives:
   - id: lateral_raise_cable
     name: Cable Lateral Raise
     equipment: Dual Adjustable Pulley
-    description: 'Setup: Set pulley to lowest position. Stand sideways to machine, grab
-      handle with far hand (cable crosses in front of body). Slight bend in elbow, locked
-      in place.
+    description: 'Setup: Set pulley to lowest position. Stand sideways to machine,
+      grab handle with far hand (cable crosses in front of body). Slight bend in elbow,
+      locked in place.
 
 
       Execution: Raise arm out to the side until parallel with floor or slightly above.
@@ -271,76 +271,49 @@ exercises:
 
 
       Key points: Keep slight forward lean to target side delt better. Don''t swing
-      or use momentum. Think about pouring water from a pitcher at the top. Pinky slightly
-      higher than thumb.
+      or use momentum. Think about pouring water from a pitcher at the top. Pinky
+      slightly higher than thumb.
 
       '
     demo: exercises/0178-goJ6ezq.gif
   demo: exercises/0334-DsgkuIt.gif
-- id: face_pull
-  name: Face Pull
-  muscle: Rear Delts
+- id: cable_crossover
+  name: Cable Crossover
+  muscle: Chest
   equipment: Dual Adjustable Pulley
-  sets: 4
+  sets: 2
   reps: 10
-  startingWeight: 16.34
-  notes: Essential for shoulder health and posture
-  description: 'Setup: Set cable to face height with rope attachment. Grip rope with
-    thumbs pointing back toward you. Step back to create tension, arms extended.
+  startingWeight: 12.5
+  notes: Chest stretch work - pairs with pec deck (squeeze) for full development
+  description: 'Setup: Set both pulleys slightly above shoulder height. Grab a handle
+    in each hand, step forward into a staggered stance, arms out wide with slight
+    bend in elbows.
 
+    Execution: Sweep hands down and together in front of your body, crossing slightly
+    past midline for a full squeeze. Return slowly to the wide stretch position.
 
-    Execution: Pull rope toward your face, separating hands as you pull. Aim to bring
-    hands beside your ears. Squeeze shoulder blades together and externally rotate
-    (thumbs pointing back).
-
-
-    Key points: This is a rear delt AND rotator cuff exercise. Pull apart, not just
-    back. Hold the squeeze for a second. Don''t let your elbows drop - keep them high.
-    Light weight, high reps.
-
-    '
+    Key points: This is a stretch-focused fly - feel the pecs lengthen at the start
+    of each rep. Keep elbow bend constant. Light-to-moderate weight, controlled negatives.
+    Place after pec deck: squeeze first, stretch second. '
   alternatives:
-  - id: rear_delt_fly
-    name: Rear Delt Fly
-    equipment: Dumbbells
-    description: 'Setup: Bend at hips until torso is nearly parallel to floor (or
-      sit on bench and lean forward). Hold dumbbells hanging below chest with slight
-      elbow bend.
+  - id: dumbbell_pull_over
+    name: Dumbbell Pullover
+    equipment: Dumbbell + Bench
+    description: 'Setup: Lie across a flat bench (shoulders on it, feet planted),
+      holding one dumbbell with both hands above your chest.
 
+      Execution: Lower the dumbbell in an arc back over your head until you feel a
+      deep stretch in chest and lats. Pull it back over your chest with slightly bent
+      elbows.
 
-      Execution: Raise dumbbells out to sides, leading with elbows. Squeeze rear delts
-      at top. Lower slowly with control.
-
-
-      Key points: Keep torso stable - don''t swing up. Slight bend in elbows stays
-      constant. Focus on rear delts, not traps. Light weight, higher reps. Great for
-      posture and shoulder health.
-
-      '
-    demo: exercises/0075-Ln9iTbU.gif
-  - id: reverse_cable_fly
-    name: Reverse Cable Fly
-    equipment: Dual Adjustable Pulley
-    description: 'Setup: Set cables to shoulder height. Stand between cables, grab
-      left handle with right hand and right handle with left (cables cross). Step
-      back to create tension.
-
-
-      Execution: Pull hands apart and back, squeezing rear delts and upper back. Hold
-      contraction briefly. Return slowly with control.
-
-
-      Key points: Keep slight bend in elbows. Squeeze shoulder blades together at
-      contraction. Constant cable tension is excellent for rear delt development.
-      Don''t use momentum.
-
-      '
-  demo: exercises/0202-yUdIGNs.gif
+      Key points: Keep hips low, core braced. Light weight - the stretch position
+      is demanding. Works chest and lats together. '
+    demo: exercises/0375-9XjtHvS.gif
 - id: tricep_pushdown
   name: Tricep Pushdown
   muscle: Triceps
   equipment: Dual Adjustable Pulley
-  sets: 3
+  sets: 2
   reps: 10
   startingWeight: 15.67
   notes: Classic tricep isolation

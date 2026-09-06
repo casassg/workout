@@ -259,63 +259,6 @@ exercises:
       '
     demo: exercises/0447-6TG6x2w.gif
   demo: exercises/0031-25GPyDY.gif
-- id: incline_dumbbell_curl
-  name: Incline Dumbbell Curl
-  muscle: Biceps (Long Head)
-  equipment: Dumbbells + Incline Bench
-  sets: 3
-  reps: 10
-  startingWeight: 9.4
-  notes: Maximum bicep stretch for long head
-  description: 'Setup: Set bench to 45-60° incline. Sit back with dumbbells hanging
-    straight down at sides. Palms face forward. Let arms hang fully extended.
-
-
-    Execution: Curl dumbbells up toward shoulders, keeping upper arms still. Squeeze
-    at top. Lower slowly, feeling the stretch at bottom when arms are fully extended.
-
-
-    Key points: The incline puts your biceps in a stretched position - that''s the
-    point. Don''t lift upper arms. Get a FULL stretch at bottom. Use lighter weight
-    than standing curls.
-
-    '
-  alternatives:
-  - id: standing_dumbbell_curl
-    name: Standing Dumbbell Curl
-    equipment: Dumbbells
-    description: 'Setup: Stand with feet shoulder-width apart. Hold dumbbells at sides
-      with palms facing forward (supinated grip).
-
-
-      Execution: Curl dumbbells up toward shoulders, keeping upper arms still. Squeeze
-      at top. Lower slowly with control.
-
-
-      Key points: Can alternate arms or do both together. Keep elbows pinned to sides.
-      Don''t swing or use momentum. Allows natural wrist rotation if you start with
-      neutral grip and supinate as you curl.
-
-      '
-    demo: exercises/0285-BU15nH4.gif
-  - id: preacher_curl
-    name: Preacher Curl
-    equipment: Preacher Bench + Barbell/Dumbbells
-    description: 'Setup: Sit at preacher bench with armpits at top of pad. Arms rest
-      on pad, extended down. Grip barbell or dumbbells with underhand grip.
-
-
-      Execution: Curl weight up toward shoulders. Squeeze biceps at top. Lower slowly,
-      stopping just before full extension (don''t hyperextend elbows).
-
-
-      Key points: The pad eliminates cheating - pure bicep isolation. Don''t let elbows
-      flare off pad. Control the negative especially. Great for strict form and bicep
-      peak development.
-
-      '
-    demo: exercises/0070-qOgPVf6.gif
-  demo: exercises/0318-ae9UoXQ.gif
 - id: hammer_curl
   name: Hammer Curl
   muscle: Biceps, Brachialis
@@ -370,3 +313,95 @@ exercises:
 
       '
   demo: exercises/0313-slDvUAU.gif
+- id: face_pull
+  name: Face Pull
+  muscle: Rear Delts
+  equipment: Dual Adjustable Pulley
+  sets: 4
+  reps: 10
+  startingWeight: 16.34
+  notes: Essential for shoulder health and posture
+  description: 'Setup: Set cable to face height with rope attachment. Grip rope with
+    thumbs pointing back toward you. Step back to create tension, arms extended.
+
+
+    Execution: Pull rope toward your face, separating hands as you pull. Aim to bring
+    hands beside your ears. Squeeze shoulder blades together and externally rotate
+    (thumbs pointing back).
+
+
+    Key points: This is a rear delt AND rotator cuff exercise. Pull apart, not just
+    back. Hold the squeeze for a second. Don''t let your elbows drop - keep them high.
+    Light weight, high reps.
+
+    '
+  alternatives:
+  - id: rear_delt_fly
+    name: Rear Delt Fly
+    equipment: Dumbbells
+    description: 'Setup: Bend at hips until torso is nearly parallel to floor (or
+      sit on bench and lean forward). Hold dumbbells hanging below chest with slight
+      elbow bend.
+
+
+      Execution: Raise dumbbells out to sides, leading with elbows. Squeeze rear delts
+      at top. Lower slowly with control.
+
+
+      Key points: Keep torso stable - don''t swing up. Slight bend in elbows stays
+      constant. Focus on rear delts, not traps. Light weight, higher reps. Great for
+      posture and shoulder health.
+
+      '
+    demo: exercises/0075-Ln9iTbU.gif
+  - id: reverse_cable_fly
+    name: Reverse Cable Fly
+    equipment: Dual Adjustable Pulley
+    description: 'Setup: Set cables to shoulder height. Stand between cables, grab
+      left handle with right hand and right handle with left (cables cross). Step
+      back to create tension.
+
+
+      Execution: Pull hands apart and back, squeezing rear delts and upper back. Hold
+      contraction briefly. Return slowly with control.
+
+
+      Key points: Keep slight bend in elbows. Squeeze shoulder blades together at
+      contraction. Constant cable tension is excellent for rear delt development.
+      Don''t use momentum.
+
+      '
+  demo: exercises/0202-yUdIGNs.gif
+- id: dumbbell_lateral_raise
+  name: Dumbbell Lateral Raise
+  muscle: Side Delts
+  equipment: Dumbbells
+  sets: 3
+  reps: 12
+  startingWeight: 11.35
+  notes: Second weekly delt session - light, strict form, no momentum
+  description: 'Setup: Stand with feet shoulder-width apart, dumbbells at sides with
+    slight bend in elbows. Palms face your body.
+
+    Execution: Raise arms out to sides until parallel with floor. Lead with elbows,
+    not hands. Lower slowly with control.
+
+    Key points: On pull day keep it LIGHT and strict - the delts already worked Monday,
+    so this is frequency volume, not max load. No swinging. Think "pour water" at
+    the top - pinky slightly higher than thumb. '
+  alternatives:
+  - id: lateral_raise_cable
+    name: Cable Lateral Raise
+    equipment: Dual Adjustable Pulley
+    description: 'Setup: Set pulley to lowest position. Stand sideways to machine,
+      grab handle with far hand (cable crosses in front of body). Slight bend in elbow,
+      locked in place.
+
+      Execution: Raise arm out to the side until parallel with floor or slightly above.
+      Lead with your elbow, not your hand. Lower slowly under control.
+
+      Key points: Keep slight forward lean to target side delt better. Don''t swing
+      or use momentum. Light weight, strict form - this is frequency work on pull
+      day. '
+    demo: exercises/0178-goJ6ezq.gif
+  demo: exercises/0334-DsgkuIt.gif
