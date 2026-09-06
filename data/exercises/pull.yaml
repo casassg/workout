@@ -202,44 +202,50 @@ exercises:
       '
     demo: exercises/0375-9XjtHvS.gif
   demo: exercises/0238-x69MAlq.gif
-- id: barbell_curl
-  name: Barbell Curl
+- id: standing_dumbbell_curl
+  name: Standing Dumbbell Curl
   muscle: Biceps
-  equipment: Barbell
+  equipment: Dumbbells
   sets: 3
   reps: 10
   startingWeight: 18.4
-  notes: Classic bicep mass builder
-  description: 'Setup: Stand with feet shoulder-width apart. Grip barbell with underhand
-    grip, hands shoulder-width. Arms hang straight down, bar at thighs.
+  notes: Classic bicep mass builder - supinate as you curl
+  description: 'Setup: Stand with feet shoulder-width apart. Hold a dumbbell in each
+    hand at sides, palms facing your body (neutral grip). Arms hang straight down.
 
-
-    Execution: Keeping upper arms pinned to sides, curl bar up toward shoulders. Squeeze
-    biceps at top. Lower slowly under control, resisting gravity.
-
+    Execution: Curl both dumbbells up toward shoulders, rotating your palms outward
+    (supinating) as you rise, so palms face up at the top. Squeeze biceps at top.
+    Lower slowly under control, resisting gravity, rotating back to neutral.
 
     Key points: Upper arms should NOT move - no swinging! Keep elbows at your sides
-    throughout. Don''t lean back. If you have to swing, the weight is too heavy. Control
-    the negative.
-
-    '
+    throughout. Don''t lean back. The supination rotation adds a full bicep contraction
+    the barbell can''t. Control the negative. '
   alternatives:
+  - id: barbell_curl
+    name: Barbell Curl
+    equipment: Barbell
+    description: 'Setup: Stand with feet shoulder-width apart. Grip barbell with underhand
+      grip, hands shoulder-width. Arms hang straight down, bar at thighs.
+
+      Execution: Keeping upper arms pinned to sides, curl bar up toward shoulders.
+      Squeeze biceps at top. Lower slowly under control, resisting gravity.
+
+      Key points: Upper arms should NOT move - no swinging! Keep elbows at your sides
+      throughout. Don''t lean back. If you have to swing, the weight is too heavy.
+      Control the negative. '
+    demo: exercises/0031-25GPyDY.gif
   - id: cable_curl
     name: Cable Curl
     equipment: Dual Adjustable Pulley
     description: 'Setup: Attach straight bar or EZ bar to low pulley. Stand facing
       machine, grip bar with underhand grip, arms extended down.
 
-
       Execution: Keeping upper arms still, curl bar up toward shoulders. Squeeze biceps
       at top. Lower slowly with control.
 
-
       Key points: Constant cable tension throughout range of motion - no rest at bottom.
       Keep elbows pinned to sides. Don''t swing. Great for maintaining tension on
-      biceps.
-
-      '
+      biceps. '
     demo: exercises/0868-G08RZcQ.gif
   - id: ez_bar_curl
     name: EZ Bar Curl
@@ -247,18 +253,14 @@ exercises:
     description: 'Setup: Stand with feet shoulder-width apart. Grip EZ bar on the
       angled portions with underhand grip. Arms hang straight down.
 
-
       Execution: Keeping upper arms still, curl bar up toward shoulders. Squeeze biceps
       at top. Lower slowly with control.
 
-
       Key points: The angled grip is easier on wrists than straight bar. Keep elbows
       at sides. Don''t swing or lean back. Same principles as barbell curl with more
-      comfort.
-
-      '
+      comfort. '
     demo: exercises/0447-6TG6x2w.gif
-  demo: exercises/0031-25GPyDY.gif
+  demo: exercises/0285-BU15nH4.gif
 - id: hammer_curl
   name: Hammer Curl
   muscle: Biceps, Brachialis
