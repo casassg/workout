@@ -59,6 +59,7 @@ CURATED = {
     "incline barbell press": "barbell incline bench press",
     "dumbbell shoulder press": "dumbbell one arm shoulder press",
     "dumbbell lateral raise": "dumbbell lateral raise",
+    "cable crossover": "cable standing up straight crossovers",
     "rear delt fly": "barbell rear delt raise",
     "close-grip bench press": "barbell close-grip bench press",
     "skull crushers": "barbell lying triceps extension skull crusher",
