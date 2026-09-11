@@ -214,10 +214,10 @@ exercises:
 - id: lunges
   name: Walking Lunges
   muscle: Quads, Glutes
-  equipment: Dumbbells or Bodyweight
+  equipment: Dumbbells
   sets: 3
   reps: 10 each leg
-  startingWeight: 0
+  startingWeight: 9.07
   notes: Functional movement - great for runners
   description: 'Setup: Stand tall holding dumbbells at sides (or bodyweight). Feet
     together, core braced.
