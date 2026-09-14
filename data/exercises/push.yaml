@@ -277,39 +277,45 @@ exercises:
       '
     demo: exercises/0178-goJ6ezq.gif
   demo: exercises/0334-DsgkuIt.gif
-- id: cable_crossover
-  name: Cable Crossover
-  muscle: Chest
+- id: overhead_tricep_extension
+  name: Overhead Tricep Extension
+  muscle: Triceps
   equipment: Dual Adjustable Pulley
-  sets: 2
-  reps: 10
+  sets: 3
+  reps: 10-12
   startingWeight: 13.63
-  notes: Chest stretch work - pairs with pec deck (squeeze) for full development
-  description: 'Setup: Set both pulleys slightly above shoulder height. Grab a handle
-    in each hand, step forward into a staggered stance, arms out wide with slight
-    bend in elbows.
+  notes: Long-head tricep builder - pairs with pushdown for full tricep development
+  description: 'Setup: Set cable to low position with rope attachment. Face away from
+    the machine, grab the rope with both hands behind your head, elbows pointing up.
+    Step forward into a staggered stance, slight forward lean.
 
-    Execution: Sweep hands down and together in front of your body, crossing slightly
-    past midline for a full squeeze. Return slowly to the wide stretch position.
 
-    Key points: This is a stretch-focused fly - feel the pecs lengthen at the start
-    of each rep. Keep elbow bend constant. Light-to-moderate weight, controlled negatives.
-    Place after pec deck: squeeze first, stretch second. '
+    Execution: Keeping upper arms still and close to your head, extend forearms up
+    until arms are straight. Squeeze triceps hard at the top. Lower slowly back to
+    the start, feeling a deep stretch in the triceps.
+
+
+    Key points: Elbows stay tucked near your head throughout - this is what loads
+    the long head. Don''t let elbows flare out. Light-to-moderate weight, controlled
+    reps. The stretch at the bottom is the money position - don''t cut it short.
+
+    '
   alternatives:
-  - id: dumbbell_pull_over
-    name: Dumbbell Pullover
+  - id: dumbbell_overhead_extension
+    name: Dumbbell Overhead Extension
     equipment: Dumbbell + Bench
-    description: 'Setup: Lie across a flat bench (shoulders on it, feet planted),
-      holding one dumbbell with both hands above your chest.
+    description: 'Setup: Sit on a bench holding one dumbbell with both hands overhead,
+      arms extended. Keep elbows close to your head.
 
-      Execution: Lower the dumbbell in an arc back over your head until you feel a
-      deep stretch in chest and lats. Pull it back over your chest with slightly bent
-      elbows.
 
-      Key points: Keep hips low, core braced. Light weight - the stretch position
-      is demanding. Works chest and lats together. '
-    demo: exercises/0375-9XjtHvS.gif
-  demo: exercises/1269-UKWTJWR.gif
+      Execution: Lower the dumbbell behind your head by bending at the elbows, keeping
+      upper arms still. Extend back up until arms are straight. Squeeze at the top.
+
+
+      Key points: Keep elbows tucked in - don''t let them flare. Control the weight
+      on the way down. Great seated option when the cable station is busy.
+
+      '
 - id: tricep_pushdown
   name: Tricep Pushdown
   muscle: Triceps

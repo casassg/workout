@@ -40,9 +40,8 @@ week:
   friday:
     type: "gym"
     workout: "push"
-    alternateWeekly: "legs"
     duration: 60
-    description: "Push or Legs (alternates weekly). No afternoon run"
+    description: "Push (upper body focus, 2nd session of the week). No afternoon run"
     icon: "🏋️"
     includeAbs: true
 
@@ -58,11 +57,3 @@ week:
     duration: 0
     description: "Rest day - active recovery (walking, stretching) encouraged"
     icon: "🧘"
-
-# Alternation tracking
-alternation:
-  friday:
-    exercises:
-      - "push"
-      - "legs"
-    description: "Alternates between Push and Legs each week"
