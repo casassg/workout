@@ -33,6 +33,7 @@ CURATED = {
     "face pull": "cable rear delt row (stirrups)",
     "tricep pushdown": "cable pushdown",
     "overhead cable extension": "cable overhead triceps extension (rope attachment)",
+    "overhead tricep extension": "cable overhead triceps extension (rope attachment)",
     # Pull
     "lat pulldown": "cable pulldown",
     "seated cable row": "cable seated row",
@@ -69,6 +70,7 @@ CURATED = {
     "barbell row": "barbell bent over row",
     "single-arm dumbbell row": "dumbbell bent over row",
     "dumbbell pullover": "dumbbell pullover",
+    "dumbbell overhead extension": "dumbbell seated triceps extension",
     "ez bar curl": "ez barbell curl",
     "standing dumbbell curl": "dumbbell alternate biceps curl",
     "preacher curl": "barbell preacher curl",

@@ -1,4 +1,4 @@
-// Client-side day logic, Friday alternation, week reordering, focus mode.
+// Client-side day logic, week reordering, focus mode.
 (function () {
   var DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
   var UNIT_KEY = "workout:unit";
@@ -15,15 +15,6 @@
     return unit === "lb" ? String(Math.round(toLb(kg) / 2.5) * 2.5) + " lb" : formatKg(kg) + " kg";
   }
 
-  function altWeek(anchorISO) {
-    var p = anchorISO.split("-");
-    var anchor = Date.UTC(+p[0], p[1] - 1, +p[2], 12);
-    var now = new Date();
-    var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), 12);
-    var weeks = Math.floor((today - anchor) / (7 * 864e5));
-    return ((weeks % 2) + 2) % 2 === 0 ? "a" : "b";
-  }
-
   // --- Today page ---
   var todayPage = document.querySelector("[data-today-page]");
   if (todayPage) {
@@ -35,12 +26,8 @@
         weekday: "long", month: "long", day: "numeric", year: "numeric"
       });
     }
-    var week = altWeek(todayPage.getAttribute("data-alt-anchor"));
     document.querySelectorAll("[data-day]").forEach(function (sec) {
-      var match = sec.getAttribute("data-day") === dayKey;
-      var alt = sec.getAttribute("data-alt-week");
-      if (alt) match = match && alt === week;
-      sec.hidden = !match;
+      sec.hidden = sec.getAttribute("data-day") !== dayKey;
     });
     initToday(now);
   }
