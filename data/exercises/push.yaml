@@ -100,6 +100,7 @@ exercises:
       connection.
 
       '
+    demo: exercises/0171-tBWXbIT.gif
   - id: incline_barbell_press
     name: Incline Barbell Press
     equipment: Barbell + Incline Bench
@@ -178,6 +179,7 @@ exercises:
 
       '
     demo: exercises/1269-UKWTJWR.gif
+  demo: exercises/0596-v3xmPAR.gif
 - id: overhead_press
   name: Overhead Press
   muscle: Shoulders
@@ -218,6 +220,7 @@ exercises:
       heavy loads.
 
       '
+    demo: exercises/0603-67n3r98.gif
   - id: dumbbell_shoulder_press
     name: Dumbbell Shoulder Press
     equipment: Dumbbells
@@ -356,6 +359,7 @@ exercises:
       at bottom for extra contraction. Don''t lean over the weight. Control both directions.
 
       '
+    demo: exercises/0200-dU605di.gif
   - id: close_grip_bench
     name: Close-Grip Bench Press
     equipment: Barbell + Bench

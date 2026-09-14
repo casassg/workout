@@ -34,6 +34,9 @@ CURATED = {
     "tricep pushdown": "cable pushdown",
     "overhead cable extension": "cable overhead triceps extension (rope attachment)",
     "overhead tricep extension": "cable overhead triceps extension (rope attachment)",
+    "rope pushdown": "cable pushdown (with rope attachment)",
+    "incline cable fly": "cable incline fly",
+    "shoulder press machine": "lever shoulder press",
     # Pull
     "lat pulldown": "cable pulldown",
     "seated cable row": "cable seated row",
@@ -43,9 +46,11 @@ CURATED = {
     "incline dumbbell curl": "dumbbell incline curl",
     "hammer curl": "dumbbell hammer curl",
     # Legs
+    "pec deck machine": "lever seated fly",
     "leg extension": "lever leg extension",
     "leg curl": "lever lying leg curl",
     "standing calf raises": "barbell standing calf raise",
+    "single-leg calf raise": "single leg calf raise (on a dumbbell)",
     "walking lunges": "dumbbell lunge",
     # Abs
     "cable crunch": "cable kneeling crunch",
