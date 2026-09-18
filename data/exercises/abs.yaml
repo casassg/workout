@@ -2,46 +2,25 @@ category: Abs
 description: Core exercises - add to any workout day
 icon: 🎯
 exercises:
-- id: cable_crunch
-  name: Cable Crunch
+- id: crunches
+  name: Crunches
   muscle: Abs
-  equipment: Dual Adjustable Pulley
+  equipment: Bodyweight
   sets: 3
-  reps: 10
-  startingWeight: 27.01
-  notes: Weighted ab exercise for progression
-  description: 'Setup: Attach rope to high pulley. Kneel facing machine, grab rope
-    with both hands and hold at forehead/temples. Keep hands in place throughout.
-
-
-    Execution: Crunch DOWN by curling ribcage toward pelvis. Imagine trying to bring
-    your sternum to your belly button. Squeeze abs hard at bottom. Return to start
-    position slowly.
-
-
-    Key points: This is a crunch, not a bow - your hips should NOT move back. The
-    movement comes from your spine curling, not your whole body hinging. Keep hands
-    at head level. Focus on abs doing the work.
-
-    '
+  reps: 15
+  startingWeight: null
+  notes: 'Swapped from cable crunch (owner 2026-09-18: cable version loads his lower
+    back). Bodyweight crunches, add reps/ tempo for progression.'
+  description: Lie on back, knees bent, hands beside temples. Curl shoulder blades
+    off the floor by flexing the abs, exhale on the way up, lower slowly without relaxing
+    completely.
   alternatives:
-  - id: crunches
-    name: Crunches
-    equipment: Bodyweight
-    description: 'Setup: Lie on back with knees bent, feet flat on floor. Hands behind
-      head (don''t pull on neck) or crossed on chest.
-
-
-      Execution: Curl shoulders and upper back off floor by contracting abs. Focus
-      on bringing ribcage toward pelvis. Hold briefly at top. Lower slowly with control.
-
-
-      Key points: Small range of motion - don''t sit all the way up. Don''t pull on
-      your neck. Exhale as you crunch up. Keep lower back pressed into floor. Quality
-      over quantity.
-
-      '
-    demo: exercises/0274-TFqbd8t.gif
+  - id: cable_crunch
+    name: Cable Crunch
+    equipment: Dual Adjustable Pulley
+    description: 'Kneeling cable crunch with rope: strong ab loading but owner reports
+      lower-back strain; kept as reference only.'
+    demo: exercises/0175-WW95auq.gif
   - id: ab_wheel
     name: Ab Wheel Rollout
     equipment: Ab Wheel
@@ -59,7 +38,7 @@ exercises:
       Very challenging - one of the best ab exercises.
 
       '
-  demo: exercises/0175-WW95auq.gif
+  demo: exercises/0274-TFqbd8t.gif
 - id: lying_leg_raise
   name: Lying Leg Raise
   muscle: Lower Abs

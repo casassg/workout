@@ -120,29 +120,22 @@ exercises:
       '
     demo: exercises/0047-3TZduzM.gif
   demo: exercises/0314-ns0SIbU.gif
-- id: pec_deck
-  name: Pec Deck Machine
+- id: chest_press
+  name: Chest Press Machine
   muscle: Chest
   equipment: Machine
   sets: 3
   reps: 10
   startingWeight: 32.22
-  notes: Isolation movement for chest squeeze
-  description: 'Setup: Adjust seat so handles are at chest height. Sit with back flat
-    against pad. Place forearms against pads (or grip handles, depending on machine
-    type).
-
-
-    Execution: Bring arms together in front of chest, squeezing pecs hard. Hold contraction
-    briefly. Return slowly to starting position, feeling chest stretch.
-
-
-    Key points: Don''t let shoulders roll forward. Keep slight bend in elbows if using
-    handles. Control the weight - don''t let it slam back. Excellent for isolating
-    chest without balance concerns.
-
-    '
+  notes: Machine press; swap from pec deck (no pec deck at gym)
+  description: Seated machine chest press.
   alternatives:
+  - id: pec_deck
+    name: Pec Deck Machine
+    equipment: Machine
+    description: Fly-style chest isolation with pads; original pick before Gerard
+      found no pec deck machine at his gym.
+    demo: exercises/0596-v3xmPAR.gif
   - id: dumbbell_fly
     name: Dumbbell Fly
     equipment: Dumbbells + Bench
@@ -179,7 +172,7 @@ exercises:
 
       '
     demo: exercises/1269-UKWTJWR.gif
-  demo: exercises/0596-v3xmPAR.gif
+  demo: exercises/0576-DOoWcnA.gif
 - id: overhead_press
   name: Overhead Press
   muscle: Shoulders
