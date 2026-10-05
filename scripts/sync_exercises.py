@@ -93,6 +93,8 @@ CURATED = {
     "russian twist": "russian twist",
     "mountain climbers": "mountain climber",
     "push-up": "push-up",
+    # Posture
+    "glute bridge": "low glute bridge on floor",
     # Functional
     "thruster (dumbbell)": "kettlebell thruster",
     "kettlebell swing": "kettlebell swing",
