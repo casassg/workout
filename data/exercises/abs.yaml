@@ -105,6 +105,59 @@ exercises:
 
       '
   demo: exercises/0274-TFqbd8t.gif
+- id: reverse_crunch
+  name: Reverse Crunch
+  muscle: Lower Abs
+  equipment: Bench / Floor
+  sets: 3
+  reps: 10
+  startingWeight: 0
+  notes: Lower ab focus without hanging
+  description: 'Setup: Lie on back on floor or bench. Hands at sides (or grip bench behind head for stability). Lift legs
+    with knees bent at 90°, thighs vertical.
+
+
+    Execution: Curl hips up off floor/bench by contracting lower abs, bringing knees toward chest. Your tailbone should lift.
+    Lower slowly until hips touch again, keeping legs up.
+
+
+    Key points: Don''t swing legs - use abs to curl hips up. The movement is small but targeted. Think about tilting pelvis
+    toward ribcage. Keep upper back on surface. Control is key.
+
+    '
+  alternatives:
+  - id: knee_raise
+    name: Knee Raise
+    equipment: Bodyweight
+    description: 'Setup: Lie on back with legs extended, hands at sides or under lower back. Keep lower back pressed into
+      floor.
+
+
+      Execution: Bring knees toward chest by curling pelvis up. Squeeze lower abs at top. Lower legs back down slowly with
+      control, stopping just before feet touch ground.
+
+
+      Key points: Focus on tilting pelvis up, not just moving legs. Keep lower back pressed down. Easier than straight leg
+      raises but still effective. Control the negative.
+
+      '
+  - id: mountain_climbers
+    name: Mountain Climbers
+    equipment: Bodyweight
+    description: 'Setup: Start in push-up position - hands under shoulders, body in straight line from head to heels. Core
+      braced.
+
+
+      Execution: Drive one knee toward chest, then quickly switch legs as if running in place. Keep hips down and core tight
+      throughout.
+
+
+      Key points: Can go slow for ab focus or fast for cardio. Don''t let hips pike up or sag down. Keep shoulders over hands.
+      Great for lower abs and hip flexors while also building conditioning.
+
+      '
+    demo: exercises/0630-RJgzwny.gif
+  demo: exercises/0872-nCU1Ekp.gif
 - id: bird_dog
   name: Bird Dog
   muscle: Glutes, Core
@@ -172,59 +225,6 @@ exercises:
       '
     demo: exercises/0472-I3tsCnC.gif
   demo: exercises/0620-WhuFnR7.gif
-- id: reverse_crunch
-  name: Reverse Crunch
-  muscle: Lower Abs
-  equipment: Bench / Floor
-  sets: 3
-  reps: 10
-  startingWeight: 0
-  notes: Lower ab focus without hanging
-  description: 'Setup: Lie on back on floor or bench. Hands at sides (or grip bench behind head for stability). Lift legs
-    with knees bent at 90°, thighs vertical.
-
-
-    Execution: Curl hips up off floor/bench by contracting lower abs, bringing knees toward chest. Your tailbone should lift.
-    Lower slowly until hips touch again, keeping legs up.
-
-
-    Key points: Don''t swing legs - use abs to curl hips up. The movement is small but targeted. Think about tilting pelvis
-    toward ribcage. Keep upper back on surface. Control is key.
-
-    '
-  alternatives:
-  - id: knee_raise
-    name: Knee Raise
-    equipment: Bodyweight
-    description: 'Setup: Lie on back with legs extended, hands at sides or under lower back. Keep lower back pressed into
-      floor.
-
-
-      Execution: Bring knees toward chest by curling pelvis up. Squeeze lower abs at top. Lower legs back down slowly with
-      control, stopping just before feet touch ground.
-
-
-      Key points: Focus on tilting pelvis up, not just moving legs. Keep lower back pressed down. Easier than straight leg
-      raises but still effective. Control the negative.
-
-      '
-  - id: mountain_climbers
-    name: Mountain Climbers
-    equipment: Bodyweight
-    description: 'Setup: Start in push-up position - hands under shoulders, body in straight line from head to heels. Core
-      braced.
-
-
-      Execution: Drive one knee toward chest, then quickly switch legs as if running in place. Keep hips down and core tight
-      throughout.
-
-
-      Key points: Can go slow for ab focus or fast for cardio. Don''t let hips pike up or sag down. Keep shoulders over hands.
-      Great for lower abs and hip flexors while also building conditioning.
-
-      '
-    demo: exercises/0630-RJgzwny.gif
-  demo: exercises/0872-nCU1Ekp.gif
 - id: wood_chop
   name: Cable Wood Chop
   muscle: Obliques

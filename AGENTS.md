@@ -35,7 +35,7 @@ Deploy is automatic on push to `main`. CI fails if validation fails.
 | `workout` | gym: exercise category (`push`/`pull`/`legs`/`abs`/`functional`); run: running workout `id` |
 | `duration` | minutes (0 for rest) |
 | `description`, `icon` | shown on cards |
-| `includeAbs` | gym only: append first 3 abs exercises |
+| `includeAbs` | gym only: append first 4 abs exercises |
 | `extra` | optional secondary block: `{type, workout, duration, description, icon}` |
 | `options` | flexible/choice days: list of blocks like `extra` |
 

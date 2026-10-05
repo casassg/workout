@@ -20,8 +20,8 @@
     {{ range $cat.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
     {{ if $day.includeAbs }}
       {{ $abs := index $site.Data.exercises "abs" }}
-      <h2 class="mt-5 mb-2 text-sm font-semibold uppercase tracking-wide text-muted">Abs (first 3)</h2>
-      {{ range first 3 $abs.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+      <h2 class="mt-5 mb-2 text-sm font-semibold uppercase tracking-wide text-muted">Abs (first 4)</h2>
+      {{ range first 4 $abs.exercises }}{{ partial "exercise-item.html" . }}{{ end }}
     {{ end }}
   </div>
 {{ else if eq $day.type "run" }}
