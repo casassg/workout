@@ -22,12 +22,6 @@ week:
     duration: 0
     description: "Rest day - easy walk / active recovery"
     icon: "🧘"
-    extra:
-      type: "gym"
-      workout: "posture"
-      duration: 8
-      description: "Posture fix: APT circuit (glutes + core + hip flexors)"
-      icon: "🧍"
 
   wednesday:
     type: "gym"
@@ -36,24 +30,12 @@ week:
     description: "Back and biceps day + abs. Football at 19:00"
     icon: "🏋️"
     includeAbs: true
-    extra:
-      type: "gym"
-      workout: "posture"
-      duration: 8
-      description: "Posture fix: APT circuit (glutes + core + hip flexors)"
-      icon: "🧍"
 
   thursday:
     type: "rest"
     duration: 0
     description: "Rest day - active recovery before tempo run Friday-week"
     icon: "🧘"
-    extra:
-      type: "gym"
-      workout: "posture"
-      duration: 8
-      description: "Posture fix: APT circuit (glutes + core + hip flexors)"
-      icon: "🧍"
 
   friday:
     type: "gym"
@@ -62,12 +44,6 @@ week:
     description: "Push (upper body focus, 2nd session of the week). No afternoon run"
     icon: "🏋️"
     includeAbs: true
-    extra:
-      type: "gym"
-      workout: "posture"
-      duration: 8
-      description: "Posture fix: APT circuit (glutes + core + hip flexors)"
-      icon: "🧍"
 
   saturday:
     type: "run"
@@ -81,9 +57,3 @@ week:
     duration: 0
     description: "Rest day - active recovery (walking, stretching) encouraged"
     icon: "🧘"
-    extra:
-      type: "gym"
-      workout: "posture"
-      duration: 8
-      description: "Posture fix: APT circuit (glutes + core + hip flexors)"
-      icon: "🧍"
