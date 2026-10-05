@@ -72,19 +72,6 @@ exercises:
     Key points: Drive through your heels. If your hamstrings cramp, your glutes are not firing - lighten up and focus on squeezing
     the glutes first.'
   demo: exercises/3013-u0cNiij.gif
-- id: bird_dog
-  name: Bird Dog
-  muscle: Glutes, Core
-  equipment: Bodyweight
-  sets: 3
-  reps: 8 per side
-  notes: Posterior chain stability - glutes and spinal stabilizers working together
-  description: 'Setup: On all fours, hands under shoulders, knees under hips, back flat and neutral.
-
-    Execution: Extend your right arm forward and left leg back until both are in line with your torso. Squeeze the glute of
-    the extended leg. Hold 2 seconds, return slowly, repeat on the other side.
-
-    Key points: Do not let your hips rotate or your lower back arch. Imagine balancing a glass of water on your lower back.'
 - id: crunches
   name: Crunches
   muscle: Abs
@@ -118,6 +105,19 @@ exercises:
 
       '
   demo: exercises/0274-TFqbd8t.gif
+- id: bird_dog
+  name: Bird Dog
+  muscle: Glutes, Core
+  equipment: Bodyweight
+  sets: 3
+  reps: 8 per side
+  notes: Posterior chain stability - glutes and spinal stabilizers working together
+  description: 'Setup: On all fours, hands under shoulders, knees under hips, back flat and neutral.
+
+    Execution: Extend your right arm forward and left leg back until both are in line with your torso. Squeeze the glute of
+    the extended leg. Hold 2 seconds, return slowly, repeat on the other side.
+
+    Key points: Do not let your hips rotate or your lower back arch. Imagine balancing a glass of water on your lower back.'
 - id: lying_leg_raise
   name: Lying Leg Raise
   muscle: Lower Abs
