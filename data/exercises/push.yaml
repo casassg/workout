@@ -8,7 +8,7 @@ exercises:
   equipment: Barbell + Bench
   sets: 4
   reps: 10
-  startingWeight: 42.68
+  startingWeight: 47.22
   notes: The foundational chest exercise
   description: 'Setup: Lie on bench with eyes under the bar. Grip slightly wider than
     shoulder-width. Plant feet flat on floor.
@@ -126,7 +126,7 @@ exercises:
   equipment: Machine
   sets: 3
   reps: 10
-  startingWeight: 36.76
+  startingWeight: 39.03
   notes: Machine press; swap from pec deck (no pec deck at gym)
   description: Seated machine chest press.
   alternatives:
