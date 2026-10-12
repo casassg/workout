@@ -94,11 +94,13 @@
     var exercises = [];
     visible.querySelectorAll("[data-exercise-id]").forEach(function (card) {
       var descEl = card.querySelector("[data-desc]");
+      var repsMatch = (card.getAttribute("data-reps") || "").match(/\d+/);
       exercises.push({
         id: card.getAttribute("data-exercise-id"),
         name: card.getAttribute("data-exercise-name"),
         sets: parseInt(card.getAttribute("data-sets"), 10) || 0,
         reps: card.getAttribute("data-reps"),
+        repsTarget: repsMatch ? parseInt(repsMatch[0], 10) : 0,
         weight: parseFloat(card.getAttribute("data-weight")) || 0,
         demo: card.getAttribute("data-demo"),
         descHtml: descEl ? descEl.innerHTML : ""
@@ -151,6 +153,7 @@
     var pos = 0;
     var unit = "kg";
     var currentWeights = {};
+    var workingReps = {};
     try {
       if (localStorage.getItem(UNIT_KEY) === "lb") unit = "lb";
     } catch (e) {}
@@ -265,15 +268,35 @@
       return currentWeights[ex.id];
     }
 
-    function addSet(id, total) {
-      state[id] = state[id] || {};
-      for (var s = 0; s < total; s++) {
-        if (!state[id][s]) {
-          state[id][s] = true;
-          if (Object.prototype.hasOwnProperty.call(currentWeights, id)) {
+    function currentReps(ex) {
+      if (Object.prototype.hasOwnProperty.call(workingReps, ex.id)) return workingReps[ex.id];
+      var loggedReps = state._r && state._r[ex.id];
+      if (loggedReps) {
+        for (var s = ex.sets - 1; s >= 0; s--) {
+          if (state[ex.id] && state[ex.id][s] && Object.prototype.hasOwnProperty.call(loggedReps, s)) {
+            workingReps[ex.id] = loggedReps[s];
+            return workingReps[ex.id];
+          }
+        }
+      }
+      workingReps[ex.id] = ex.repsTarget;
+      return workingReps[ex.id];
+    }
+
+    function addSet(ex) {
+      state[ex.id] = state[ex.id] || {};
+      for (var s = 0; s < ex.sets; s++) {
+        if (!state[ex.id][s]) {
+          state[ex.id][s] = true;
+          if (ex.weight && Object.prototype.hasOwnProperty.call(currentWeights, ex.id)) {
             state._w = state._w || {};
-            state._w[id] = state._w[id] || {};
-            state._w[id][s] = currentWeights[id];
+            state._w[ex.id] = state._w[ex.id] || {};
+            state._w[ex.id][s] = currentWeights[ex.id];
+          }
+          if (!ex.weight && ex.repsTarget && Object.prototype.hasOwnProperty.call(workingReps, ex.id)) {
+            state._r = state._r || {};
+            state._r[ex.id] = state._r[ex.id] || {};
+            state._r[ex.id][s] = workingReps[ex.id];
           }
           save();
           return;
@@ -281,12 +304,13 @@
       }
     }
 
-    function undoSet(id, total) {
-      if (!state[id]) return;
-      for (var s = total - 1; s >= 0; s--) {
-        if (state[id][s]) {
-          state[id][s] = false;
-          if (state._w && state._w[id]) delete state._w[id][s];
+    function undoSet(ex) {
+      if (!state[ex.id]) return;
+      for (var s = ex.sets - 1; s >= 0; s--) {
+        if (state[ex.id][s]) {
+          state[ex.id][s] = false;
+          if (state._w && state._w[ex.id]) delete state._w[ex.id][s];
+          if (state._r && state._r[ex.id]) delete state._r[ex.id][s];
           save();
           return;
         }
@@ -308,6 +332,8 @@
         doneSets += d;
         var weights = [];
         var loggedWeights = state._w && state._w[ex.id];
+        var loggedReps = state._r && state._r[ex.id];
+        var repsDone = [];
         for (var s = 0; s < ex.sets; s++) {
           if (!state[ex.id] || !state[ex.id][s]) continue;
           if (loggedWeights && Object.prototype.hasOwnProperty.call(loggedWeights, s)) {
@@ -315,12 +341,17 @@
           } else if (ex.weight) {
             weights.push(ex.weight);
           }
+          if (loggedReps && Object.prototype.hasOwnProperty.call(loggedReps, s)) {
+            repsDone.push(loggedReps[s]);
+          }
         }
         var suffix = "";
         if (weights.length) {
           var textWeights = weights.map(formatKg);
           suffix = " @ " + (textWeights.every(function (weight) { return weight === textWeights[0]; })
             ? textWeights[0] : textWeights.join("/")) + " kg";
+        } else if (repsDone.length) {
+          suffix = " \u00b7 reps " + repsDone.join("/");
         }
         items.push("- " + ex.name + ": " + d + "/" + ex.sets + " sets of " + ex.reps + suffix);
       }
@@ -397,14 +428,21 @@
 
       if (done) {
         var loggedWeights = state._w && state._w[ex.id];
+        var loggedReps = state._r && state._r[ex.id];
         html += '<div class="mt-6"><p class="text-xs font-semibold uppercase tracking-wide text-muted mb-2">Completed</p>' +
           '<div class="flex flex-wrap gap-2">';
         for (var s = 0; s < ex.sets; s++) {
           if (!state[ex.id] || !state[ex.id][s]) continue;
           var loggedWeight = loggedWeights && Object.prototype.hasOwnProperty.call(loggedWeights, s)
             ? loggedWeights[s] : ex.weight;
+          var repsTxt = "";
+          if (ex.weight) {
+            repsTxt = ' \u00b7 ' + formatWeight(loggedWeight, unit);
+          } else if (loggedReps && Object.prototype.hasOwnProperty.call(loggedReps, s)) {
+            repsTxt = ' \u00b7 ' + loggedReps[s];
+          }
           html += '<span class="rounded-lg bg-green/15 px-3 py-2 text-sm font-medium text-green tabular-nums">Set ' + (s + 1) +
-            (ex.weight ? ' \u00b7 ' + formatWeight(loggedWeight, unit) : '') + ' \u2713</span>';
+            repsTxt + ' \u2713</span>';
         }
         html += '</div></div>';
       }
@@ -421,6 +459,13 @@
               '<button type="button" id="focus-sub-weight" aria-label="Decrease weight" class="min-h-11 min-w-11 rounded-lg bg-surface text-xl font-bold text-muted cursor-pointer">\u2212</button>' +
               '<span class="min-w-28 text-center text-xl font-semibold tabular-nums text-heading">' + formatWeight(weight, unit) + '</span>' +
               '<button type="button" id="focus-add-weight" aria-label="Increase weight" class="min-h-11 min-w-11 rounded-lg bg-surface text-xl font-bold text-muted cursor-pointer">+</button>' +
+            '</div>';
+        } else if (ex.repsTarget) {
+          html += '<p class="mt-4 text-center text-xs font-semibold uppercase tracking-wide text-muted">Reps</p>' +
+            '<div class="mt-2 flex items-center justify-center gap-4">' +
+              '<button type="button" id="focus-sub-reps" aria-label="Decrease reps" class="min-h-11 min-w-11 rounded-lg bg-surface text-xl font-bold text-muted cursor-pointer">\u2212</button>' +
+              '<span class="min-w-28 text-center text-xl font-semibold tabular-nums text-heading">' + currentReps(ex) + '</span>' +
+              '<button type="button" id="focus-add-reps" aria-label="Increase reps" class="min-h-11 min-w-11 rounded-lg bg-surface text-xl font-bold text-muted cursor-pointer">+</button>' +
             '</div>';
         }
         html += '<button type="button" id="focus-log-set" class="mt-4 w-full rounded-xl bg-accent px-4 py-3 font-semibold text-white min-h-11 cursor-pointer">Log set</button>' +
@@ -452,7 +497,7 @@
       var addBtn = document.getElementById("focus-log-set");
       if (addBtn) {
         addBtn.addEventListener("click", function () {
-          addSet(ex.id, ex.sets);
+          addSet(ex);
           var newDone = countDone(ex.id, ex.sets);
           if (newDone >= ex.sets) {
             render(); // show green check
@@ -473,7 +518,7 @@
       var subBtn = document.getElementById("focus-undo-set");
       if (subBtn) {
         subBtn.addEventListener("click", function () {
-          undoSet(ex.id, ex.sets);
+          undoSet(ex);
           render();
         });
       }
@@ -487,6 +532,14 @@
       }
       if (subWeightBtn) subWeightBtn.addEventListener("click", function () { adjustWeight(-1); });
       if (addWeightBtn) addWeightBtn.addEventListener("click", function () { adjustWeight(1); });
+      var subRepsBtn = document.getElementById("focus-sub-reps");
+      var addRepsBtn = document.getElementById("focus-add-reps");
+      function adjustReps(direction) {
+        workingReps[ex.id] = Math.max(0, currentReps(ex) + direction);
+        render();
+      }
+      if (subRepsBtn) subRepsBtn.addEventListener("click", function () { adjustReps(-1); });
+      if (addRepsBtn) addRepsBtn.addEventListener("click", function () { adjustReps(1); });
       bodyEl.querySelectorAll("[data-unit]").forEach(function (btn) {
         btn.addEventListener("click", function () {
           unit = btn.getAttribute("data-unit");
