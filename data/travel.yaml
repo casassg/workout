@@ -7,6 +7,9 @@ rules:
 - Cardio on a treadmill, elliptical or bike. A hotel run at zone 2, 35 minutes, is the same stimulus as the home one.
 - Nothing new and nothing maximal on the road. The goal is to keep the habit and the muscle, not to set PRs.
 - 'Cables are back: rope pushdowns on push day, face pulls on pull day.'
+- 'MAINTENANCE MODE: the loads shown on the travel sessions are reference loads so you know what to pick up, not progression targets. Take the closest dumbbell, keep 2 reps in reserve, and do not chase
+  a PR.'
+- 'Nothing you log on a travel session ever updates your home weights: the hotel sessions use their own exercise ids, and the home loads stay frozen until the plan reverts on 8 November.'
 modes:
 - id: hotel_gym
   name: Hotel gym
@@ -61,3 +64,62 @@ modes:
     icon: 🔥
     duration: 25-30 min
     category: indoor_circuit
+equivalents:
+  intro: Every barbell or machine movement in the home plan, and what replaces it when there is only a rack of dumbbells, or nothing at all. The travel sessions carry REFERENCE loads (what to pick up at
+    the rack), the goal is MAINTENANCE, and no travel session ever writes back into your home weights.
+  columns:
+  - Home gym
+  - Dumbbells (hotel)
+  - Zero equipment (room)
+  rows:
+  - - Barbell Bench Press
+    - Dumbbell Bench Press, or Dumbbell Floor Press
+    - Push-Ups (feet elevated to add difficulty)
+  - - Incline Dumbbell Press
+    - Incline Dumbbell Press (unchanged)
+    - Pike Push-Ups
+  - - Chest Press Machine / Pec Deck
+    - Dumbbell Bench Press, Dumbbell Fly
+    - Push-Ups
+  - - Overhead Press (barbell)
+    - Seated Dumbbell Overhead Press
+    - Pike Push-Ups
+  - - Cable Lateral Raise
+    - Dumbbell Lateral Raise
+    - 'Side Plank or nothing: shoulder raises need load'
+  - - Tricep Pushdown / Overhead Cable Extension
+    - Rope Triceps Pushdown, or Dumbbell Overhead Extension
+    - Chair Dips
+  - - Lat Pulldown
+    - One-Arm Dumbbell Row (both arms, same sets)
+    - Table or Towel Rows
+  - - Seated Cable Row
+    - Two-Arm Dumbbell Bent-Over Row
+    - Table or Towel Rows
+  - - Straight-Arm Pulldown
+    - Dumbbell Pullover
+    - Towel Isometric Row Hold
+  - - Face Pull
+    - Face Pull on the rope station, or Dumbbell Reverse Fly
+    - Towel Isometric Row Hold
+  - - Barbell or Cable Curl
+    - Dumbbell Curl
+    - Backpack Curl
+  - - Hammer Curl
+    - Hammer Curl (dumbbells)
+    - Backpack Curl, neutral grip
+  - - Leg Press / Back Squat
+    - Goblet Squat (kettlebell is ideal)
+    - Split Squats
+  - - Leg Extension
+    - Dumbbell Split Squat
+    - Wall Sit
+  - - Leg Curl
+    - Dumbbell Romanian Deadlift
+    - Towel Hamstring Curl
+  - - Standing Calf Raise (barbell)
+    - Dumbbell Standing Calf Raise
+    - Single-Leg Calf Raise
+  - - Crunches, Dead Bug, Plank
+    - 'Unchanged: this is bodyweight already'
+    - Unchanged

@@ -8,64 +8,59 @@ exercises:
   reps: 10
   muscle: Back
   equipment: Dumbbell + bench
-  description: 'Setup: One hand and one knee on the bench, back flat, dumbbell hanging
-    straight down.
+  description: 'Setup: One hand and one knee on the bench, back flat, dumbbell hanging straight down.
 
     Execution: Row to the hip, not to the chest, and pause for a beat at the top.
 
     Key points: No rotation of the torso. The lats do the work, not the lower back.
 
     '
-  notes: This replaces the lat pulldown. Do both arms, same number of sets.
+  notes: Reference load per dumbbell, taken from your home seated cable row. This replaces the lat pulldown. Do both arms, same number of sets.
   demo: exercises/0292-C0MA9bC.gif
+  startingWeight: 29.08
 - id: tl_bent_over_row
   name: Two-Arm Dumbbell Bent-Over Row
   sets: 3
   reps: 10
   muscle: Back
   equipment: Dumbbells
-  description: 'Setup: Hinge to about 45 degrees, knees soft, dumbbells hanging, spine
-    neutral.
+  description: 'Setup: Hinge to about 45 degrees, knees soft, dumbbells hanging, spine neutral.
 
-    Execution: Row both dumbbells to the ribs, squeeze the shoulder blades, lower
-    slowly.
+    Execution: Row both dumbbells to the ribs, squeeze the shoulder blades, lower slowly.
 
     '
   demo: exercises/0293-BJ0Hz5L.gif
+  startingWeight: 22.68
+  notes: 'Reference load per dumbbell. Less than the one-arm row on purpose: both sides are loaded at once.'
 - id: tl_reverse_fly
   name: Dumbbell Reverse Fly
   sets: 3
   reps: 12
   muscle: Rear delts
   equipment: Dumbbells
-  description: 'Setup: Hinge forward with a flat back, dumbbells under the chest,
-    soft elbows.
+  description: 'Setup: Hinge forward with a flat back, dumbbells under the chest, soft elbows.
 
-    Execution: Raise out to the sides to shoulder height, lead with the pinky edge,
-    lower slowly.
+    Execution: Raise out to the sides to shoulder height, lead with the pinky edge, lower slowly.
 
     '
-  notes: Rear-delt work without a cable. The hotel does have a rope station (confirmed
-    at the gym 19/10), so the Face Pull below is the first choice and this one is
-    the backup or the finisher.
+  notes: Reference load per dumbbell. There is no home equivalent, so this is a starting point, not a measured number. Rear-delt work without a cable. The hotel does have a rope station (confirmed at the
+    gym 19/10), so the Face Pull below is the first choice and this one is the backup or the finisher.
   demo: exercises/0383-EAs3xL9.gif
+  startingWeight: 9.07
 - id: tl_face_pull
   name: Face Pull
   sets: 3
   reps: 15
   muscle: Rear delts + rotator cuff
   equipment: Cable machine + rope
-  description: 'Setup: rope on a high pulley, hands neutral, arms extended, one step
-    back for tension.
+  description: 'Setup: rope on a high pulley, hands neutral, arms extended, one step back for tension.
 
-    Execution: Pull the rope toward the eyebrows, elbows high and wide, and rotate
-    the hands outward at the end.
+    Execution: Pull the rope toward the eyebrows, elbows high and wide, and rotate the hands outward at the end.
 
-    Key points: Light weight, high reps. This is the single best shoulder-health move
-    in the whole plan.'
-  notes: Back on the list because the hotel gym has a rope station (confirmed 19/10).
-    Keep it light and strict.
+    Key points: Light weight, high reps. This is the single best shoulder-health move in the whole plan.'
+  notes: Reference load from your home face pull. Back on the list because the hotel gym has a rope station (confirmed 19/10). Keep it light and strict.
   demo: exercises/0202-yUdIGNs.gif
+  startingWeight: 23.15
 - id: tl_curl
   name: Dumbbell Curl
   sets: 3
@@ -78,6 +73,8 @@ exercises:
 
     '
   demo: exercises/0294-NbVPDMW.gif
+  startingWeight: 22.94
+  notes: Reference load from your home standing dumbbell curl.
 - id: tl_hammer_curl
   name: Hammer Curl
   sets: 3
@@ -90,32 +87,34 @@ exercises:
 
     '
   demo: exercises/0313-slDvUAU.gif
+  startingWeight: 22.75
+  notes: Reference load from your home hammer curl.
 - id: tl_pullover
   name: Dumbbell Pullover
   sets: 3
   reps: 12
   muscle: Lats
   equipment: One dumbbell + bench
-  description: 'Setup: Lying flat, both hands on one dumbbell overhead, arms slightly
-    bent.
+  description: 'Setup: Lying flat, both hands on one dumbbell overhead, arms slightly bent.
 
-    Execution: Take the dumbbell back over the head until you feel the stretch, then
-    pull it to the chest.
+    Execution: Take the dumbbell back over the head until you feel the stretch, then pull it to the chest.
 
     Tip: Light weight, this one is about the stretch.
 
     '
   demo: exercises/0375-9XjtHvS.gif
+  startingWeight: 22.48
+  notes: Reference load from your home straight-arm pulldown.
 - id: tl_dead_hang
   name: Dead Hang or Pull-Ups
   sets: 3
   reps: 30-45s
   muscle: Grip + lats
   equipment: Pull-up bar if the gym has one
-  description: 'Execution: Hang with the shoulders active, or do pull-ups if there
-    is a bar you can reach.
+  description: 'Execution: Hang with the shoulders active, or do pull-ups if there is a bar you can reach.
 
     Tip: No bar in the hotel gym? Skip it and add one more set of rows.
 
     '
   demo: exercises/0652-lBDjFxJ.gif
+  notes: 'Bodyweight: hang time or pull-ups, no load.'

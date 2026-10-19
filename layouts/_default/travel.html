@@ -8,6 +8,31 @@
   {{ range $t.rules }}<li>{{ . }}</li>{{ end }}
 </ul>
 
+{{ with $t.equivalents }}
+<section class="mt-8">
+  <h2 class="text-lg font-semibold text-heading">🔁 Home gym → dumbbells → nothing</h2>
+  <p class="text-sm text-muted">{{ .intro }}</p>
+  <div class="mt-3 overflow-x-auto">
+    <table class="w-full text-sm border-collapse">
+      <thead>
+        <tr>
+          {{ range .columns }}<th class="border-b border-line px-2 py-1.5 text-left text-xs font-semibold uppercase tracking-wide text-muted">{{ . }}</th>{{ end }}
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .rows }}
+        <tr>
+          <td class="border-b border-line px-2 py-1.5 align-top text-body">{{ index . 0 }}</td>
+          <td class="border-b border-line px-2 py-1.5 align-top text-body">{{ index . 1 }}</td>
+          <td class="border-b border-line px-2 py-1.5 align-top text-muted">{{ index . 2 }}</td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+</section>
+{{ end }}
+
 {{ range $t.modes }}
 <section class="mt-8">
   <h2 class="text-lg font-semibold text-heading">{{ .icon }} {{ .name }}</h2>
