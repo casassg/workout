@@ -66,6 +66,41 @@ def check_workout_ref(block, where):
         err(f"{where}: workout {ref!r} is not a running workout id ({sorted(run_ids)})")
 
 
+# Load travel plan (data/travel.yaml): modes -> blocks -> exercises
+travel_ids = []
+travel_path = ROOT / "data" / "travel.yaml"
+if travel_path.exists():
+    try:
+        travel = yaml.safe_load(travel_path.read_text()) or {}
+    except yaml.YAMLError as e:
+        err(f"data/travel.yaml: invalid YAML: {e}")
+        travel = {}
+    modes = travel.get("modes") or []
+    if not modes:
+        err("data/travel.yaml: needs a non-empty modes list")
+    for mode in modes:
+        mid = mode.get("id")
+        if not mid or not mode.get("name"):
+            err(f"travel mode {mid or '?'}: needs id and name")
+        if not mode.get("equipment"):
+            err(f"travel mode {mid or '?'}: needs an equipment line")
+        blocks = mode.get("blocks") or []
+        if not blocks:
+            err(f"travel mode {mid or '?'}: needs at least one block")
+        for blk in blocks:
+            bid = blk.get("id")
+            if not bid or not blk.get("name"):
+                err(f"travel/{mid}: block {bid or '?'} needs id and name")
+            for ex in blk.get("exercises") or []:
+                check_exercise(ex, f"travel/{mid}/{bid}")
+                travel_ids.append(ex.get("id"))
+    dupes = {i for i in travel_ids if travel_ids.count(i) > 1}
+    for d in sorted(dupes):
+        err(f"data/travel.yaml: duplicate exercise id {d!r}")
+else:
+    err("data/travel.yaml: missing")
+
+
 # Load schedule
 try:
     schedule = yaml.safe_load((ROOT / "data" / "schedule.yaml").read_text())
@@ -93,4 +128,4 @@ for day in DAYS:
 if errors:
     print("\n".join(errors))
     sys.exit(f"\n{len(errors)} validation error(s)")
-print(f"OK: {len(week)} days, {len(gym_categories)} categories, {len(run_ids)} running workouts")
+print(f"OK: {len(week)} days, {len(gym_categories)} categories, {len(run_ids)} running workouts, {len(travel_ids)} travel exercises")

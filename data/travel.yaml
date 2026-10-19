@@ -1,0 +1,418 @@
+# Travel plan: what to do when the home gym is not available.
+#
+# Deliberately contains NO dates, cities or hotel names: this repo is public.
+# Modes are ordered from most equipped to least equipped.
+
+intro: >-
+  The same split as the home plan (push, pull, legs) rebuilt around whatever
+  equipment the place has. If a machine is missing, the dumbbell version always
+  works; if the dumbbells are missing, the bodyweight version does.
+
+rules:
+  - "Keep the same days: push Monday, pull Wednesday, legs Friday."
+  - "No barbell anywhere on the road, so every press becomes a dumbbell press."
+  - "No lat pulldown stack either: rows replace it, one arm at a time if the dumbbells are light."
+  - "Drop the load, not the session: travel dumbbells are usually light, so add reps and slow the lowering phase to 3 seconds."
+  - "Cardio on a treadmill, elliptical or bike. A hotel run at zone 2, 35 minutes, is the same stimulus as the home one."
+  - "Nothing new and nothing maximal on the road. The goal is to keep the habit and the muscle, not to set PRs."
+
+modes:
+  - id: hotel_gym
+    name: "Hotel gym"
+    icon: "🏨"
+    equipment: "Dumbbells and kettlebells (usually light to medium), one weight machine, medicine and balance balls, a bench or plyo box, treadmills, ellipticals, a bike."
+    note: "No barbell and no lat pulldown stack. Everything below is written for that."
+    blocks:
+      - id: travel_push
+        name: "Push — dumbbell day"
+        icon: "🏋️"
+        duration: "45-50 min"
+        exercises:
+          - id: tp_db_bench
+            name: Dumbbell Bench Press
+            sets: 4
+            reps: 10
+            muscle: Chest
+            equipment: Dumbbells + bench
+            description: |
+              Setup: Lie flat, feet planted, dumbbells at chest level, elbows at about 45 degrees from the torso.
+              Execution: Press up and slightly together without clanging the dumbbells, then lower for three seconds.
+              Tip: No bench? Do a Dumbbell Floor Press on a mat: the floor caps the range but protects the shoulders.
+            notes: "The main press of the day. Get two sets at your top weight before adding anything."
+          - id: tp_incline_db
+            name: Incline Dumbbell Press
+            sets: 3
+            reps: 10
+            muscle: Upper chest
+            equipment: Dumbbells + incline bench
+            description: |
+              Setup: Bench at 30 degrees, not higher, or the front delts take over from the chest.
+              Execution: Press straight up over the collar bone, lower to a three-second count.
+              Tip: No incline bench? Raise one end of a flat bench on a plyo box, or overhead-press instead.
+          - id: tp_db_ohp
+            name: Seated Dumbbell Overhead Press
+            sets: 4
+            reps: 10
+            muscle: Shoulders
+            equipment: Dumbbells + bench
+            description: |
+              Setup: Back supported, dumbbells at shoulder height, wrists stacked over elbows.
+              Execution: Press to lockout without arching the lower back, lower under control.
+              Key points: Ribs down, glutes tight. If the back arches, reduce the weight, not the reps.
+          - id: tp_lateral_raise
+            name: Dumbbell Lateral Raise
+            sets: 3
+            reps: 12
+            muscle: Side delts
+            equipment: Dumbbells
+            description: |
+              Setup: Slight forward lean, tiny bend in the elbows, dumbbells at the sides.
+              Execution: Raise to shoulder height, lead with the elbows, lower for three seconds.
+              Tip: Light dumbbells are perfect here. Go slow rather than heavy.
+          - id: tp_oh_triceps
+            name: Overhead Dumbbell Triceps Extension
+            sets: 3
+            reps: 12
+            muscle: Triceps
+            equipment: One dumbbell
+            description: |
+              Setup: Both hands cupping one dumbbell, arms overhead, elbows pointing forward.
+              Execution: Lower behind the head until the forearms touch the biceps, press back to lockout.
+          - id: tp_kickback_dips
+            name: Bench Dips
+            sets: 3
+            reps: 12
+            muscle: Triceps
+            equipment: Bench or chair
+            description: |
+              Setup: Hands on the bench behind you, fingers forward, legs extended.
+              Execution: Lower until the elbows reach 90 degrees, press back up.
+              Tip: Elbows stay pointing straight back, not out to the sides.
+          - id: tp_pushups
+            name: Push-Ups
+            sets: 2
+            reps: "AMRAP"
+            muscle: Chest
+            equipment: None
+            description: |
+              Execution: One set to near failure as a finisher, body in one line, elbows at 45 degrees.
+              Tip: Too easy? Elevate the feet on the bench.
+      - id: travel_pull
+        name: "Pull — dumbbell day"
+        icon: "🪢"
+        duration: "45-50 min"
+        exercises:
+          - id: tl_one_arm_row
+            name: One-Arm Dumbbell Row
+            sets: 4
+            reps: 10
+            muscle: Back
+            equipment: Dumbbell + bench
+            description: |
+              Setup: One hand and one knee on the bench, back flat, dumbbell hanging straight down.
+              Execution: Row to the hip, not to the chest, and pause for a beat at the top.
+              Key points: No rotation of the torso. The lats do the work, not the lower back.
+            notes: "This replaces the lat pulldown. Do both arms, same number of sets."
+          - id: tl_bent_over_row
+            name: Two-Arm Dumbbell Bent-Over Row
+            sets: 3
+            reps: 10
+            muscle: Back
+            equipment: Dumbbells
+            description: |
+              Setup: Hinge to about 45 degrees, knees soft, dumbbells hanging, spine neutral.
+              Execution: Row both dumbbells to the ribs, squeeze the shoulder blades, lower slowly.
+          - id: tl_reverse_fly
+            name: Dumbbell Reverse Fly
+            sets: 3
+            reps: 12
+            muscle: Rear delts
+            equipment: Dumbbells
+            description: |
+              Setup: Hinge forward with a flat back, dumbbells under the chest, soft elbows.
+              Execution: Raise out to the sides to shoulder height, lead with the pinky edge, lower slowly.
+            notes: "Takes the place of the face pull, which needs a cable stack the hotel does not have."
+          - id: tl_curl
+            name: Dumbbell Curl
+            sets: 3
+            reps: 10
+            muscle: Biceps
+            equipment: Dumbbells
+            description: |
+              Setup: Standing, elbows at the sides, shoulders back.
+              Execution: Curl without swinging the torso, lower for three seconds.
+          - id: tl_hammer_curl
+            name: Hammer Curl
+            sets: 3
+            reps: 10
+            muscle: Biceps + forearms
+            equipment: Dumbbells
+            description: |
+              Setup: Neutral grip, thumbs up, elbows pinned.
+              Execution: Curl straight up, no rotation, slow on the way down.
+          - id: tl_pullover
+            name: Dumbbell Pullover
+            sets: 3
+            reps: 12
+            muscle: Lats
+            equipment: One dumbbell + bench
+            description: |
+              Setup: Lying flat, both hands on one dumbbell overhead, arms slightly bent.
+              Execution: Take the dumbbell back over the head until you feel the stretch, then pull it to the chest.
+              Tip: Light weight, this one is about the stretch.
+          - id: tl_dead_hang
+            name: Dead Hang or Pull-Ups
+            sets: 3
+            reps: "30-45s"
+            muscle: Grip + lats
+            equipment: Pull-up bar if the gym has one
+            description: |
+              Execution: Hang with the shoulders active, or do pull-ups if there is a bar you can reach.
+              Tip: No bar in the hotel gym? Skip it and add one more set of rows.
+      - id: travel_legs
+        name: "Legs — dumbbell day"
+        icon: "🦵"
+        duration: "40-45 min"
+        exercises:
+          - id: tg_goblet_squat
+            name: Goblet Squat
+            sets: 4
+            reps: 12
+            muscle: Quads
+            equipment: One dumbbell or kettlebell
+            description: |
+              Setup: Hold the weight at chest height, feet just outside the hips, toes slightly out.
+              Execution: Sit down between the hips, elbows inside the knees at the bottom, drive up through the mid-foot.
+            notes: "Kettlebells are ideal here. Heavier than the dumbbells you would press."
+          - id: tg_split_squat
+            name: Dumbbell Split Squat
+            sets: 3
+            reps: 10
+            muscle: Quads + glutes
+            equipment: Dumbbells + bench
+            description: |
+              Setup: Rear foot on the bench, front foot far enough forward that the knee stays over the ankle.
+              Execution: Lower straight down, front shin near vertical, drive up through the front heel.
+              Tip: Bodyweight is fine if the dumbbells are light. This one hurts either way.
+          - id: tg_rdl
+            name: Dumbbell Romanian Deadlift
+            sets: 3
+            reps: 12
+            muscle: Hamstrings
+            equipment: Dumbbells
+            description: |
+              Setup: Standing tall, dumbbells in front of the thighs, knees soft and fixed.
+              Execution: Push the hips back, keep the bar path close to the legs, stop when the hamstrings pull, then stand.
+              Note: Neutral spine throughout. If the back rounds, you have gone too low.
+          - id: tg_lunge
+            name: Dumbbell Reverse Lunge
+            sets: 3
+            reps: 10
+            muscle: Glutes
+            equipment: Dumbbells
+            description: |
+              Setup: Standing, dumbbells at the sides.
+              Execution: Step back, drop the back knee toward the floor, push through the front heel to return.
+          - id: tg_calf_raise
+            name: Standing Calf Raise
+            sets: 3
+            reps: 15
+            muscle: Calves
+            equipment: Dumbbells or a step
+            description: |
+              Execution: Rise onto the toes as high as possible, pause at the top, lower for three seconds.
+          - id: tg_plank
+            name: Plank
+            sets: 3
+            reps: "45s"
+            muscle: Core
+            equipment: Mat
+            description: |
+              Setup: Elbows under the shoulders, glutes and abs locked, body one straight line.
+              Tip: Stop the set when the hips sag, not when the timer ends.
+      - id: travel_cardio
+        name: "Cardio — treadmill or bike"
+        icon: "🏃"
+        duration: "35 min"
+        exercises:
+          - id: tc_z2_run
+            name: Zone 2 Treadmill Run
+            sets: 1
+            reps: "35 min"
+            muscle: Aerobic
+            equipment: Treadmill
+            description: |
+              Execution: 5 minutes walking to warm up, then 30 minutes at conversational pace, then 2 minutes easy.
+              Key points: Nose breathing or a pace where you could hold a sentence. Treadmill incline of 1 percent.
+            notes: "Tuesday and Thursday, same as the home plan. This is the session that carries the marathon base on the road."
+          - id: tc_machine
+            name: Elliptical, Stair Climber or Bike
+            sets: 1
+            reps: "25-30 min"
+            muscle: Aerobic
+            equipment: Elliptical, stair climber, bike
+            description: |
+              Execution: Steady effort, no intervals. Resistance high enough that talking is possible but not easy.
+              Tip: Use this when the weather is bad or the treadmill is taken.
+          - id: tc_walk
+            name: Post-Meal Walk
+            sets: 1
+            reps: "10-15 min"
+            muscle: Recovery
+            equipment: None
+            description: |
+              Execution: Easy walk after dinner, ideally outside, ideally every travel day.
+              Tip: Doubles as the best thing you can do for digestion and for sodium after restaurant food.
+
+  - id: zero_equipment
+    name: "Zero equipment"
+    icon: "🧳"
+    equipment: "Nothing but floor space, about two square metres, a chair and a backpack."
+    note: "For places with no gym and nowhere safe to run. Full body, three days a week, plus an indoor circuit."
+    blocks:
+      - id: z_push
+        name: "Push — bodyweight"
+        icon: "🏋️"
+        duration: "25-30 min"
+        exercises:
+          - id: z_pushup
+            name: Push-Ups
+            sets: 4
+            reps: 15
+            muscle: Chest
+            equipment: None
+            description: |
+              Execution: Elbows at 45 degrees, body in one line from head to heels.
+              Tip: Elevate the hands on a chair to make it easier, or the feet to make it harder.
+          - id: z_pike
+            name: Pike Push-Ups
+            sets: 3
+            reps: 10
+            muscle: Shoulders
+            equipment: None
+            description: |
+              Setup: Hips high, hands and feet on the floor, head between the hands.
+              Execution: Lower the crown of the head toward the floor, press back up. This is the overhead press of the trip.
+          - id: z_dips
+            name: Chair Dips
+            sets: 3
+            reps: 12
+            muscle: Triceps
+            equipment: Chair
+            description: |
+              Setup: Hands on the edge of a sturdy chair behind you, legs extended.
+              Execution: Lower until the elbows reach 90 degrees, press back up. Keep the elbows pointing back.
+          - id: z_plank
+            name: Plank
+            sets: 3
+            reps: "45s"
+            muscle: Core
+            equipment: None
+            description: |
+              Execution: Elbows under the shoulders, glutes locked, no sagging hips.
+      - id: z_pull
+        name: "Pull — bodyweight"
+        icon: "🪢"
+        duration: "25-30 min"
+        exercises:
+          - id: z_table_row
+            name: Table or Towel Rows
+            sets: 4
+            reps: 12
+            muscle: Back
+            equipment: Table or a towel in a door
+            description: |
+              Setup: Lie under a sturdy table, or anchor a towel in a closed door and hold both ends.
+              Execution: Pull the chest toward the edge, squeeze the shoulder blades, lower slowly. The lower the body, the harder it is.
+              Key points: This is the only real back work available without equipment, so do not skip it.
+          - id: z_backpack_curl
+            name: Backpack Curl
+            sets: 3
+            reps: 12
+            muscle: Biceps
+            equipment: Backpack with books or bottles
+            description: |
+              Setup: Hold the loaded backpack by the straps, elbows at the sides.
+              Execution: Curl up, three seconds down. Add or remove weight by adding or removing bottles.
+          - id: z_superman
+            name: Superman
+            sets: 3
+            reps: 15
+            muscle: Lower back
+            equipment: None
+            description: |
+              Execution: Face down, lift the arms and legs off the floor together, hold one second at the top, lower slowly.
+          - id: z_towel_row_hold
+            name: Towel Isometric Row Hold
+            sets: 3
+            reps: "30s"
+            muscle: Back + grip
+            equipment: Towel
+            description: |
+              Execution: Anchor the towel and pull hard with straight arms, holding tension for 30 seconds.
+              Tip: Boring, but it is the closest thing to a lat pulldown with nothing in the room.
+      - id: z_legs
+        name: "Legs — bodyweight"
+        icon: "🦵"
+        duration: "25-30 min"
+        exercises:
+          - id: z_split_squat
+            name: Split Squats
+            sets: 3
+            reps: 12
+            muscle: Quads + glutes
+            equipment: None
+            description: |
+              Execution: Feet split, lower straight down, front knee over the ankle, drive up through the front heel.
+              Tip: Hold a loaded backpack against the chest to add weight.
+          - id: z_glute_bridge
+            name: Single-Leg Glute Bridge
+            sets: 3
+            reps: 12
+            muscle: Glutes
+            equipment: None
+            description: |
+              Execution: One foot planted, the other leg extended, drive the hips up and squeeze at the top.
+          - id: z_wall_sit
+            name: Wall Sit
+            sets: 3
+            reps: "45s"
+            muscle: Quads
+            equipment: Wall
+            description: |
+              Execution: Back on the wall, knees at 90 degrees, hold. Stop when the form breaks.
+          - id: z_ham_curl
+            name: Towel Hamstring Curl
+            sets: 3
+            reps: 12
+            muscle: Hamstrings
+            equipment: Towel + smooth floor
+            description: |
+              Setup: Lying on the back, heels on a towel on a smooth floor, hips lifted.
+              Execution: Slide the heels out, then pull them back toward the glutes while keeping the hips up.
+      - id: z_circuit
+        name: "Indoor circuit (the run substitute)"
+        icon: "🔥"
+        duration: "25-30 min"
+        exercises:
+          - id: zc_circuit
+            name: Bodyweight Circuit
+            sets: 4
+            reps: "4 rounds"
+            muscle: Full body
+            equipment: None
+            description: |
+              Execution: 40 seconds on, 20 seconds off, four rounds of: high knees, mountain climbers,
+              bodyweight squats, shadow boxing, burpees, plank hold. Rest 90 seconds between rounds.
+              Key points: This replaces the run when running outside is not possible or not safe.
+              Tip: Stairs in the building work just as well if they exist: 10 minutes up and down, three times.
+          - id: zc_mobility
+            name: Mobility Circuit
+            sets: 1
+            reps: "10 min"
+            muscle: Recovery
+            equipment: Mat or towel
+            description: |
+              Execution: Daily, easy: hip flexor stretch, hamstring stretch, thoracic rotations, shoulder dislocates
+              with a towel, cat-cow, deep squat hold.
+              Tip: On a trip this is what keeps the running muscles from stiffening up while the mileage drops.

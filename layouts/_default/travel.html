@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $t := .Site.Data.travel }}
+<h1 class="text-2xl font-bold tracking-tight text-heading">Travel</h1>
+<p class="text-sm text-muted">{{ $t.intro }}</p>
+
+<h2 class="mt-6 mb-2 text-lg font-semibold text-heading">Rules for the road</h2>
+<ul class="mb-2 space-y-1 pl-5 text-sm text-muted list-disc">
+  {{ range $t.rules }}<li>{{ . }}</li>{{ end }}
+</ul>
+
+{{ range $t.modes }}
+<section class="mt-8">
+  <h2 class="text-lg font-semibold text-heading">{{ .icon }} {{ .name }}</h2>
+  <p class="text-sm text-muted">{{ .equipment }}</p>
+  {{ with .note }}<p class="mt-1 text-sm text-muted italic">{{ . }}</p>{{ end }}
+  {{ range .blocks }}
+  <h3 class="mt-6 mb-3 text-base font-semibold text-heading">{{ .icon }} {{ .name }} <span class="text-sm font-normal text-muted">· {{ .duration }}</span></h3>
+  {{ range .exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}

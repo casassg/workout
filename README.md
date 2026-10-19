@@ -7,6 +7,7 @@ A personal workout tracker for balancing gym and running. Built with Hugo and Ta
 - **Daily workouts**: Push/Pull/Legs gym days + running schedule
 - **Progress tracking**: Weight progression suggestions based on history
 - **Week overview**: See your full week at a glance
+- **Travel page**: The same splits rebuilt for a hotel gym or for zero equipment
 - **Offline-first**: All data stored locally in your browser
 
 ## Development

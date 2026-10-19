@@ -19,7 +19,8 @@ Deploy is automatic on push to `main`. CI fails if validation fails.
 
 - `data/schedule.yaml` — the weekly plan (source of truth for what happens each day).
 - `data/exercises/{push,pull,legs,abs,functional}.yaml` — gym exercises; `running.yaml` — run workouts.
-- `layouts/` — `index.html` (today: all 7 days rendered, JS picks one), `week.html` (next 7 days), `exercises.html` (catalog). Partials: `day-block`, `exercise-item`, `run-info`.
+- `data/travel.yaml` — travel plan: modes (`hotel_gym`, `zero_equipment`) → blocks (push/pull/legs/cardio) → exercises. Same exercise schema, rendered by the Travel page. NO dates, cities or hotel names in here: the repo is public.
+- `layouts/` — `index.html` (today: all 7 days rendered, JS picks one), `week.html` (next 7 days), `exercises.html` (catalog), `_default/travel.html` (travel plan). Partials: `day-block`, `exercise-item`, `run-info`.
 - `assets/js/main.js` — day selection, week reorder, set checkoff, focus mode (one exercise at a time). `static/sw.js` + `static/manifest.webmanifest` — PWA.
 - `assets/css/main.css` — Tailwind v4 with CSS variable theme (dark-first, light via prefers-color-scheme).
 - `scripts/sync_exercises.py` — syncs exercise demo GIFs from `hasaneyldrm/exercises-dataset` into `static/exercises/`. Sets `demo:` field on matched exercises. Uses curated name→dataset-name map (no fuzzy matching).
@@ -61,6 +62,7 @@ Running workout: `id`, `name`, `type`, `duration` (string), `intensity` required
 - **Update a weight after a session**: edit `startingWeight` in the exercise's yaml, validate, commit.
 - **Add/swap an exercise**: add to the category's `exercises:` list (or as an `alternative`), run `sync_exercises.py` to get GIF, run validate.
 - **Change the schedule**: edit `data/schedule.yaml`; `workout` refs must resolve (validator checks).
+- **Update a travel session**: edit `data/travel.yaml` (modes → blocks → exercises); the validator checks required fields and duplicate ids. Keep dates and locations out.
 - **Swap an alternative in**: move the alternative to the main exercise position in the YAML, demote the old main to alternatives. Run `sync_exercises.py` to update GIFs.
 
 Always run `uv run scripts/validate.py && hugo --minify` before committing data edits.
