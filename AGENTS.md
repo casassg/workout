@@ -74,6 +74,10 @@ Keep the site in English. Keep private data (logged weights, metrics, diet) out 
   `index.html` renders all 7 `data-day` sections hidden and `assets/js/main.js` unhides today's.
   The `#today-date` string is a server fallback that main.js overwrites; `<noscript>` unhides everything.
   Friday is always the same session (no A/B alternation): `schedule.yaml` holds one `workout` per day.
+- **Never use `absURL` for subresources.** The Pages workflow builds with `--baseURL "${{ steps.pages.outputs.base_url }}/"`,
+  and that resolves to `http://gerard.space/workout/`, so `absURL` emits `http://` URLs on an `https` page:
+  mixed content on every GIF and a cross-origin `data-base` that silently kills the service-worker registration.
+  Use `relURL` (and `.Site.Home.RelPermalink` for `data-base`); the HTML then carries no scheme.
 - If the Today page looks frozen or wrong: check that all 7 `data-day` sections are present and
   main.js loads (fingerprinted as `js/main.min.*.js`). Don't bake `now` into visible content.
 - The favicon is an inline percent-encoded SVG data URI in `layouts/_default/baseof.html`;
