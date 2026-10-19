@@ -14,8 +14,9 @@
   <p class="text-sm text-muted">{{ .equipment }}</p>
   {{ with .note }}<p class="mt-1 text-sm text-muted italic">{{ . }}</p>{{ end }}
   {{ range .blocks }}
+  {{ $cat := index $.Site.Data.exercises .category }}
   <h3 class="mt-6 mb-3 text-base font-semibold text-heading">{{ .icon }} {{ .name }} <span class="text-sm font-normal text-muted">· {{ .duration }}</span></h3>
-  {{ range .exercises }}{{ partial "exercise-item.html" . }}{{ end }}
+  {{ with $cat }}{{ range .exercises }}{{ partial "exercise-item.html" . }}{{ end }}{{ end }}
   {{ end }}
 </section>
 {{ end }}

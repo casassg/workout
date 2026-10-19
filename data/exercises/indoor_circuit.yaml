@@ -1,0 +1,32 @@
+category: Indoor Circuit
+description: The run substitute when running outside is not possible or not safe
+icon: 🔥
+exercises:
+- id: zc_circuit
+  name: Bodyweight Circuit
+  sets: 4
+  reps: 4 rounds
+  muscle: Full body
+  equipment: None
+  description: 'Execution: 40 seconds on, 20 seconds off, four rounds of: high knees, mountain climbers,
+
+    bodyweight squats, shadow boxing, burpees, plank hold. Rest 90 seconds between rounds.
+
+    Key points: This replaces the run when running outside is not possible or not safe.
+
+    Tip: Stairs in the building work just as well if they exist: 10 minutes up and down, three times.
+
+    '
+- id: zc_mobility
+  name: Mobility Circuit
+  sets: 1
+  reps: 10 min
+  muscle: Recovery
+  equipment: Mat or towel
+  description: 'Execution: Daily, easy: hip flexor stretch, hamstring stretch, thoracic rotations, shoulder dislocates
+
+    with a towel, cat-cow, deep squat hold.
+
+    Tip: On a trip this is what keeps the running muscles from stiffening up while the mileage drops.
+
+    '

@@ -1,0 +1,73 @@
+category: Hotel Legs
+description: Dumbbells or a kettlebell and a bench
+icon: 🦵
+exercises:
+- id: tg_goblet_squat
+  name: Goblet Squat
+  sets: 4
+  reps: 12
+  muscle: Quads
+  equipment: One dumbbell or kettlebell
+  description: 'Setup: Hold the weight at chest height, feet just outside the hips, toes slightly out.
+
+    Execution: Sit down between the hips, elbows inside the knees at the bottom, drive up through the mid-foot.
+
+    '
+  notes: Kettlebells are ideal here. Heavier than the dumbbells you would press.
+- id: tg_split_squat
+  name: Dumbbell Split Squat
+  sets: 3
+  reps: 10
+  muscle: Quads + glutes
+  equipment: Dumbbells + bench
+  description: 'Setup: Rear foot on the bench, front foot far enough forward that the knee stays over the ankle.
+
+    Execution: Lower straight down, front shin near vertical, drive up through the front heel.
+
+    Tip: Bodyweight is fine if the dumbbells are light. This one hurts either way.
+
+    '
+- id: tg_rdl
+  name: Dumbbell Romanian Deadlift
+  sets: 3
+  reps: 12
+  muscle: Hamstrings
+  equipment: Dumbbells
+  description: 'Setup: Standing tall, dumbbells in front of the thighs, knees soft and fixed.
+
+    Execution: Push the hips back, keep the bar path close to the legs, stop when the hamstrings pull, then stand.
+
+    Note: Neutral spine throughout. If the back rounds, you have gone too low.
+
+    '
+- id: tg_lunge
+  name: Dumbbell Reverse Lunge
+  sets: 3
+  reps: 10
+  muscle: Glutes
+  equipment: Dumbbells
+  description: 'Setup: Standing, dumbbells at the sides.
+
+    Execution: Step back, drop the back knee toward the floor, push through the front heel to return.
+
+    '
+- id: tg_calf_raise
+  name: Standing Calf Raise
+  sets: 3
+  reps: 15
+  muscle: Calves
+  equipment: Dumbbells or a step
+  description: 'Execution: Rise onto the toes as high as possible, pause at the top, lower for three seconds.
+
+    '
+- id: tg_plank
+  name: Plank
+  sets: 3
+  reps: 45s
+  muscle: Core
+  equipment: Mat
+  description: 'Setup: Elbows under the shoulders, glutes and abs locked, body one straight line.
+
+    Tip: Stop the set when the hips sag, not when the timer ends.
+
+    '

@@ -1,20 +1,22 @@
 # Weekly schedule template
 # Push/Pull/Legs + Running rotation
-# Última revisió: 2026-08-21 (recuperat del refredat: dissabte run llarg, diumenge functional opcional)
+# Última revisió: 2026-10-18 (TRAVEL MODE: monday and wednesday point at the hotel
+# dumbbell sessions hotel_push / hotel_pull instead of the home push / pull gym days.
+# Revert those two back to "push" and "pull" when the home gym is available again.)
 
 week:
   monday:
     type: "gym"
-    workout: "push"
-    duration: 60
-    description: "Start the week with upper body push exercises + abs"
+    workout: "hotel_push"
+    duration: 50
+    description: "Push on dumbbells only (no barbell, no cable stack). Easy run after dinner"
     icon: "🏋️"
     includeAbs: true
     extra:
       type: "run"
       workout: "easy_run"
       duration: 40
-      description: "Easy run with Laura AFTER dinner (18:00-19:00)"
+      description: "Easy run 40' on the treadmill or outside"
       icon: "🏃"
 
   tuesday:
@@ -25,9 +27,9 @@ week:
 
   wednesday:
     type: "gym"
-    workout: "pull"
-    duration: 60
-    description: "Back and biceps day + abs. Football at 19:00"
+    workout: "hotel_pull"
+    duration: 50
+    description: "Pull on dumbbells only: rows in place of the lat pulldown"
     icon: "🏋️"
     includeAbs: true
 

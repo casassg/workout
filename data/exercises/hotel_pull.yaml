@@ -1,0 +1,87 @@
+category: Hotel Pull
+description: 'Dumbbells and a bench only: rows replace the lat pulldown stack'
+icon: 🪢
+exercises:
+- id: tl_one_arm_row
+  name: One-Arm Dumbbell Row
+  sets: 4
+  reps: 10
+  muscle: Back
+  equipment: Dumbbell + bench
+  description: 'Setup: One hand and one knee on the bench, back flat, dumbbell hanging straight down.
+
+    Execution: Row to the hip, not to the chest, and pause for a beat at the top.
+
+    Key points: No rotation of the torso. The lats do the work, not the lower back.
+
+    '
+  notes: This replaces the lat pulldown. Do both arms, same number of sets.
+- id: tl_bent_over_row
+  name: Two-Arm Dumbbell Bent-Over Row
+  sets: 3
+  reps: 10
+  muscle: Back
+  equipment: Dumbbells
+  description: 'Setup: Hinge to about 45 degrees, knees soft, dumbbells hanging, spine neutral.
+
+    Execution: Row both dumbbells to the ribs, squeeze the shoulder blades, lower slowly.
+
+    '
+- id: tl_reverse_fly
+  name: Dumbbell Reverse Fly
+  sets: 3
+  reps: 12
+  muscle: Rear delts
+  equipment: Dumbbells
+  description: 'Setup: Hinge forward with a flat back, dumbbells under the chest, soft elbows.
+
+    Execution: Raise out to the sides to shoulder height, lead with the pinky edge, lower slowly.
+
+    '
+  notes: Takes the place of the face pull, which needs a cable stack the hotel does not have.
+- id: tl_curl
+  name: Dumbbell Curl
+  sets: 3
+  reps: 10
+  muscle: Biceps
+  equipment: Dumbbells
+  description: 'Setup: Standing, elbows at the sides, shoulders back.
+
+    Execution: Curl without swinging the torso, lower for three seconds.
+
+    '
+- id: tl_hammer_curl
+  name: Hammer Curl
+  sets: 3
+  reps: 10
+  muscle: Biceps + forearms
+  equipment: Dumbbells
+  description: 'Setup: Neutral grip, thumbs up, elbows pinned.
+
+    Execution: Curl straight up, no rotation, slow on the way down.
+
+    '
+- id: tl_pullover
+  name: Dumbbell Pullover
+  sets: 3
+  reps: 12
+  muscle: Lats
+  equipment: One dumbbell + bench
+  description: 'Setup: Lying flat, both hands on one dumbbell overhead, arms slightly bent.
+
+    Execution: Take the dumbbell back over the head until you feel the stretch, then pull it to the chest.
+
+    Tip: Light weight, this one is about the stretch.
+
+    '
+- id: tl_dead_hang
+  name: Dead Hang or Pull-Ups
+  sets: 3
+  reps: 30-45s
+  muscle: Grip + lats
+  equipment: Pull-up bar if the gym has one
+  description: 'Execution: Hang with the shoulders active, or do pull-ups if there is a bar you can reach.
+
+    Tip: No bar in the hotel gym? Skip it and add one more set of rows.
+
+    '

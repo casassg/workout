@@ -91,9 +91,13 @@ if travel_path.exists():
             bid = blk.get("id")
             if not bid or not blk.get("name"):
                 err(f"travel/{mid}: block {bid or '?'} needs id and name")
-            for ex in blk.get("exercises") or []:
-                check_exercise(ex, f"travel/{mid}/{bid}")
-                travel_ids.append(ex.get("id"))
+            cat = blk.get("category")
+            if not cat:
+                err(f"travel/{mid}: block {bid or '?'} needs a category")
+            elif cat not in gym_categories:
+                err(f"travel/{mid}: block {bid or '?'} category {cat!r} is not an exercise category ({sorted(gym_categories)})")
+            else:
+                travel_ids += [e.get("id") for e in (categories[cat].get("exercises") or [])]
     dupes = {i for i in travel_ids if travel_ids.count(i) > 1}
     for d in sorted(dupes):
         err(f"data/travel.yaml: duplicate exercise id {d!r}")
