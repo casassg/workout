@@ -101,6 +101,31 @@ CURATED = {
     "burpee": "burpee",
     "jump squat": "jump squat",
     "renegade row": "kettlebell alternating renegade row",
+    # Travel — hotel gym (dumbbells + bench only)
+    "seated dumbbell overhead press": "dumbbell seated shoulder press",
+    "overhead dumbbell triceps extension": "dumbbell seated triceps extension",
+    "bench dips": "bench dip (knees bent)",
+    "push-ups": "push-up",
+    "one-arm dumbbell row": "dumbbell one arm bent-over row",
+    "two-arm dumbbell bent-over row": "dumbbell bent over row",
+    "dumbbell reverse fly": "dumbbell reverse fly",
+    "dumbbell curl": "dumbbell biceps curl",
+    "dead hang or pull-ups": "pull-up",
+    "dumbbell split squat": "dumbbell single leg split squat",
+    "dumbbell reverse lunge": "dumbbell rear lunge",
+    "standing calf raise": "dumbbell standing calf raise",
+    "elliptical, stair climber or bike": "walk elliptical cross trainer",
+    # Travel — zero equipment (bodyweight)
+    "pike push-ups": "pike-to-cobra push-up",
+    "chair dips": "triceps dip (bench leg)",
+    "table or towel rows": "inverted row",
+    "backpack curl": "dumbbell biceps curl",
+    "superman": "hyperextension",
+    "towel isometric row hold": "bodyweight standing row (with towel)",
+    "split squats": "split squats",
+    "single-leg glute bridge": "single leg bridge with outstretched leg",
+    "towel hamstring curl": "self assisted inverse leg curl (on floor)",
+    "post-meal walk": "walking on incline treadmill",
 }
 
 

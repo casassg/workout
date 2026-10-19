@@ -8,27 +8,32 @@ exercises:
   reps: 12
   muscle: Quads + glutes
   equipment: None
-  description: 'Execution: Feet split, lower straight down, front knee over the ankle, drive up through the front heel.
+  description: 'Execution: Feet split, lower straight down, front knee over the ankle,
+    drive up through the front heel.
 
     Tip: Hold a loaded backpack against the chest to add weight.
 
     '
+  demo: exercises/2368-9E25EOx.gif
 - id: z_glute_bridge
   name: Single-Leg Glute Bridge
   sets: 3
   reps: 12
   muscle: Glutes
   equipment: None
-  description: 'Execution: One foot planted, the other leg extended, drive the hips up and squeeze at the top.
+  description: 'Execution: One foot planted, the other leg extended, drive the hips
+    up and squeeze at the top.
 
     '
+  demo: exercises/3645-rmEukuS.gif
 - id: z_wall_sit
   name: Wall Sit
   sets: 3
   reps: 45s
   muscle: Quads
   equipment: Wall
-  description: 'Execution: Back on the wall, knees at 90 degrees, hold. Stop when the form breaks.
+  description: 'Execution: Back on the wall, knees at 90 degrees, hold. Stop when
+    the form breaks.
 
     '
 - id: z_ham_curl
@@ -37,8 +42,11 @@ exercises:
   reps: 12
   muscle: Hamstrings
   equipment: Towel + smooth floor
-  description: 'Setup: Lying on the back, heels on a towel on a smooth floor, hips lifted.
+  description: 'Setup: Lying on the back, heels on a towel on a smooth floor, hips
+    lifted.
 
-    Execution: Slide the heels out, then pull them back toward the glutes while keeping the hips up.
+    Execution: Slide the heels out, then pull them back toward the glutes while keeping
+    the hips up.
 
     '
+  demo: exercises/0696-E4PwJqI.gif

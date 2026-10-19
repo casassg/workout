@@ -8,13 +8,17 @@ exercises:
   reps: 12
   muscle: Back
   equipment: Table or a towel in a door
-  description: 'Setup: Lie under a sturdy table, or anchor a towel in a closed door and hold both ends.
+  description: 'Setup: Lie under a sturdy table, or anchor a towel in a closed door
+    and hold both ends.
 
-    Execution: Pull the chest toward the edge, squeeze the shoulder blades, lower slowly. The lower the body, the harder it is.
+    Execution: Pull the chest toward the edge, squeeze the shoulder blades, lower
+    slowly. The lower the body, the harder it is.
 
-    Key points: This is the only real back work available without equipment, so do not skip it.
+    Key points: This is the only real back work available without equipment, so do
+    not skip it.
 
     '
+  demo: exercises/0499-bZGHsAZ.gif
 - id: z_backpack_curl
   name: Backpack Curl
   sets: 3
@@ -23,26 +27,33 @@ exercises:
   equipment: Backpack with books or bottles
   description: 'Setup: Hold the loaded backpack by the straps, elbows at the sides.
 
-    Execution: Curl up, three seconds down. Add or remove weight by adding or removing bottles.
+    Execution: Curl up, three seconds down. Add or remove weight by adding or removing
+    bottles.
 
     '
+  demo: exercises/0294-NbVPDMW.gif
 - id: z_superman
   name: Superman
   sets: 3
   reps: 15
   muscle: Lower back
   equipment: None
-  description: 'Execution: Face down, lift the arms and legs off the floor together, hold one second at the top, lower slowly.
+  description: 'Execution: Face down, lift the arms and legs off the floor together,
+    hold one second at the top, lower slowly.
 
     '
+  demo: exercises/0489-zhMwOwE.gif
 - id: z_towel_row_hold
   name: Towel Isometric Row Hold
   sets: 3
   reps: 30s
   muscle: Back + grip
   equipment: Towel
-  description: 'Execution: Anchor the towel and pull hard with straight arms, holding tension for 30 seconds.
+  description: 'Execution: Anchor the towel and pull hard with straight arms, holding
+    tension for 30 seconds.
 
-    Tip: Boring, but it is the closest thing to a lat pulldown with nothing in the room.
+    Tip: Boring, but it is the closest thing to a lat pulldown with nothing in the
+    room.
 
     '
+  demo: exercises/3165-uTv34oq.gif

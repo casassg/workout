@@ -13,6 +13,7 @@ exercises:
     Tip: Elevate the hands on a chair to make it easier, or the feet to make it harder.
 
     '
+  demo: exercises/0662-I4hDWkc.gif
 - id: z_pike
   name: Pike Push-Ups
   sets: 3
@@ -21,9 +22,11 @@ exercises:
   equipment: None
   description: 'Setup: Hips high, hands and feet on the floor, head between the hands.
 
-    Execution: Lower the crown of the head toward the floor, press back up. This is the overhead press of the trip.
+    Execution: Lower the crown of the head toward the floor, press back up. This is
+    the overhead press of the trip.
 
     '
+  demo: exercises/3662-XPUDTt7.gif
 - id: z_dips
   name: Chair Dips
   sets: 3
@@ -32,9 +35,11 @@ exercises:
   equipment: Chair
   description: 'Setup: Hands on the edge of a sturdy chair behind you, legs extended.
 
-    Execution: Lower until the elbows reach 90 degrees, press back up. Keep the elbows pointing back.
+    Execution: Lower until the elbows reach 90 degrees, press back up. Keep the elbows
+    pointing back.
 
     '
+  demo: exercises/0812-VuoerH0.gif
 - id: z_plank
   name: Plank
   sets: 3
@@ -44,3 +49,4 @@ exercises:
   description: 'Execution: Elbows under the shoulders, glutes locked, no sagging hips.
 
     '
+  demo: exercises/2135-VBAWRPG.gif

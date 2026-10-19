@@ -8,64 +8,80 @@ exercises:
   reps: 10
   muscle: Chest
   equipment: Dumbbells + bench
-  description: 'Setup: Lie flat, feet planted, dumbbells at chest level, elbows at about 45 degrees from the torso.
+  description: 'Setup: Lie flat, feet planted, dumbbells at chest level, elbows at
+    about 45 degrees from the torso.
 
-    Execution: Press up and slightly together without clanging the dumbbells, then lower for three seconds.
+    Execution: Press up and slightly together without clanging the dumbbells, then
+    lower for three seconds.
 
-    Tip: No bench? Do a Dumbbell Floor Press on a mat: the floor caps the range but protects the shoulders.
+    Tip: No bench? Do a Dumbbell Floor Press on a mat: the floor caps the range but
+    protects the shoulders.
 
     '
-  notes: The main press of the day. Get two sets at your top weight before adding anything.
+  notes: The main press of the day. Get two sets at your top weight before adding
+    anything.
+  demo: exercises/0289-SpYC0Kp.gif
 - id: tp_incline_db
   name: Incline Dumbbell Press
   sets: 3
   reps: 10
   muscle: Upper chest
   equipment: Dumbbells + incline bench
-  description: 'Setup: Bench at 30 degrees, not higher, or the front delts take over from the chest.
+  description: 'Setup: Bench at 30 degrees, not higher, or the front delts take over
+    from the chest.
 
     Execution: Press straight up over the collar bone, lower to a three-second count.
 
-    Tip: No incline bench? Raise one end of a flat bench on a plyo box, or overhead-press instead.
+    Tip: No incline bench? Raise one end of a flat bench on a plyo box, or overhead-press
+    instead.
 
     '
+  demo: exercises/0314-ns0SIbU.gif
 - id: tp_db_ohp
   name: Seated Dumbbell Overhead Press
   sets: 4
   reps: 10
   muscle: Shoulders
   equipment: Dumbbells + bench
-  description: 'Setup: Back supported, dumbbells at shoulder height, wrists stacked over elbows.
+  description: 'Setup: Back supported, dumbbells at shoulder height, wrists stacked
+    over elbows.
 
     Execution: Press to lockout without arching the lower back, lower under control.
 
-    Key points: Ribs down, glutes tight. If the back arches, reduce the weight, not the reps.
+    Key points: Ribs down, glutes tight. If the back arches, reduce the weight, not
+    the reps.
 
     '
+  demo: exercises/0405-znQUdHY.gif
 - id: tp_lateral_raise
   name: Dumbbell Lateral Raise
   sets: 3
   reps: 12
   muscle: Side delts
   equipment: Dumbbells
-  description: 'Setup: Slight forward lean, tiny bend in the elbows, dumbbells at the sides.
+  description: 'Setup: Slight forward lean, tiny bend in the elbows, dumbbells at
+    the sides.
 
     Execution: Raise to shoulder height, lead with the elbows, lower for three seconds.
 
     Tip: Light dumbbells are perfect here. Go slow rather than heavy.
 
     '
+  demo: exercises/0334-DsgkuIt.gif
 - id: tp_oh_triceps
   name: Overhead Dumbbell Triceps Extension
   sets: 3
   reps: 12
   muscle: Triceps
   equipment: One dumbbell
-  description: 'Setup: Both hands cupping one dumbbell, arms overhead, elbows pointing forward.
+  description: 'Setup: Both hands cupping one dumbbell, arms overhead, elbows pointing
+    forward.
 
-    Execution: Lower behind the head until the forearms touch the biceps, press back to lockout.
+    Execution: Lower behind the head until the forearms touch the biceps, press back
+    to lockout.
 
     '
+  demo: exercises/2188-kont8Ut.gif
 - id: tp_kickback_dips
   name: Bench Dips
   sets: 3
@@ -79,14 +95,17 @@ exercises:
     Tip: Elbows stay pointing straight back, not out to the sides.
 
     '
+  demo: exercises/0129-RrLske5.gif
 - id: tp_pushups
   name: Push-Ups
   sets: 2
   reps: AMRAP
   muscle: Chest
   equipment: None
-  description: 'Execution: One set to near failure as a finisher, body in one line, elbows at 45 degrees.
+  description: 'Execution: One set to near failure as a finisher, body in one line,
+    elbows at 45 degrees.
 
     Tip: Too easy? Elevate the feet on the bench.
 
     '
+  demo: exercises/0662-I4hDWkc.gif

@@ -8,31 +8,39 @@ exercises:
   reps: 35 min
   muscle: Aerobic
   equipment: Treadmill
-  description: 'Execution: 5 minutes walking to warm up, then 30 minutes at conversational pace, then 2 minutes easy.
+  description: 'Execution: 5 minutes walking to warm up, then 30 minutes at conversational
+    pace, then 2 minutes easy.
 
-    Key points: Nose breathing or a pace where you could hold a sentence. Treadmill incline of 1 percent.
+    Key points: Nose breathing or a pace where you could hold a sentence. Treadmill
+    incline of 1 percent.
 
     '
-  notes: Tuesday and Thursday, same as the home plan. This is the session that carries the marathon base on the road.
+  notes: Tuesday and Thursday, same as the home plan. This is the session that carries
+    the marathon base on the road.
 - id: tc_machine
   name: Elliptical, Stair Climber or Bike
   sets: 1
   reps: 25-30 min
   muscle: Aerobic
   equipment: Elliptical, stair climber, bike
-  description: 'Execution: Steady effort, no intervals. Resistance high enough that talking is possible but not easy.
+  description: 'Execution: Steady effort, no intervals. Resistance high enough that
+    talking is possible but not easy.
 
     Tip: Use this when the weather is bad or the treadmill is taken.
 
     '
+  demo: exercises/2141-rjtuP6X.gif
 - id: tc_walk
   name: Post-Meal Walk
   sets: 1
   reps: 10-15 min
   muscle: Recovery
   equipment: None
-  description: 'Execution: Easy walk after dinner, ideally outside, ideally every travel day.
+  description: 'Execution: Easy walk after dinner, ideally outside, ideally every
+    travel day.
 
-    Tip: Doubles as the best thing you can do for digestion and for sodium after restaurant food.
+    Tip: Doubles as the best thing you can do for digestion and for sodium after restaurant
+    food.
 
     '
+  demo: exercises/3666-rjiM4L3.gif

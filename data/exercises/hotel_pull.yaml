@@ -8,7 +8,8 @@ exercises:
   reps: 10
   muscle: Back
   equipment: Dumbbell + bench
-  description: 'Setup: One hand and one knee on the bench, back flat, dumbbell hanging straight down.
+  description: 'Setup: One hand and one knee on the bench, back flat, dumbbell hanging
+    straight down.
 
     Execution: Row to the hip, not to the chest, and pause for a beat at the top.
 
@@ -16,29 +17,37 @@ exercises:
 
     '
   notes: This replaces the lat pulldown. Do both arms, same number of sets.
+  demo: exercises/0292-C0MA9bC.gif
 - id: tl_bent_over_row
   name: Two-Arm Dumbbell Bent-Over Row
   sets: 3
   reps: 10
   muscle: Back
   equipment: Dumbbells
-  description: 'Setup: Hinge to about 45 degrees, knees soft, dumbbells hanging, spine neutral.
+  description: 'Setup: Hinge to about 45 degrees, knees soft, dumbbells hanging, spine
+    neutral.
 
-    Execution: Row both dumbbells to the ribs, squeeze the shoulder blades, lower slowly.
+    Execution: Row both dumbbells to the ribs, squeeze the shoulder blades, lower
+    slowly.
 
     '
+  demo: exercises/0293-BJ0Hz5L.gif
 - id: tl_reverse_fly
   name: Dumbbell Reverse Fly
   sets: 3
   reps: 12
   muscle: Rear delts
   equipment: Dumbbells
-  description: 'Setup: Hinge forward with a flat back, dumbbells under the chest, soft elbows.
+  description: 'Setup: Hinge forward with a flat back, dumbbells under the chest,
+    soft elbows.
 
-    Execution: Raise out to the sides to shoulder height, lead with the pinky edge, lower slowly.
+    Execution: Raise out to the sides to shoulder height, lead with the pinky edge,
+    lower slowly.
 
     '
-  notes: Takes the place of the face pull, which needs a cable stack the hotel does not have.
+  notes: Takes the place of the face pull, which needs a cable stack the hotel does
+    not have.
+  demo: exercises/0383-EAs3xL9.gif
 - id: tl_curl
   name: Dumbbell Curl
   sets: 3
@@ -50,6 +59,7 @@ exercises:
     Execution: Curl without swinging the torso, lower for three seconds.
 
     '
+  demo: exercises/0294-NbVPDMW.gif
 - id: tl_hammer_curl
   name: Hammer Curl
   sets: 3
@@ -61,27 +71,33 @@ exercises:
     Execution: Curl straight up, no rotation, slow on the way down.
 
     '
+  demo: exercises/0313-slDvUAU.gif
 - id: tl_pullover
   name: Dumbbell Pullover
   sets: 3
   reps: 12
   muscle: Lats
   equipment: One dumbbell + bench
-  description: 'Setup: Lying flat, both hands on one dumbbell overhead, arms slightly bent.
+  description: 'Setup: Lying flat, both hands on one dumbbell overhead, arms slightly
+    bent.
 
-    Execution: Take the dumbbell back over the head until you feel the stretch, then pull it to the chest.
+    Execution: Take the dumbbell back over the head until you feel the stretch, then
+    pull it to the chest.
 
     Tip: Light weight, this one is about the stretch.
 
     '
+  demo: exercises/0375-9XjtHvS.gif
 - id: tl_dead_hang
   name: Dead Hang or Pull-Ups
   sets: 3
   reps: 30-45s
   muscle: Grip + lats
   equipment: Pull-up bar if the gym has one
-  description: 'Execution: Hang with the shoulders active, or do pull-ups if there is a bar you can reach.
+  description: 'Execution: Hang with the shoulders active, or do pull-ups if there
+    is a bar you can reach.
 
     Tip: No bar in the hotel gym? Skip it and add one more set of rows.
 
     '
+  demo: exercises/0652-lBDjFxJ.gif
