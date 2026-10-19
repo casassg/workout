@@ -45,9 +45,27 @@ exercises:
     lower slowly.
 
     '
-  notes: Takes the place of the face pull, which needs a cable stack the hotel does
-    not have.
+  notes: Rear-delt work without a cable. The hotel does have a rope station (confirmed
+    at the gym 19/10), so the Face Pull below is the first choice and this one is
+    the backup or the finisher.
   demo: exercises/0383-EAs3xL9.gif
+- id: tl_face_pull
+  name: Face Pull
+  sets: 3
+  reps: 15
+  muscle: Rear delts + rotator cuff
+  equipment: Cable machine + rope
+  description: 'Setup: rope on a high pulley, hands neutral, arms extended, one step
+    back for tension.
+
+    Execution: Pull the rope toward the eyebrows, elbows high and wide, and rotate
+    the hands outward at the end.
+
+    Key points: Light weight, high reps. This is the single best shoulder-health move
+    in the whole plan.'
+  notes: Back on the list because the hotel gym has a rope station (confirmed 19/10).
+    Keep it light and strict.
+  demo: exercises/0202-yUdIGNs.gif
 - id: tl_curl
   name: Dumbbell Curl
   sets: 3

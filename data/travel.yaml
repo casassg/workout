@@ -2,27 +2,28 @@ intro: The same split as the home plan (push, pull, legs) rebuilt around whateve
   version does.
 rules:
 - 'Keep the same days: push Monday, pull Wednesday, legs Friday.'
-- No barbell anywhere on the road, so every press becomes a dumbbell press.
-- 'No lat pulldown stack either: rows replace it, one arm at a time if the dumbbells are light.'
+- No barbell anywhere on the road, so every press becomes a dumbbell press. There IS a cable rope station.
 - 'Drop the load, not the session: travel dumbbells are usually light, so add reps and slow the lowering phase to 3 seconds.'
 - Cardio on a treadmill, elliptical or bike. A hotel run at zone 2, 35 minutes, is the same stimulus as the home one.
 - Nothing new and nothing maximal on the road. The goal is to keep the habit and the muscle, not to set PRs.
+- 'Cables are back: rope pushdowns on push day, face pulls on pull day.'
 modes:
 - id: hotel_gym
   name: Hotel gym
   icon: 🏨
-  equipment: Dumbbells and kettlebells (usually light to medium), one weight machine, medicine and balance balls, a bench or plyo box, treadmills, ellipticals, a bike.
-  note: No barbell and no lat pulldown stack. Everything below is written for that.
+  equipment: Dumbbells and kettlebells (usually light to medium), a cable station with a rope attachment, one weight machine, medicine and balance balls, a bench or plyo box, treadmills, ellipticals, a
+    bike.
+  note: No barbell. The cable rope station is confirmed (19/10), so pushdowns and face pulls are in.
   blocks:
   - id: travel_push
     name: Push — dumbbell day
     icon: 🏋️
-    duration: 45-50 min
+    duration: 50-55 min
     category: hotel_push
   - id: travel_pull
     name: Pull — dumbbell day
     icon: 🪢
-    duration: 45-50 min
+    duration: 50-55 min
     category: hotel_pull
   - id: travel_legs
     name: Legs — dumbbell day

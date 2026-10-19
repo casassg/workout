@@ -126,6 +126,7 @@ CURATED = {
     "single-leg glute bridge": "single leg bridge with outstretched leg",
     "towel hamstring curl": "self assisted inverse leg curl (on floor)",
     "post-meal walk": "walking on incline treadmill",
+    "rope triceps pushdown": "cable pushdown (with rope attachment)",
 }
 
 

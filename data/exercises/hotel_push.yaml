@@ -82,6 +82,23 @@ exercises:
 
     '
   demo: exercises/2188-kont8Ut.gif
+- id: tp_rope_pushdown
+  name: Rope Triceps Pushdown
+  sets: 3
+  reps: 12
+  muscle: Triceps
+  equipment: Cable machine + rope
+  description: 'Setup: rope on a high pulley, elbows pinned to the ribs, slight forward
+    lean.
+
+    Execution: Push down and spread the rope ends apart at the bottom, then let it
+    rise slowly for three seconds.
+
+    Key points: Only the forearms move. If the elbows travel forward, drop the weight.'
+  notes: The hotel has a cable station with a rope, so the pushdown is back on the
+    menu (confirmed at the gym 19/10). It replaces the bench dips as the isolation
+    finisher if you are short of time, or do both.
+  demo: exercises/0200-dU605di.gif
 - id: tp_kickback_dips
   name: Bench Dips
   sets: 3
