@@ -1,4 +1,4 @@
-<div class="rounded-xl border border-line bg-surface p-4 mb-3" data-exercise-id="{{ .id }}" data-sets="{{ .sets }}" data-reps="{{ .reps }}"{{ with .startingWeight }} data-weight="{{ . }}"{{ end }} data-exercise-name="{{ .name }}"{{ with .demo }} data-demo="{{ . | absURL }}"{{ end }}>
+<div class="rounded-xl border border-line bg-surface p-4 mb-3" data-exercise-id="{{ .id }}" data-sets="{{ .sets }}" data-reps="{{ .reps }}"{{ with .startingWeight }} data-weight="{{ . }}"{{ end }} data-exercise-name="{{ .name }}"{{ with .demo }} data-demo="{{ . | relURL }}"{{ end }}>
   <div class="flex items-start justify-between gap-3">
     <div class="min-w-0">
       <h4 class="text-base font-semibold text-heading break-words">{{ .name }}</h4>
