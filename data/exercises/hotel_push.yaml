@@ -114,7 +114,7 @@ exercises:
 - id: tp_pushups
   name: Push-Ups
   sets: 2
-  reps: AMRAP
+  reps: AMRAP (15-25)
   muscle: Chest
   equipment: None
   description: 'Execution: One set to near failure as a finisher, body in one line, elbows at 45 degrees.
@@ -123,4 +123,6 @@ exercises:
 
     '
   demo: exercises/0662-I4hDWkc.gif
-  notes: Bodyweight finisher.
+  notes: 'AMRAP means as many clean reps as possible, not to total failure: stop 1 or 2 reps short, because this is a maintenance block and the next push day should feel the same. Two sets, 90 seconds rest.
+    Bodyweight load for you is roughly 57 kg on the hands at 88.7 kg, so it is heavier than your 47 kg bench: 15-25 in the first set and 8-15 in the second is the normal range. More than 25? Elevate the
+    feet on the bench. Fewer than 10? Hands on the bench or on the knees, and build from there.'
