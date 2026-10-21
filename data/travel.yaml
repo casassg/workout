@@ -10,6 +10,7 @@ rules:
 - 'MAINTENANCE MODE: the loads shown on the travel sessions are reference loads so you know what to pick up, not progression targets. Take the closest dumbbell, keep 2 reps in reserve, and do not chase
   a PR.'
 - 'Nothing you log on a travel session ever updates your home weights: the hotel sessions use their own exercise ids, and the home loads stay frozen until the plan reverts on 8 November.'
+- 'Light rack rule: when the dumbbells run out at around 20 kg, rows go TWO-ARM (total kilos beat one arm) and lats go on the cable station (straight-arm pulldown, seated cable row), never skipped.'
 modes:
 - id: hotel_gym
   name: Hotel gym

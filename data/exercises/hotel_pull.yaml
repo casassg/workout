@@ -31,7 +31,8 @@ exercises:
     '
   demo: exercises/0293-BJ0Hz5L.gif
   startingWeight: 22.68
-  notes: 'Reference load per dumbbell. Less than the one-arm row on purpose: both sides are loaded at once.'
+  notes: 'When the hotel rack is light, THIS is the volume lift, not the one-arm row: two dumbbells at 20 kg is 40 kg of total load, more than any single dumbbell the rack will give you for a one-arm row.
+    If the one-arm row feels capped, do not skip this one.'
 - id: tl_reverse_fly
   name: Dumbbell Reverse Fly
   sets: 3
@@ -104,7 +105,8 @@ exercises:
     '
   demo: exercises/0375-9XjtHvS.gif
   startingWeight: 22.48
-  notes: Reference load from your home straight-arm pulldown.
+  notes: 'The lats also live on the cable station the hotel has: a straight-arm pulldown with the rope or the bar is the same movement with constant tension and no awkward setup. If the pullover feels clumsy
+    with the dumbbells on offer, swap it for that.'
 - id: tl_dead_hang
   name: Dead Hang or Pull-Ups
   sets: 3
