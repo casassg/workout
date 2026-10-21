@@ -39,13 +39,14 @@ exercises:
   reps: 12
   muscle: Rear delts
   equipment: Dumbbells
-  description: 'Setup: Hinge forward with a flat back, dumbbells under the chest, soft elbows.
+  description: 'Setup: hinge at the hips until the torso is near horizontal, dumbbells hanging, soft knees, flat back.
 
-    Execution: Raise out to the sides to shoulder height, lead with the pinky edge, lower slowly.
+    Execution: raise both arms OUT TO THE SIDES with a slight bend in the elbow, thumbs pointing down, until they reach shoulder height, then lower slowly.
 
-    '
-  notes: Reference load per dumbbell. There is no home equivalent, so this is a starting point, not a measured number. Rear-delt work without a cable. The hotel does have a rope station (confirmed at the
-    gym 19/10), so the Face Pull below is the first choice and this one is the backup or the finisher.
+    Key points: this is NOT the lateral raise. The lateral raise is done standing upright with the arms out to the sides; the reverse fly is done BENT OVER with the arms out to the sides, and it hits the
+    rear delts and the upper back, which is the whole point of doing it on pull day. Light weight, strict form: if the arms end up in front of the body, it has become a row.'
+  notes: 'Rear delts, bent over, thumbs down. The face pull above is the first choice because the hotel has the rope; this one is the backup or the finisher. Careful not to swap it for a lateral raise:
+    they look similar and train different muscles.'
   demo: exercises/0383-EAs3xL9.gif
   startingWeight: 9.07
 - id: tl_face_pull
