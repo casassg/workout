@@ -1,20 +1,21 @@
 # Weekly schedule template
 # Push/Pull/Legs + Running rotation
-# Última revisió: 2026-10-23 (HONDURAS ZERO-EQUIPMENT MODE, 23/10 to 7/11)
-# No equipment there and outdoor running is not safe, so the whole week is bodyweight:
-# monday bodyweight_push, wednesday bodyweight_pull, friday bodyweight_legs, and the
-# saturday long run is replaced by the indoor_circuit.
-# REVERT all four to "push" / "pull" / "legs" / "long_run" (run, 60 min) when the home
-# gym is available again, on 8/11.
+# Última revisió: 2026-08-21 (recuperat del refredat: dissabte run llarg, diumenge functional opcional)
 
 week:
   monday:
     type: "gym"
-    workout: "bodyweight_push"
-    duration: 30
-    description: "Push with no equipment: push-ups, pike push-ups, chair dips. No run: running outside is not safe here"
+    workout: "push"
+    duration: 60
+    description: "Start the week with upper body push exercises + abs"
     icon: "🏋️"
     includeAbs: true
+    extra:
+      type: "run"
+      workout: "easy_run"
+      duration: 40
+      description: "Easy run with Laura AFTER dinner (18:00-19:00)"
+      icon: "🏃"
 
   tuesday:
     type: "rest"
@@ -24,32 +25,32 @@ week:
 
   wednesday:
     type: "gym"
-    workout: "bodyweight_pull"
-    duration: 30
-    description: "Pull with no equipment: table or towel rows, backpack curls, superman"
+    workout: "pull"
+    duration: 60
+    description: "Back and biceps day + abs. Football at 19:00"
     icon: "🏋️"
     includeAbs: true
 
   thursday:
     type: "rest"
     duration: 0
-    description: "Rest day - active recovery before the Friday session"
+    description: "Rest day - active recovery before tempo run Friday-week"
     icon: "🧘"
 
   friday:
     type: "gym"
-    workout: "bodyweight_legs"
-    duration: 30
-    description: "Legs with no equipment: split squats, single-leg glute bridge, wall sit, towel hamstring curl"
+    workout: "push"
+    duration: 60
+    description: "Push (upper body focus, 2nd session of the week). No afternoon run"
     icon: "🏋️"
     includeAbs: true
 
   saturday:
-    type: "gym"
-    workout: "indoor_circuit"
-    duration: 30
-    description: "Indoor circuit replaces the long run: outdoor running is not safe here. 40s on / 20s off, 4 rounds, plus mobility"
-    icon: "🔥"
+    type: "run"
+    workout: "long_run"
+    duration: 60
+    description: "Long run 60' moderate (Mode A). First long run back after the cold: easy pace, build gently."
+    icon: "🏃"
 
   sunday:
     type: "rest"
