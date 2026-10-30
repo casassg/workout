@@ -1,21 +1,20 @@
 # Weekly schedule template
 # Push/Pull/Legs + Running rotation
-# Última revisió: 2026-08-21 (recuperat del refredat: dissabte run llarg, diumenge functional opcional)
+# Última revisió: 2026-10-30 (HONDURAS ZERO-EQUIPMENT MODE)
+#
+# !! CURRENT MODE: Honduras, zero equipment, no outdoor running (not safe). !!
+# Mon bodyweight push / Wed bodyweight pull / Fri bodyweight legs, 30' each, plus an
+# indoor circuit on Saturday instead of the long run. No run events at all this week.
+# REVERT to the home gym plan (push 60 + easy run, pull 60, push 60, long run 60) as soon
+# as the Houston gym is available again; travel window 30/10-15/11 (see travel_windows.json).
 
 week:
   monday:
     type: "gym"
-    workout: "push"
-    duration: 60
-    description: "Start the week with upper body push exercises + abs"
+    workout: "bodyweight_push"
+    duration: 30
+    description: "Zero-equipment push: push-ups, pike push-ups, chair dips, planks. No run (outdoor running is not safe here)"
     icon: "🏋️"
-    includeAbs: true
-    extra:
-      type: "run"
-      workout: "easy_run"
-      duration: 40
-      description: "Easy run with Laura AFTER dinner (18:00-19:00)"
-      icon: "🏃"
 
   tuesday:
     type: "rest"
@@ -25,32 +24,30 @@ week:
 
   wednesday:
     type: "gym"
-    workout: "pull"
-    duration: 60
-    description: "Back and biceps day + abs. Football at 19:00"
-    icon: "🏋️"
-    includeAbs: true
+    workout: "bodyweight_pull"
+    duration: 30
+    description: "Zero-equipment pull: table or towel rows, backpack curls, superman holds"
+    icon: "🪢"
 
   thursday:
     type: "rest"
     duration: 0
-    description: "Rest day - active recovery before tempo run Friday-week"
+    description: "Rest day - active recovery (walking, stretching)"
     icon: "🧘"
 
   friday:
     type: "gym"
-    workout: "push"
-    duration: 60
-    description: "Push (upper body focus, 2nd session of the week). No afternoon run"
-    icon: "🏋️"
-    includeAbs: true
+    workout: "bodyweight_legs"
+    duration: 30
+    description: "Zero-equipment legs: split squats, single-leg glute bridge, wall sit, towel hamstring curl"
+    icon: "🦵"
 
   saturday:
-    type: "run"
-    workout: "long_run"
-    duration: 60
-    description: "Long run 60' moderate (Mode A). First long run back after the cold: easy pace, build gently."
-    icon: "🏃"
+    type: "gym"
+    workout: "indoor_circuit"
+    duration: 30
+    description: "Indoor circuit replaces the long run: outdoor running is not safe here. 40/20 x 4 rounds, bodyweight only"
+    icon: "🔥"
 
   sunday:
     type: "rest"
