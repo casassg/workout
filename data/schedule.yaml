@@ -46,7 +46,7 @@ week:
     type: "gym"
     workout: "indoor_circuit"
     duration: 30
-    description: "Indoor circuit replaces the long run: outdoor running is not safe here. 6 stations, 40s work / 20s rest, 4 rounds, bodyweight only"
+    description: "Indoor circuit replaces the long run: outdoor running is not safe here. 6 circuit stations, 40s work / 20s rest, 4 rounds, then the 6-station mobility cooldown"
     icon: "🔥"
 
   sunday:

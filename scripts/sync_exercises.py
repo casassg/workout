@@ -132,6 +132,15 @@ CURATED = {
     "burpees": "burpee",
     "plank hold": "weighted front plank",
     "wall sit": "march sit (wall)",
+    # Travel — mobility stations
+    "hip flexor stretch": "intermediate hip flexor and quad stretch",
+    "hamstring stretch": "hamstring stretch",
+    "thoracic rotation": "spine twist",
+    "shoulder dislocates": "chest and front of shoulder stretch",
+    "cat-cow": "spine stretch",
+    "deep squat hold": "potty squat",
+    "half-kneeling hip flexor stretch": "intermediate hip flexor and quad stretch",
+    "couch stretch": "intermediate hip flexor and quad stretch",
     "post-meal walk": "walking on incline treadmill",
     "rope triceps pushdown": "cable pushdown (with rope attachment)",
 }

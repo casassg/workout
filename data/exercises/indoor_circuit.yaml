@@ -108,21 +108,109 @@ exercises:
 
     '
   demo: exercises/2135-VBAWRPG.gif
-- id: zc_mobility
-  name: Mobility Circuit
+- id: zc_hip_flexor
+  name: Hip Flexor Stretch
   sets: 1
-  reps: 10 min
-  muscle: Recovery
+  reps: 60s
+  muscle: Mobility
   equipment: Mat or towel
-  description: 'Execution: Daily, easy: hip flexor stretch, hamstring stretch, thoracic
-    rotations, shoulder dislocates
+  notes: Mobility station 1 of 6 · 60s each, two passes for the full 10 min
+  description: 'Execution: Half kneeling, tuck the pelvis and push the hips forward
+    until you feel the front of the rear hip.
 
-    with a towel, cat-cow, deep squat hold.
 
-    Key points: Four rounds of the six stations is roughly 24 minutes of work plus
-    rest; this cooldown brings it to 30.
+    Key points: Do not arch the lower back; the tuck is what makes the stretch land
+    on the hip and not the spine.
 
-    Tip: On a trip this is what keeps the running muscles from stiffening up while
-    the mileage drops.
 
-    '
+    Tip: The tightest spot after a week of sitting on planes and in cars. Stay 60
+    seconds per side.'
+  demo: exercises/1564-tFGKm99.gif
+- id: zc_hamstring
+  name: Hamstring Stretch
+  sets: 1
+  reps: 60s
+  muscle: Mobility
+  equipment: Mat or towel
+  notes: Mobility station 2 of 6 · 60s each, two passes for the full 10 min
+  description: 'Execution: Seated or standing with one leg long, hinge from the hip
+    with a flat back until the back of the thigh pulls.
+
+
+    Key points: Hinge at the hip, not the waist. A flat back and a small range beats
+    a rounded back and a big one.
+
+
+    Tip: This is the one that keeps the running muscles from stiffening while the
+    mileage is at zero.'
+  demo: exercises/1511-99rWm7w.gif
+- id: zc_thoracic_rotation
+  name: Thoracic Rotation
+  sets: 1
+  reps: 60s
+  muscle: Mobility
+  equipment: Mat or towel
+  notes: Mobility station 3 of 6 · 60s each, two passes for the full 10 min
+  description: 'Execution: Side lying with the knees bent, open the top arm and rotate
+    the chest toward the ceiling, follow the hand with the eyes.
+
+
+    Key points: The knees stay stacked together; the movement comes from the mid back,
+    not the lower back.
+
+
+    Tip: Do both sides slowly. This is what undoes a day of sitting.'
+  demo: exercises/2329-2jl9K55.gif
+- id: zc_shoulder_dislocates
+  name: Shoulder Dislocates
+  sets: 1
+  reps: 60s
+  muscle: Mobility
+  equipment: Mat or towel
+  notes: Mobility station 4 of 6 · 60s each, two passes for the full 10 min
+  description: 'Execution: Hold a towel wide with both hands and pass it over the
+    head and behind the back, then back.
+
+
+    Key points: Widen the grip until it is painless; narrow it week by week. Never
+    force the range.
+
+
+    Tip: A towel is enough, no band needed. Ten slow passes each way.'
+  demo: exercises/1271-Uto7l43.gif
+- id: zc_cat_cow
+  name: Cat-Cow
+  sets: 1
+  reps: 60s
+  muscle: Mobility
+  equipment: Mat or towel
+  notes: Mobility station 5 of 6 · 60s each, two passes for the full 10 min
+  description: 'Execution: On all fours, alternate rounding the back up and dropping
+    the belly while lifting the chest and the head.
+
+
+    Key points: Move with the breath: exhale to round, inhale to arch. Slow, one vertebra
+    at a time.
+
+
+    Tip: Ten slow cycles. The best two minutes in the whole plan for a stiff lower
+    back.'
+  demo: exercises/1363-JbC2iaV.gif
+- id: zc_deep_squat_hold
+  name: Deep Squat Hold
+  sets: 1
+  reps: 60s
+  muscle: Mobility
+  equipment: Mat or towel
+  notes: Mobility station 6 of 6 · 60s each, two passes for the full 10 min
+  description: 'Execution: Sit into the deepest squat you can with the heels down
+    and the chest up, and hold.
+
+
+    Key points: Hold a doorframe or the bed if the heels lift; work toward heels down
+    over the weeks.
+
+
+    Tip: This is the closest thing to the ankle and hip range that running gives you.
+    Aim for 60 seconds.'
+  demo: exercises/3119-75Bgtjy.gif
