@@ -125,6 +125,12 @@ CURATED = {
     "split squats": "split squats",
     "single-leg glute bridge": "single leg bridge with outstretched leg",
     "towel hamstring curl": "self assisted inverse leg curl (on floor)",
+    # Travel — indoor circuit stations
+    "jumping jacks": "jack jump (male)",
+    "bodyweight squats": "half knee bends (male)",
+    "shadow boxing": "left hook. boxing",
+    "burpees": "burpee",
+    "plank hold": "weighted front plank",
     "post-meal walk": "walking on incline treadmill",
     "rope triceps pushdown": "cable pushdown (with rope attachment)",
 }

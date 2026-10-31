@@ -2,31 +2,127 @@ category: Indoor Circuit
 description: The run substitute when running outside is not possible or not safe
 icon: 🔥
 exercises:
-- id: zc_circuit
-  name: Bodyweight Circuit
+- id: zc_jumping_jacks
+  name: Jumping Jacks
   sets: 4
-  reps: 4 rounds
+  reps: 40s
   muscle: Full body
   equipment: None
-  description: 'Execution: 40 seconds on, 20 seconds off, four rounds of: high knees, mountain climbers,
+  notes: Circuit station 1 of 6 · 40s work / 20s rest
+  description: 'Execution: Stand tall, jump the feet out while the arms go overhead,
+    jump back in.
 
-    bodyweight squats, shadow boxing, burpees, plank hold. Rest 90 seconds between rounds.
+    Key points: Land soft on the midfoot and keep a steady rhythm for the whole 40
+    seconds.
 
-    Key points: This replaces the run when running outside is not possible or not safe.
-
-    Tip: Stairs in the building work just as well if they exist: 10 minutes up and down, three times.
+    Tip: This is the warm-up station. Go easy on the first round and let the heart
+    rate climb.
 
     '
+  demo: exercises/3224-1g5bPpA.gif
+- id: zc_mountain_climbers
+  name: Mountain Climbers
+  sets: 4
+  reps: 40s
+  muscle: Core / cardio
+  equipment: Mat or towel
+  notes: Circuit station 2 of 6 · 40s work / 20s rest
+  description: 'Execution: From a high plank, drive one knee toward the chest and
+    alternate fast, hips low and stable.
+
+    Key points: The hips must not bounce up and down; the work comes from the legs,
+    not the lower back.
+
+    Tip: If the lower back starts to sag, slow down instead of stopping.
+
+    '
+  demo: exercises/0630-RJgzwny.gif
+- id: zc_bodyweight_squat
+  name: Bodyweight Squats
+  sets: 4
+  reps: 40s
+  muscle: Legs
+  equipment: None
+  notes: Circuit station 3 of 6 · 40s work / 20s rest
+  description: 'Execution: Feet shoulder width, sit back and down until the thighs
+    are parallel, chest up, then stand.
+
+    Key points: Knees track over the toes, heels stay down, full depth every rep.
+
+    Tip: This is the only leg station. Aim for a constant pace of about 20 reps per
+    40 seconds rather than sprinting the first 15 and stopping.
+
+    '
+  demo: exercises/3221-ia6kIIl.gif
+- id: zc_shadow_boxing
+  name: Shadow Boxing
+  sets: 4
+  reps: 40s
+  muscle: Shoulders / cardio
+  equipment: None
+  notes: Circuit station 4 of 6 · 40s work / 20s rest
+  description: 'Execution: Guard up, throw straight punches and hooks into the air,
+    rotating the hips and keeping the feet light.
+
+    Key points: Keep the wrists straight and do not lock the elbows; breathe out on
+    every punch.
+
+    Tip: It feels easy for the first 20 seconds and then it does not. Keep the guard
+    up the whole time.
+
+    '
+  demo: exercises/2271-hoXt6wv.gif
+- id: zc_burpee
+  name: Burpees
+  sets: 4
+  reps: 40s
+  muscle: Full body
+  equipment: None
+  notes: Circuit station 5 of 6 · 40s work / 20s rest
+  description: 'Execution: Squat, hands down, jump the feet back to a plank, push-up
+    optional, jump the feet in and stand up.
+
+    Key points: Step the feet back instead of jumping them if the floor is slippery
+    or the neighbours are close.
+
+    Tip: This is the hardest station. Pick a pace you can hold for all four rounds,
+    not a pace that empties you in round one.
+
+    '
+  demo: exercises/1160-dK9394r.gif
+- id: zc_plank_hold
+  name: Plank Hold
+  sets: 4
+  reps: 40s
+  muscle: Core
+  equipment: Mat or towel
+  notes: Circuit station 6 of 6 · 40s work / 20s rest
+  description: 'Execution: Forearms and toes on the floor, body in one line from the
+    head to the heels, glutes and abs tight.
+
+    Key points: Do not let the hips drop or pike up. Squeeze the glutes and breathe
+    normally.
+
+    Tip: This closes the round. Then rest 90 seconds and start the next round at station
+    1.
+
+    '
+  demo: exercises/2135-VBAWRPG.gif
 - id: zc_mobility
   name: Mobility Circuit
   sets: 1
   reps: 10 min
   muscle: Recovery
   equipment: Mat or towel
-  description: 'Execution: Daily, easy: hip flexor stretch, hamstring stretch, thoracic rotations, shoulder dislocates
+  description: 'Execution: Daily, easy: hip flexor stretch, hamstring stretch, thoracic
+    rotations, shoulder dislocates
 
     with a towel, cat-cow, deep squat hold.
 
-    Tip: On a trip this is what keeps the running muscles from stiffening up while the mileage drops.
+    Key points: Four rounds of the six stations is roughly 24 minutes of work plus
+    rest; this cooldown brings it to 30.
+
+    Tip: On a trip this is what keeps the running muscles from stiffening up while
+    the mileage drops.
 
     '

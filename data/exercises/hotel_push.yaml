@@ -8,15 +8,20 @@ exercises:
   reps: 10
   muscle: Chest
   equipment: Dumbbells + bench
-  description: 'Setup: Lie flat, feet planted, dumbbells at chest level, elbows at about 45 degrees from the torso.
+  description: 'Setup: Lie flat, feet planted, dumbbells at chest level, elbows at
+    about 45 degrees from the torso.
 
-    Execution: Press up and slightly together without clanging the dumbbells, then lower for three seconds.
+    Execution: Press up and slightly together without clanging the dumbbells, then
+    lower for three seconds.
 
-    Tip: No bench? Do a Dumbbell Floor Press on a mat: the floor caps the range but protects the shoulders.
+    Tip: No bench? Do a Dumbbell Floor Press on a mat: the floor caps the range but
+    protects the shoulders.
 
     '
-  notes: Reference load per dumbbell, taken from your home incline dumbbell press. Your barbell bench (47.22 kg) is total bar + plates, so it is not comparable per hand. The main press of the day. Get two
-    sets at your top weight before adding anything.
+  notes: Reference load per dumbbell, taken from your home incline dumbbell press.
+    Your barbell bench (47.22 kg) is total bar + plates, so it is not comparable per
+    hand. The main press of the day. Get two sets at your top weight before adding
+    anything.
   demo: exercises/0289-SpYC0Kp.gif
   startingWeight: 27.29
 - id: tp_incline_db
@@ -25,11 +30,13 @@ exercises:
   reps: 10
   muscle: Upper chest
   equipment: Dumbbells + incline bench
-  description: 'Setup: Bench at 30 degrees, not higher, or the front delts take over from the chest.
+  description: 'Setup: Bench at 30 degrees, not higher, or the front delts take over
+    from the chest.
 
     Execution: Press straight up over the collar bone, lower to a three-second count.
 
-    Tip: No incline bench? Raise one end of a flat bench on a plyo box, or overhead-press instead.
+    Tip: No incline bench? Raise one end of a flat bench on a plyo box, or overhead-press
+    instead.
 
     '
   demo: exercises/0314-ns0SIbU.gif
@@ -41,11 +48,13 @@ exercises:
   reps: 10
   muscle: Shoulders
   equipment: Dumbbells + bench
-  description: 'Setup: Back supported, dumbbells at shoulder height, wrists stacked over elbows.
+  description: 'Setup: Back supported, dumbbells at shoulder height, wrists stacked
+    over elbows.
 
     Execution: Press to lockout without arching the lower back, lower under control.
 
-    Key points: Ribs down, glutes tight. If the back arches, reduce the weight, not the reps.
+    Key points: Ribs down, glutes tight. If the back arches, reduce the weight, not
+    the reps.
 
     '
   demo: exercises/0405-znQUdHY.gif
@@ -57,7 +66,8 @@ exercises:
   reps: 12
   muscle: Side delts
   equipment: Dumbbells
-  description: 'Setup: Slight forward lean, tiny bend in the elbows, dumbbells at the sides.
+  description: 'Setup: Slight forward lean, tiny bend in the elbows, dumbbells at
+    the sides.
 
     Execution: Raise to shoulder height, lead with the elbows, lower for three seconds.
 
@@ -66,16 +76,19 @@ exercises:
     '
   demo: exercises/0334-DsgkuIt.gif
   startingWeight: 18.38
-  notes: Reference load from your home dumbbell lateral raise. Hotel racks often stop well below this.
+  notes: Reference load from your home dumbbell lateral raise. Hotel racks often stop
+    well below this.
 - id: tp_oh_triceps
   name: Overhead Dumbbell Triceps Extension
   sets: 3
   reps: 12
   muscle: Triceps
   equipment: One dumbbell
-  description: 'Setup: Both hands cupping one dumbbell, arms overhead, elbows pointing forward.
+  description: 'Setup: Both hands cupping one dumbbell, arms overhead, elbows pointing
+    forward.
 
-    Execution: Lower behind the head until the forearms touch the biceps, press back to lockout.
+    Execution: Lower behind the head until the forearms touch the biceps, press back
+    to lockout.
 
     '
   demo: exercises/2188-kont8Ut.gif
@@ -87,13 +100,17 @@ exercises:
   reps: 12
   muscle: Triceps
   equipment: Cable machine + rope
-  description: 'Setup: rope on a high pulley, elbows pinned to the ribs, slight forward lean.
+  description: 'Setup: rope on a high pulley, elbows pinned to the ribs, slight forward
+    lean.
 
-    Execution: Push down and spread the rope ends apart at the bottom, then let it rise slowly for three seconds.
+    Execution: Push down and spread the rope ends apart at the bottom, then let it
+    rise slowly for three seconds.
 
     Key points: Only the forearms move. If the elbows travel forward, drop the weight.'
-  notes: Reference load from your home tricep pushdown. The hotel has a cable station with a rope, so the pushdown is back on the menu (confirmed at the gym 19/10). It replaces the bench dips as the isolation
-    finisher if you are short of time, or do both.
+  notes: Reference load from your home tricep pushdown. The hotel has a cable station
+    with a rope, so the pushdown is back on the menu (confirmed at the gym 19/10).
+    It replaces the bench dips as the isolation finisher if you are short of time,
+    or do both.
   demo: exercises/0200-dU605di.gif
   startingWeight: 17.94
 - id: tp_kickback_dips
@@ -117,11 +134,15 @@ exercises:
   reps: 20
   muscle: Chest
   equipment: None
-  description: 'Execution: One set to near failure as a finisher, body in one line, elbows at 45 degrees.
+  description: 'Execution: One set to near failure as a finisher, body in one line,
+    elbows at 45 degrees.
 
     Tip: Too easy? Elevate the feet on the bench.
 
     '
   demo: exercises/0662-I4hDWkc.gif
-  notes: 'Target 20 clean reps per set, two sets, 90 seconds rest. Bodyweight for you is roughly 57 kg on the hands at 88.7 kg, heavier than your 47 kg bench, so 20 is a real working set and not a warm-down.
-    The second set will honestly land around 12-15: log what you actually do. Clearing 20 twice with reps in reserve? Put the feet on the bench. Cannot reach 10? Hands on the bench or on the knees.'
+  notes: 'Target 20 clean reps per set, two sets, 90 seconds rest. Bodyweight for
+    you is roughly 57 kg on the hands at 88.7 kg, heavier than your 47 kg bench, so
+    20 is a real working set and not a warm-down. The second set will honestly land
+    around 12-15: log what you actually do. Clearing 20 twice with reps in reserve?
+    Put the feet on the bench. Cannot reach 10? Hands on the bench or on the knees.'

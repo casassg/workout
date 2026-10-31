@@ -8,14 +8,16 @@ exercises:
   reps: 10
   muscle: Back
   equipment: Dumbbell + bench
-  description: 'Setup: One hand and one knee on the bench, back flat, dumbbell hanging straight down.
+  description: 'Setup: One hand and one knee on the bench, back flat, dumbbell hanging
+    straight down.
 
     Execution: Row to the hip, not to the chest, and pause for a beat at the top.
 
     Key points: No rotation of the torso. The lats do the work, not the lower back.
 
     '
-  notes: Reference load per dumbbell, taken from your home seated cable row. This replaces the lat pulldown. Do both arms, same number of sets.
+  notes: Reference load per dumbbell, taken from your home seated cable row. This
+    replaces the lat pulldown. Do both arms, same number of sets.
   demo: exercises/0292-C0MA9bC.gif
   startingWeight: 29.08
 - id: tl_bent_over_row
@@ -24,29 +26,39 @@ exercises:
   reps: 10
   muscle: Back
   equipment: Dumbbells
-  description: 'Setup: Hinge to about 45 degrees, knees soft, dumbbells hanging, spine neutral.
+  description: 'Setup: Hinge to about 45 degrees, knees soft, dumbbells hanging, spine
+    neutral.
 
-    Execution: Row both dumbbells to the ribs, squeeze the shoulder blades, lower slowly.
+    Execution: Row both dumbbells to the ribs, squeeze the shoulder blades, lower
+    slowly.
 
     '
   demo: exercises/0293-BJ0Hz5L.gif
   startingWeight: 22.68
-  notes: 'When the hotel rack is light, THIS is the volume lift, not the one-arm row: two dumbbells at 20 kg is 40 kg of total load, more than any single dumbbell the rack will give you for a one-arm row.
-    If the one-arm row feels capped, do not skip this one.'
+  notes: 'When the hotel rack is light, THIS is the volume lift, not the one-arm row:
+    two dumbbells at 20 kg is 40 kg of total load, more than any single dumbbell the
+    rack will give you for a one-arm row. If the one-arm row feels capped, do not
+    skip this one.'
 - id: tl_reverse_fly
   name: Dumbbell Reverse Fly
   sets: 3
   reps: 12
   muscle: Rear delts
   equipment: Dumbbells
-  description: 'Setup: hinge at the hips until the torso is near horizontal, dumbbells hanging, soft knees, flat back.
+  description: 'Setup: hinge at the hips until the torso is near horizontal, dumbbells
+    hanging, soft knees, flat back.
 
-    Execution: raise both arms OUT TO THE SIDES with a slight bend in the elbow, thumbs pointing down, until they reach shoulder height, then lower slowly.
+    Execution: raise both arms OUT TO THE SIDES with a slight bend in the elbow, thumbs
+    pointing down, until they reach shoulder height, then lower slowly.
 
-    Key points: this is NOT the lateral raise. The lateral raise is done standing upright with the arms out to the sides; the reverse fly is done BENT OVER with the arms out to the sides, and it hits the
-    rear delts and the upper back, which is the whole point of doing it on pull day. Light weight, strict form: if the arms end up in front of the body, it has become a row.'
-  notes: 'Rear delts, bent over, thumbs down. The face pull above is the first choice because the hotel has the rope; this one is the backup or the finisher. Careful not to swap it for a lateral raise:
-    they look similar and train different muscles.'
+    Key points: this is NOT the lateral raise. The lateral raise is done standing
+    upright with the arms out to the sides; the reverse fly is done BENT OVER with
+    the arms out to the sides, and it hits the rear delts and the upper back, which
+    is the whole point of doing it on pull day. Light weight, strict form: if the
+    arms end up in front of the body, it has become a row.'
+  notes: 'Rear delts, bent over, thumbs down. The face pull above is the first choice
+    because the hotel has the rope; this one is the backup or the finisher. Careful
+    not to swap it for a lateral raise: they look similar and train different muscles.'
   demo: exercises/0383-EAs3xL9.gif
   startingWeight: 9.07
 - id: tl_face_pull
@@ -55,12 +67,16 @@ exercises:
   reps: 15
   muscle: Rear delts + rotator cuff
   equipment: Cable machine + rope
-  description: 'Setup: rope on a high pulley, hands neutral, arms extended, one step back for tension.
+  description: 'Setup: rope on a high pulley, hands neutral, arms extended, one step
+    back for tension.
 
-    Execution: Pull the rope toward the eyebrows, elbows high and wide, and rotate the hands outward at the end.
+    Execution: Pull the rope toward the eyebrows, elbows high and wide, and rotate
+    the hands outward at the end.
 
-    Key points: Light weight, high reps. This is the single best shoulder-health move in the whole plan.'
-  notes: Reference load from your home face pull. Back on the list because the hotel gym has a rope station (confirmed 19/10). Keep it light and strict.
+    Key points: Light weight, high reps. This is the single best shoulder-health move
+    in the whole plan.'
+  notes: Reference load from your home face pull. Back on the list because the hotel
+    gym has a rope station (confirmed 19/10). Keep it light and strict.
   demo: exercises/0202-yUdIGNs.gif
   startingWeight: 23.15
 - id: tl_curl
@@ -97,24 +113,28 @@ exercises:
   reps: 12
   muscle: Lats
   equipment: One dumbbell + bench
-  description: 'Setup: Lying flat, both hands on one dumbbell overhead, arms slightly bent.
+  description: 'Setup: Lying flat, both hands on one dumbbell overhead, arms slightly
+    bent.
 
-    Execution: Take the dumbbell back over the head until you feel the stretch, then pull it to the chest.
+    Execution: Take the dumbbell back over the head until you feel the stretch, then
+    pull it to the chest.
 
     Tip: Light weight, this one is about the stretch.
 
     '
   demo: exercises/0375-9XjtHvS.gif
   startingWeight: 22.48
-  notes: 'The lats also live on the cable station the hotel has: a straight-arm pulldown with the rope or the bar is the same movement with constant tension and no awkward setup. If the pullover feels clumsy
-    with the dumbbells on offer, swap it for that.'
+  notes: 'The lats also live on the cable station the hotel has: a straight-arm pulldown
+    with the rope or the bar is the same movement with constant tension and no awkward
+    setup. If the pullover feels clumsy with the dumbbells on offer, swap it for that.'
 - id: tl_dead_hang
   name: Dead Hang or Pull-Ups
   sets: 3
   reps: 30-45s
   muscle: Grip + lats
   equipment: Pull-up bar if the gym has one
-  description: 'Execution: Hang with the shoulders active, or do pull-ups if there is a bar you can reach.
+  description: 'Execution: Hang with the shoulders active, or do pull-ups if there
+    is a bar you can reach.
 
     Tip: No bar in the hotel gym? Skip it and add one more set of rows.
 
