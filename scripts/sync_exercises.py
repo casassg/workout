@@ -131,6 +131,7 @@ CURATED = {
     "shadow boxing": "left hook. boxing",
     "burpees": "burpee",
     "plank hold": "weighted front plank",
+    "wall sit": "march sit (wall)",
     "post-meal walk": "walking on incline treadmill",
     "rope triceps pushdown": "cable pushdown (with rope attachment)",
 }
